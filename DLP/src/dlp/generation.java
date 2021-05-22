@@ -10,6 +10,56 @@ package dlp;
  * @author Hamad DEVIL
  */
 public class generation {
+     public static void buffering(){
+          BufferingFrame buf = new BufferingFrame(); 
+        buf.setVisible(true);
+       try{
+           for (int i=0;i<=30;i++)
+           {
+               
+               
+               Thread.sleep(90);
+               
+               if(i==10)
+               {
+                   
+                  buf.bufferingLabel.setText("Loading..");
+               }
+               if(i==15)
+               {
+                   
+                  buf.bufferingLabel.setText("Loading...");
+               }
+               if(i==20)
+               {
+                  buf.bufferingLabel.setText("Loading....");
+               }
+            
+               if(i==25)
+               {
+                  buf.bufferingLabel.setText("Loading..");
+               }
+               if(i==29)
+               {
+                  buf.bufferingLabel.setText("Loading...");
+               }
+             
+                       
+               
+               if(i==30)
+               {
+                   
+                   buf.setVisible(false);
+                   
+                   
+               }
+           }
+       }
+       catch(Exception e)
+       {
+           
+       }
+     }
     public static void startProgram(){
          ProgressBar b = new ProgressBar(); 
         b.setVisible(true);
@@ -88,8 +138,5 @@ public class generation {
            
        }
     }
-    public static void main(String args[])
-    {
-        
-       }
+    
     }
