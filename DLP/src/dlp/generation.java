@@ -10,9 +10,8 @@ package dlp;
  * @author Hamad DEVIL
  */
 public class generation {
-    public static void main(String args[])
-    {
-        ProgressBar b = new ProgressBar(); 
+    public static void startProgram(){
+         ProgressBar b = new ProgressBar(); 
         b.setVisible(true);
        try{
            for (int i=0;i<=101;i++)
@@ -65,12 +64,12 @@ public class generation {
                }
                    if(i==85)
                {
-                  b.LoadingStatus.setText("getting ready.");
+                  b.LoadingStatus.setText("getting ready..");
                   
                }
                     if(i==95)
                {
-                  b.LoadingStatus.setText("Thank You for waiting");
+                  b.LoadingStatus.setText("Thank You for waiting..");
                   
                }
                        
@@ -78,6 +77,8 @@ public class generation {
                if(i==101)
                {
                    b.setVisible(false);
+                   LogInFrame m = new LogInFrame();
+                   m.setVisible(true);
                    
                }
            }
@@ -87,4 +88,8 @@ public class generation {
            
        }
     }
-}
+    public static void main(String args[])
+    {
+        
+       }
+    }

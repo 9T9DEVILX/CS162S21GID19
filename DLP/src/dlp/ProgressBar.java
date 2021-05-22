@@ -33,6 +33,7 @@ public class ProgressBar extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("DIGITAL LEARNING PLATFORM");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
