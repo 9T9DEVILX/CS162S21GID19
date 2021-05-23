@@ -1404,6 +1404,19 @@ jPanel15.setBackground(Color.BLACK);
         jTabbedPane3.setSelectedIndex(1);
     }//GEN-LAST:event_jPanel18MouseClicked
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+       jTabbedPane2.setSelectedIndex(1); // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
 
 
     /**
