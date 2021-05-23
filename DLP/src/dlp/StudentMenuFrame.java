@@ -434,6 +434,11 @@ public class StudentMenuFrame extends javax.swing.JFrame {
         jLabel1.setText("DIGITAL LEARNING PLATFORM");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/crosss.PNG"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/minus_24px.png"))); // NOI18N
 
@@ -1399,13 +1404,7 @@ jPanel15.setBackground(Color.BLACK);
         jTabbedPane3.setSelectedIndex(1);
     }//GEN-LAST:event_jPanel18MouseClicked
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-       jTabbedPane2.setSelectedIndex(1); // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel3MouseClicked
 
     /**
      * @param args the command line arguments
