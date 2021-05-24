@@ -280,6 +280,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator14 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         tIME_AD = new javax.swing.JPanel();
         jPanel50 = new javax.swing.JPanel();
         jPanel51 = new javax.swing.JPanel();
@@ -956,21 +957,24 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator27.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 260, 10));
 
-        jButton9.setBackground(new java.awt.Color(0, 51, 51));
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton9.setBackground(new java.awt.Color(0, 0, 0));
+        jButton9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton9.setText("Edit Program");
         jPanel16.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 120, 34));
 
-        jButton10.setBackground(new java.awt.Color(0, 51, 51));
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton10.setText("Delete Program");
         jPanel16.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 130, 34));
 
-        jButton11.setBackground(new java.awt.Color(0, 51, 51));
-        jButton11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton11.setBackground(new java.awt.Color(0, 0, 0));
+        jButton11.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton11.setText("Add Program");
         jPanel16.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 120, 34));
 
@@ -1031,8 +1035,9 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel17.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 430, 130));
 
         jButton12.setBackground(new java.awt.Color(0, 51, 51));
-        jButton12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton12.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton12.setText("Add PLO");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1041,15 +1046,17 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel17.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 120, 34));
 
-        jButton13.setBackground(new java.awt.Color(0, 51, 51));
-        jButton13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton13.setBackground(new java.awt.Color(0, 0, 0));
+        jButton13.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton13.setText("Edit PLO");
         jPanel17.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 120, 34));
 
-        jButton14.setBackground(new java.awt.Color(0, 51, 51));
-        jButton14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton14.setBackground(new java.awt.Color(0, 0, 0));
+        jButton14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton14.setForeground(new java.awt.Color(255, 255, 255));
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton14.setText("Delete PLO");
         jPanel17.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 130, 34));
 
@@ -1270,15 +1277,17 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator31.setForeground(new java.awt.Color(0, 0, 0));
         jPanel19.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 260, 10));
 
-        jButton15.setBackground(new java.awt.Color(0, 51, 51));
-        jButton15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton15.setBackground(new java.awt.Color(0, 0, 0));
+        jButton15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton15.setForeground(new java.awt.Color(255, 255, 255));
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton15.setText("Edit Course");
         jPanel19.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 120, 34));
 
-        jButton16.setBackground(new java.awt.Color(0, 51, 51));
-        jButton16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton16.setBackground(new java.awt.Color(0, 0, 0));
+        jButton16.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton16.setForeground(new java.awt.Color(255, 255, 255));
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton16.setText("Add Course");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1290,6 +1299,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton17.setBackground(new java.awt.Color(0, 51, 51));
         jButton17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton17.setForeground(new java.awt.Color(255, 255, 255));
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton17.setText("Delete Course");
         jPanel19.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 130, 34));
 
@@ -1441,9 +1451,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator37.setForeground(new java.awt.Color(0, 0, 0));
         jPanel20.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 260, 10));
 
-        jButton18.setBackground(new java.awt.Color(0, 51, 51));
-        jButton18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton18.setBackground(new java.awt.Color(0, 0, 0));
+        jButton18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton18.setForeground(new java.awt.Color(255, 255, 255));
+        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton18.setText("Add CLO");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1452,21 +1463,24 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel20.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 34));
 
-        jButton19.setBackground(new java.awt.Color(0, 51, 51));
-        jButton19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton19.setBackground(new java.awt.Color(0, 0, 0));
+        jButton19.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton19.setForeground(new java.awt.Color(255, 255, 255));
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton19.setText("Edit CLO");
         jPanel20.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 120, 34));
 
-        jButton20.setBackground(new java.awt.Color(0, 51, 51));
-        jButton20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton20.setBackground(new java.awt.Color(0, 0, 0));
+        jButton20.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton20.setForeground(new java.awt.Color(255, 255, 255));
+        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton20.setText("Delete CLO");
         jPanel20.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 130, 34));
 
-        jButton21.setBackground(new java.awt.Color(0, 51, 51));
-        jButton21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton21.setBackground(new java.awt.Color(0, 0, 0));
+        jButton21.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton21.setForeground(new java.awt.Color(255, 255, 255));
+        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton21.setText("Add Rubric");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1475,15 +1489,17 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel20.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 120, 34));
 
-        jButton22.setBackground(new java.awt.Color(0, 51, 51));
-        jButton22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton22.setBackground(new java.awt.Color(0, 0, 0));
+        jButton22.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton22.setForeground(new java.awt.Color(255, 255, 255));
+        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton22.setText("Edit Rubric");
         jPanel20.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 120, 34));
 
-        jButton23.setBackground(new java.awt.Color(0, 51, 51));
-        jButton23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton23.setBackground(new java.awt.Color(0, 0, 0));
+        jButton23.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton23.setForeground(new java.awt.Color(255, 255, 255));
+        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton23.setText("Delete Rubric");
         jPanel20.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, 130, 34));
 
@@ -1646,15 +1662,17 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator42.setForeground(new java.awt.Color(0, 0, 0));
         jPanel21.add(jSeparator42, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 260, 10));
 
-        jButton24.setBackground(new java.awt.Color(0, 51, 51));
-        jButton24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton24.setBackground(new java.awt.Color(0, 0, 0));
+        jButton24.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton24.setForeground(new java.awt.Color(255, 255, 255));
+        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton24.setText("Delete CLO");
         jPanel21.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 130, 34));
 
-        jButton25.setBackground(new java.awt.Color(0, 51, 51));
-        jButton25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton25.setBackground(new java.awt.Color(0, 0, 0));
+        jButton25.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton25.setForeground(new java.awt.Color(255, 255, 255));
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton25.setText("Add CLO");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1663,9 +1681,10 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel21.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 120, 34));
 
-        jButton26.setBackground(new java.awt.Color(0, 51, 51));
-        jButton26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton26.setBackground(new java.awt.Color(0, 0, 0));
+        jButton26.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton26.setForeground(new java.awt.Color(255, 255, 255));
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton26.setText("Edit CLO");
         jPanel21.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 120, 34));
 
@@ -1941,9 +1960,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator50.setForeground(new java.awt.Color(0, 0, 0));
         jPanel3.add(jSeparator50, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 260, 10));
 
-        jButton27.setBackground(new java.awt.Color(0, 51, 51));
-        jButton27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton27.setBackground(new java.awt.Color(0, 0, 0));
+        jButton27.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton27.setForeground(new java.awt.Color(255, 255, 255));
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton27.setText("Add Teacher");
         jButton27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1952,15 +1972,17 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel3.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 120, 34));
 
-        jButton28.setBackground(new java.awt.Color(0, 51, 51));
-        jButton28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton28.setBackground(new java.awt.Color(0, 0, 0));
+        jButton28.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton28.setForeground(new java.awt.Color(255, 255, 255));
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton28.setText("Edit Teacher");
-        jPanel3.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 120, 34));
+        jPanel3.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 130, 34));
 
-        jButton29.setBackground(new java.awt.Color(0, 51, 51));
-        jButton29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton29.setBackground(new java.awt.Color(0, 0, 0));
+        jButton29.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton29.setForeground(new java.awt.Color(255, 255, 255));
+        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton29.setText("Delete Teacher");
         jPanel3.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 130, 34));
 
@@ -1972,7 +1994,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Department", "CNIC", "Phone Number", "DOB", "ID"
+                "Name", "Department", "CNIC", "PhoneNo.", "DOB", "ID"
             }
         ));
         jScrollPane15.setViewportView(jTable15);
@@ -2055,9 +2077,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jComboBox9.setBorder(null);
         jPanel4.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 260, -1));
 
-        jButton30.setBackground(new java.awt.Color(0, 51, 51));
-        jButton30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton30.setBackground(new java.awt.Color(0, 0, 0));
+        jButton30.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton30.setForeground(new java.awt.Color(255, 255, 255));
+        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_chart_16.png"))); // NOI18N
         jButton30.setText("Allocate");
         jButton30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2066,15 +2089,17 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel4.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 120, 34));
 
-        jButton31.setBackground(new java.awt.Color(0, 51, 51));
-        jButton31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton31.setBackground(new java.awt.Color(0, 0, 0));
+        jButton31.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton31.setForeground(new java.awt.Color(255, 255, 255));
+        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton31.setText("Edit ");
         jPanel4.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 120, 34));
 
-        jButton32.setBackground(new java.awt.Color(0, 51, 51));
-        jButton32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton32.setBackground(new java.awt.Color(0, 0, 0));
+        jButton32.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton32.setForeground(new java.awt.Color(255, 255, 255));
+        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton32.setText("Delete ");
         jPanel4.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 120, 34));
 
@@ -2262,9 +2287,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jComboBox10.setBorder(null);
         jPanel6.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 260, -1));
 
-        jButton33.setBackground(new java.awt.Color(0, 51, 51));
-        jButton33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton33.setBackground(new java.awt.Color(0, 0, 0));
+        jButton33.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton33.setForeground(new java.awt.Color(255, 255, 255));
+        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton33.setText("Add Hall");
         jButton33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2273,15 +2299,17 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel6.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 120, 34));
 
-        jButton34.setBackground(new java.awt.Color(0, 51, 51));
-        jButton34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton34.setBackground(new java.awt.Color(0, 0, 0));
+        jButton34.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton34.setForeground(new java.awt.Color(255, 255, 255));
+        jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton34.setText("Edit Hall");
         jPanel6.add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 120, 34));
 
-        jButton35.setBackground(new java.awt.Color(0, 51, 51));
-        jButton35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton35.setBackground(new java.awt.Color(0, 0, 0));
+        jButton35.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton35.setForeground(new java.awt.Color(255, 255, 255));
+        jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton35.setText("Delete Hall");
         jPanel6.add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 120, 34));
 
@@ -2554,18 +2582,41 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Teacher Name", "Account No", "Total Pay", "Semester Title", "Status"
             }
         ));
         jScrollPane3.setViewportView(jTable3);
 
-        pay_Ad.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 710, -1));
+        pay_Ad.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 710, 300));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_cash_16.png"))); // NOI18N
+        jButton1.setText("Pay");
+        pay_Ad.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(733, 540, 110, 40));
 
         jTabbedPane1.addTab("tab7", pay_Ad);
 
@@ -3896,6 +3947,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JPanel fee_ad;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JPanel hostel_ad;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;

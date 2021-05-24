@@ -47,7 +47,7 @@ public class ProgressBar extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dlps/unnamed.gif"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dlps/dribbble-loader-green.gif"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dlps/8855140fd9394e775c1e668e2f612857b4002e87r1-480-480_hq.gif"))); // NOI18N
 
         Loading.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Loading.setForeground(new java.awt.Color(255, 255, 255));
