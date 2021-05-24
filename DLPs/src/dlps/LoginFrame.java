@@ -228,7 +228,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 220, 80));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 220, 600));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -244,7 +244,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/minus_24px.png"))); // NOI18N
         jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 2, 22)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 22)); // NOI18N
         jLabel6.setText("Login Menu");
         jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, 40));
 
@@ -272,7 +272,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(0, 0, 0));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("ADMIN LOGIN");
         jPanel9.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, -1));
@@ -322,7 +322,9 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         jPanel9.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 40, 40));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_login_32.png"))); // NOI18N
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -408,7 +410,9 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel10.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
         jPanel10.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 80, 10));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_login_32.png"))); // NOI18N
         jButton2.setText("Login");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -478,7 +482,9 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
         jPanel11.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 80, 10));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_login_32.png"))); // NOI18N
         jButton3.setText("Login");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -514,14 +520,16 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel12.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 260, 10));
         jPanel12.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 260, 10));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_send_32.png"))); // NOI18N
         jButton4.setText("Send Code");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, -1, -1));
+        jPanel12.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 140, 40));
 
         jTextField5.setBackground(new java.awt.Color(0, 0, 0));
         jTextField5.setForeground(new java.awt.Color(204, 204, 204));
@@ -537,7 +545,9 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         jPanel12.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 260, 30));
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_reset_32.png"))); // NOI18N
         jButton5.setText("Reset Password");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -573,7 +583,7 @@ public class LoginFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
         );
 
         pack();

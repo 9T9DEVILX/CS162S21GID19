@@ -131,6 +131,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jTable8 = new javax.swing.JTable();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTable9 = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
         HOSTELS = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
@@ -140,6 +141,10 @@ public class StudentFrame extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable10 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         scho = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
@@ -149,6 +154,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jScrollPane11 = new javax.swing.JScrollPane();
         jTable11 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
         fees = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
@@ -585,6 +591,11 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("View Courses");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -604,6 +615,12 @@ public class StudentFrame extends javax.swing.JFrame {
         );
 
         course.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 130, 40));
+
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Course Registration");
@@ -684,8 +701,8 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 98, 791, 220));
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Un-Register");
         jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 380, 126, 34));
@@ -730,9 +747,10 @@ public class StudentFrame extends javax.swing.JFrame {
         jLabel32.setText("Select From the table to  register Available Courses");
         jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 51, 51));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_registered_trademark_16.png"))); // NOI18N
         jButton2.setText("Register");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -883,6 +901,11 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("View Assignment Results");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -936,9 +959,10 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jPanel19.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 800, 190));
 
-        jButton3.setBackground(new java.awt.Color(0, 51, 51));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_login_32.png"))); // NOI18N
         jButton3.setText("Submit");
         jPanel19.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 380, 126, 34));
 
@@ -981,6 +1005,11 @@ public class StudentFrame extends javax.swing.JFrame {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
             new String [] {
@@ -992,10 +1021,15 @@ public class StudentFrame extends javax.swing.JFrame {
             jTable7.getColumnModel().getColumn(0).setMaxWidth(50);
         }
 
-        jPanel20.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 720, 130));
+        jPanel20.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 780, 130));
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1061,6 +1095,10 @@ public class StudentFrame extends javax.swing.JFrame {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -1069,10 +1107,14 @@ public class StudentFrame extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(jTable8);
 
-        dmc.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 840, 150));
+        dmc.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 840, 160));
 
         jTable9.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -1083,11 +1125,15 @@ public class StudentFrame extends javax.swing.JFrame {
             }
         ));
         jScrollPane9.setViewportView(jTable9);
-        if (jTable9.getColumnModel().getColumnCount() > 0) {
-            jTable9.getColumnModel().getColumn(4).setHeaderValue("Grade");
-        }
 
-        dmc.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 840, 220));
+        dmc.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 840, 160));
+
+        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_download_16.png"))); // NOI18N
+        jButton7.setText("Download");
+        dmc.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 580, 120, 40));
 
         jTabbedPane1.addTab("tab4", dmc);
 
@@ -1095,7 +1141,7 @@ public class StudentFrame extends javax.swing.JFrame {
         HOSTELS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
-        jLabel26.setText("HOSTELS MANAGEMENT");
+        jLabel26.setText("HOSTEL APPLICATION");
         HOSTELS.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 250, 40));
 
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
@@ -1135,7 +1181,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jComboBox6.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Semester" }));
         jComboBox6.setBorder(null);
-        HOSTELS.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 280, -1));
+        HOSTELS.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 560, 20));
 
         jTable10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1150,13 +1196,26 @@ public class StudentFrame extends javax.swing.JFrame {
         ));
         jScrollPane10.setViewportView(jTable10);
 
-        HOSTELS.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 780, 190));
+        HOSTELS.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 780, 190));
 
-        jButton4.setBackground(new java.awt.Color(0, 51, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_send_32.png"))); // NOI18N
         jButton4.setText("Request");
-        HOSTELS.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, 126, 34));
+        HOSTELS.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 560, 140, 40));
+
+        jLabel16.setText("Semester :");
+        HOSTELS.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 150, 60, 20));
+
+        jLabel36.setText("Reason  :");
+        HOSTELS.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 230, 50, 20));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane15.setViewportView(jTextArea1);
+
+        HOSTELS.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 560, 80));
 
         jTabbedPane1.addTab("tab5", HOSTELS);
 
@@ -1164,12 +1223,12 @@ public class StudentFrame extends javax.swing.JFrame {
         scho.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
-        jLabel27.setText("SCHOLARSHIPS");
-        scho.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, 40));
+        jLabel27.setText("SCHOLARSHIP APPLICATION");
+        scho.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 320, 40));
 
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        scho.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 10));
+        scho.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 10));
 
         jPanel34.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1204,7 +1263,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jComboBox7.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Semester" }));
         jComboBox7.setBorder(null);
-        scho.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 280, -1));
+        scho.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 570, 20));
 
         jTable11.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1221,11 +1280,15 @@ public class StudentFrame extends javax.swing.JFrame {
 
         scho.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 780, 190));
 
-        jButton5.setBackground(new java.awt.Color(0, 51, 51));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_send_32.png"))); // NOI18N
         jButton5.setText("Request");
-        scho.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, 126, 34));
+        scho.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(806, 464, 140, 40));
+
+        jLabel37.setText("Semester :");
+        scho.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 150, 60, 20));
 
         jTabbedPane1.addTab("tab6", scho);
 
@@ -1285,11 +1348,12 @@ public class StudentFrame extends javax.swing.JFrame {
 
         fees.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 800, 250));
 
-        jButton6.setBackground(new java.awt.Color(0, 51, 51));
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_cash_16.png"))); // NOI18N
         jButton6.setText("Pay Challan");
-        fees.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, 126, 34));
+        fees.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(796, 470, 150, 40));
 
         jTabbedPane1.addTab("tab7", fees);
 
@@ -1573,6 +1637,18 @@ public class StudentFrame extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jPanel31MouseClicked
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+       jTabbedPane2.setSelectedIndex(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+       jTabbedPane2.setSelectedIndex(1);  // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+jTabbedPane3.setSelectedIndex(1);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel13MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1622,6 +1698,7 @@ public class StudentFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1635,6 +1712,7 @@ public class StudentFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1656,6 +1734,8 @@ public class StudentFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -1709,6 +1789,7 @@ public class StudentFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1749,6 +1830,7 @@ public class StudentFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel profile;
     private javax.swing.JPanel scho;
     private javax.swing.JPanel timetable;
