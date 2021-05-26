@@ -6,6 +6,7 @@
 package dlps;
 
 import java.awt.Color;
+import java.util.Date;
 
 /**
  *
@@ -16,8 +17,12 @@ public class AdminFrame extends javax.swing.JFrame {
     /**
      * Creates new form AdminFrame
      */
+    
+    DLPs driverr = DLPs.driver_instance();
+    
     public AdminFrame() {
         initComponents();
+         jLabel58.setVisible(false);
     }
 
     /**
@@ -188,7 +193,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         jTextField22 = new javax.swing.JTextField();
         jSeparator43 = new javax.swing.JSeparator();
-        jTextField23 = new javax.swing.JTextField();
         jSeparator44 = new javax.swing.JSeparator();
         jTextField26 = new javax.swing.JTextField();
         jSeparator47 = new javax.swing.JSeparator();
@@ -203,6 +207,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton29 = new javax.swing.JButton();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTable15 = new javax.swing.JTable();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel58 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
+        jSeparator45 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
@@ -1862,25 +1870,8 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator43.setForeground(new java.awt.Color(0, 0, 0));
         jPanel3.add(jSeparator43, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 260, 10));
 
-        jTextField23.setText("DOB");
-        jTextField23.setBorder(null);
-        jTextField23.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField23FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField23FocusLost(evt);
-            }
-        });
-        jTextField23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField23ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 260, 30));
-
         jSeparator44.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel3.add(jSeparator44, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 260, 10));
+        jPanel3.add(jSeparator44, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 260, 10));
 
         jTextField26.setText("Teacher Name");
         jTextField26.setBorder(null);
@@ -1972,21 +1963,21 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton27ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 120, 34));
+        jPanel3.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 120, 34));
 
         jButton28.setBackground(new java.awt.Color(0, 0, 0));
         jButton28.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton28.setForeground(new java.awt.Color(255, 255, 255));
         jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton28.setText("Edit Teacher");
-        jPanel3.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 130, 34));
+        jPanel3.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 130, 34));
 
         jButton29.setBackground(new java.awt.Color(0, 0, 0));
         jButton29.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton29.setForeground(new java.awt.Color(255, 255, 255));
         jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton29.setText("Delete Teacher");
-        jPanel3.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 130, 34));
+        jPanel3.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 130, 34));
 
         jTable15.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2002,6 +1993,32 @@ public class AdminFrame extends javax.swing.JFrame {
         jScrollPane15.setViewportView(jTable15);
 
         jPanel3.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 450, 140));
+        jPanel3.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 260, -1));
+
+        jLabel58.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel58.setText("* Fill all the Fields First");
+        jPanel3.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 140, -1));
+
+        jTextField23.setText("Year of Joining");
+        jTextField23.setBorder(null);
+        jTextField23.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField23FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField23FocusLost(evt);
+            }
+        });
+        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField23ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 260, 30));
+
+        jSeparator45.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.add(jSeparator45, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 260, 10));
 
         jTabbedPane4.addTab("tab1", jPanel3);
 
@@ -3749,18 +3766,6 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField22ActionPerformed
 
-    private void jTextField23FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23FocusGained
-
-    private void jTextField23FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23FocusLost
-
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
-
     private void jTextField26FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField26FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField26FocusGained
@@ -3811,6 +3816,26 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         // TODO add your handling code here:
+        String name = jTextField26.getText();
+        String  dep = jTextField27.getText();
+        String phone = jTextField28.getText();
+        String email = jTextField29.getText();
+        String cnic = jTextField22.getText();
+        String year = jTextField23.getText();
+        Date dob = jDateChooser1.getDate();
+         if (name != "Teacher Name" && dep != "Department" && phone != "Phone Number" && email != "Email" && cnic != "CNIC" && year != "Year of Joining")
+         {
+             driverr.add_teacher(name, dep, phone, email, cnic, dob, year);
+             
+             
+         }
+         else
+         {
+             jLabel58.setVisible(true);
+         }
+        
+        
+        
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jTextField30FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField30FocusGained
@@ -3956,6 +3981,18 @@ public class AdminFrame extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jPanel33MouseClicked
 
+    private void jTextField23FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField23FocusGained
+
+    private void jTextField23FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField23FocusLost
+
+    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField23ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4047,6 +4084,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -4100,6 +4138,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -4228,6 +4267,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator42;
     private javax.swing.JSeparator jSeparator43;
     private javax.swing.JSeparator jSeparator44;
+    private javax.swing.JSeparator jSeparator45;
     private javax.swing.JSeparator jSeparator47;
     private javax.swing.JSeparator jSeparator48;
     private javax.swing.JSeparator jSeparator49;
