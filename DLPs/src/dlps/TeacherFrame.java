@@ -92,6 +92,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator14 = new javax.swing.JSeparator();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
+        jLabel37 = new javax.swing.JLabel();
         assignment_teac = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
@@ -156,6 +157,10 @@ public class TeacherFrame extends javax.swing.JFrame {
         jScrollPane11 = new javax.swing.JScrollPane();
         jTable11 = new javax.swing.JTable();
         jComboBox6 = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jButton1 = new javax.swing.JButton();
         hostel_tea = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
@@ -165,6 +170,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jScrollPane12 = new javax.swing.JScrollPane();
         jTable12 = new javax.swing.JTable();
         jButton10 = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
         result_teac = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
         jPanel33 = new javax.swing.JPanel();
@@ -185,6 +191,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator29 = new javax.swing.JSeparator();
         jScrollPane14 = new javax.swing.JScrollPane();
         jTable14 = new javax.swing.JTable();
+        jLabel41 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
@@ -193,6 +200,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator30 = new javax.swing.JSeparator();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTable15 = new javax.swing.JTable();
+        jLabel42 = new javax.swing.JLabel();
         PAY_TEA = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
         jPanel35 = new javax.swing.JPanel();
@@ -200,6 +208,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator11 = new javax.swing.JSeparator();
         jScrollPane16 = new javax.swing.JScrollPane();
         jTable16 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         TIME_TEA = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
@@ -789,6 +798,18 @@ public class TeacherFrame extends javax.swing.JFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -815,7 +836,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jComboBox1.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course Code", " " }));
         jComboBox1.setBorder(null);
-        jPanel13.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 280, -1));
+        jPanel13.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 630, -1));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel32.setText("CLO ");
@@ -862,6 +883,9 @@ public class TeacherFrame extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jTable5);
 
         jPanel13.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 720, 130));
+
+        jLabel37.setText("Course Code:");
+        jPanel13.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, 20));
 
         jTabbedPane2.addTab("tab3", jPanel13);
 
@@ -1044,17 +1068,19 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator16.setForeground(new java.awt.Color(0, 0, 0));
         jPanel14.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 260, 10));
 
-        jButton4.setBackground(new java.awt.Color(0, 51, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton4.setText("Delete Question");
-        jPanel14.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 460, -1, 34));
+        jPanel14.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, 34));
 
-        jButton5.setBackground(new java.awt.Color(0, 51, 51));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_checkmark_16.png"))); // NOI18N
         jButton5.setText("Done Assignment");
-        jPanel14.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 150, 34));
+        jPanel14.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, 34));
 
         jTextField2.setText("Question");
         jTextField2.setBorder(null);
@@ -1136,23 +1162,26 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator20.setForeground(new java.awt.Color(0, 0, 0));
         jPanel14.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 260, 10));
 
-        jButton6.setBackground(new java.awt.Color(0, 51, 51));
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton6.setText("Add Assignment");
-        jPanel14.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 140, 34));
+        jPanel14.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 160, 34));
 
-        jButton7.setBackground(new java.awt.Color(0, 51, 51));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton7.setText("Add Question");
-        jPanel14.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 120, 34));
+        jPanel14.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 170, 30));
 
-        jButton8.setBackground(new java.awt.Color(0, 51, 51));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton8.setBackground(new java.awt.Color(0, 0, 0));
+        jButton8.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton8.setText("Edit Question");
-        jPanel14.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 120, 34));
+        jPanel14.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 160, 30));
 
         jTabbedPane3.addTab("tab1", jPanel14);
 
@@ -1359,20 +1388,54 @@ public class TeacherFrame extends javax.swing.JFrame {
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null}
             },
             new String [] {
-                "Stu No", "Student Name", "Attendence Status"
+                "Registration number", "Student Name", "Attendence Status"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane11.setViewportView(jTable11);
 
-        atten_tea.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 750, 270));
+        atten_tea.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 750, 270));
 
         jComboBox6.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select COurse Code" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course Code" }));
         jComboBox6.setBorder(null);
-        atten_tea.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 280, -1));
+        atten_tea.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 710, -1));
+
+        jLabel38.setText("Course Code :");
+        atten_tea.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, 20));
+
+        jLabel39.setText("Select Date:");
+        atten_tea.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, 20));
+        atten_tea.add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 180, 110));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_checkmark_16.png"))); // NOI18N
+        jButton1.setText("Done");
+        atten_tea.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(823, 620, 110, 40));
 
         jTabbedPane1.addTab("tab4", atten_tea);
 
@@ -1420,10 +1483,17 @@ public class TeacherFrame extends javax.swing.JFrame {
         jComboBox7.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department" }));
         jComboBox7.setBorder(null);
-        hostel_tea.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 280, -1));
+        hostel_tea.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 680, -1));
 
         jTable12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1437,11 +1507,15 @@ public class TeacherFrame extends javax.swing.JFrame {
 
         hostel_tea.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 780, 190));
 
-        jButton10.setBackground(new java.awt.Color(0, 51, 51));
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_checkmark_16.png"))); // NOI18N
         jButton10.setText("Request");
         hostel_tea.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, 126, 34));
+
+        jLabel40.setText("Department :");
+        hostel_tea.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, 20));
 
         jTabbedPane1.addTab("tab5", hostel_tea);
 
@@ -1550,7 +1624,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jComboBox8.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course Code", " " }));
         jComboBox8.setBorder(null);
-        jPanel7.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 280, -1));
+        jPanel7.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 680, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel34.setText("Course");
@@ -1596,7 +1670,10 @@ public class TeacherFrame extends javax.swing.JFrame {
         ));
         jScrollPane14.setViewportView(jTable14);
 
-        jPanel7.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 720, 130));
+        jPanel7.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 770, 130));
+
+        jLabel41.setText("Course Code:");
+        jPanel7.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, 20));
 
         jTabbedPane4.addTab("tab1", jPanel7);
 
@@ -1614,7 +1691,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jComboBox9.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course Code", " " }));
         jComboBox9.setBorder(null);
-        jPanel8.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 280, -1));
+        jPanel8.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 660, -1));
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel36.setText("Course");
@@ -1639,6 +1716,9 @@ public class TeacherFrame extends javax.swing.JFrame {
 
         jPanel8.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 780, 200));
 
+        jLabel42.setText("Course Code:");
+        jPanel8.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, 20));
+
         jTabbedPane4.addTab("tab2", jPanel8);
 
         result_teac.add(jTabbedPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 1020, 620));
@@ -1646,6 +1726,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jTabbedPane1.addTab("tab6", result_teac);
 
         PAY_TEA.setBackground(new java.awt.Color(255, 255, 255));
+        PAY_TEA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel34.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1660,6 +1741,8 @@ public class TeacherFrame extends javax.swing.JFrame {
             .addGap(0, 12, Short.MAX_VALUE)
         );
 
+        PAY_TEA.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 27, -1, -1));
+
         jPanel35.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
@@ -1673,70 +1756,62 @@ public class TeacherFrame extends javax.swing.JFrame {
             .addGap(0, 660, Short.MAX_VALUE)
         );
 
+        PAY_TEA.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 6, -1, -1));
+
         jLabel30.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel30.setText("PAY REPORTS");
+        PAY_TEA.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 63, 151, 40));
 
         jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        PAY_TEA.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 103, 151, 10));
 
         jTable16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Sr. No", "Payment ID", "Account NO", "Date", "Amount"
+                "Sr. No", "Payment ID", "Account NO", "Date", "Amount", "Semester", "Status"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane16.setViewportView(jTable16);
 
-        javax.swing.GroupLayout PAY_TEALayout = new javax.swing.GroupLayout(PAY_TEA);
-        PAY_TEA.setLayout(PAY_TEALayout);
-        PAY_TEALayout.setHorizontalGroup(
-            PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PAY_TEALayout.createSequentialGroup()
-                .addGroup(PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PAY_TEALayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                            .addComponent(jSeparator11)))
-                    .addGroup(PAY_TEALayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
-            .addGroup(PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PAY_TEALayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(PAY_TEALayout.createSequentialGroup()
-                            .addGap(1030, 1030, 1030)
-                            .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        PAY_TEALayout.setVerticalGroup(
-            PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PAY_TEALayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
-            .addGroup(PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PAY_TEALayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(PAY_TEALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PAY_TEALayout.createSequentialGroup()
-                            .addGap(21, 21, 21)
-                            .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        PAY_TEA.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 139, 809, 308));
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_cash_16.png"))); // NOI18N
+        jButton2.setMnemonic('G');
+        jButton2.setText("Get Pay");
+        PAY_TEA.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 510, 140, 34));
 
         jTabbedPane1.addTab("tab7", PAY_TEA);
 
@@ -2248,13 +2323,16 @@ public class TeacherFrame extends javax.swing.JFrame {
     private javax.swing.JPanel course_teac;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JPanel hostel_tea;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -2294,7 +2372,13 @@ public class TeacherFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
