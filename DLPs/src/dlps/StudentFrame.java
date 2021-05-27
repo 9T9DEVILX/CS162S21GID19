@@ -178,6 +178,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -1450,6 +1451,9 @@ public class StudentFrame extends javax.swing.JFrame {
         jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/instagram_old_50px.png"))); // NOI18N
         jPanel1.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 60, 70));
 
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/WhatsApp Image 2021-05-27 at 11.10.46 AM (1).jpeg"))); // NOI18N
+        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 170, 150));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1737,6 +1741,7 @@ jTabbedPane3.setSelectedIndex(1);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;

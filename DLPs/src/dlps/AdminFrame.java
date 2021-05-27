@@ -364,6 +364,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -3268,6 +3269,9 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/play_button_50px.png"))); // NOI18N
         jPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 650, -1, -1));
 
+        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/WhatsApp Image 2021-05-27 at 11.10.46 AM (1).jpeg"))); // NOI18N
+        jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 170, 150));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -4139,6 +4143,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
