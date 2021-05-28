@@ -7,6 +7,8 @@ package dlps;
 
 import java.awt.Color;
 import java.util.Date;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -75,6 +77,18 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel58 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jSeparator28 = new javax.swing.JSeparator();
+        jTextField8 = new javax.swing.JTextField();
+        jSeparator25 = new javax.swing.JSeparator();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable9 = new javax.swing.JTable();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -89,18 +103,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jSeparator28 = new javax.swing.JSeparator();
-        jTextField8 = new javax.swing.JTextField();
-        jSeparator25 = new javax.swing.JSeparator();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jTable9 = new javax.swing.JTable();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
+        jLabel60 = new javax.swing.JLabel();
         course_ad = new javax.swing.JPanel();
         jPanel40 = new javax.swing.JPanel();
         jPanel41 = new javax.swing.JPanel();
@@ -894,103 +897,6 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
-        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
-        jLabel9.setText("Program Management");
-        jPanel16.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 240, 34));
-
-        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel16.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 230, 10));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Sr. No", "Program Name", "Program ID", "HOD"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel16.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, -1, 170));
-
-        jTextField6.setText("Program Name");
-        jTextField6.setBorder(null);
-        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField6FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField6FocusLost(evt);
-            }
-        });
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-        jPanel16.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 260, 30));
-
-        jSeparator23.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel16.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 260, 10));
-
-        jTextField7.setText("Program ID");
-        jTextField7.setBorder(null);
-        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField7FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField7FocusLost(evt);
-            }
-        });
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-        jPanel16.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 260, 30));
-
-        jSeparator24.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel16.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 260, 10));
-
-        jComboBox4.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select HOD" }));
-        jComboBox4.setBorder(null);
-        jPanel16.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 260, -1));
-
-        jSeparator27.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel16.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 260, 10));
-
-        jButton9.setBackground(new java.awt.Color(0, 0, 0));
-        jButton9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
-        jButton9.setText("Edit Program");
-        jPanel16.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 120, 34));
-
-        jButton10.setBackground(new java.awt.Color(0, 0, 0));
-        jButton10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
-        jButton10.setText("Delete Program");
-        jPanel16.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 130, 34));
-
-        jButton11.setBackground(new java.awt.Color(0, 0, 0));
-        jButton11.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(255, 255, 255));
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
-        jButton11.setText("Add Program");
-        jPanel16.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 120, 34));
-
-        jTabbedPane2.addTab("tab1", jPanel16);
-
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1072,6 +978,125 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel17.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 130, 34));
 
         jTabbedPane2.addTab("tab2", jPanel17);
+
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
+        jLabel9.setText("Program Management");
+        jPanel16.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 240, 34));
+
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel16.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 230, 10));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Sr. No", "Program Name", "Program ID", "HOD"
+            }
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel16.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 80, 520, 170));
+
+        jTextField6.setText("Program Name");
+        jTextField6.setBorder(null);
+        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField6FocusLost(evt);
+            }
+        });
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 260, 30));
+
+        jSeparator23.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel16.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 260, 10));
+
+        jTextField7.setText("Program ID (e.g CS123)");
+        jTextField7.setBorder(null);
+        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField7FocusLost(evt);
+            }
+        });
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 260, 30));
+
+        jSeparator24.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel16.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 260, 10));
+
+        jComboBox4.setForeground(new java.awt.Color(102, 102, 102));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select HOD" }));
+        jComboBox4.setBorder(null);
+        jPanel16.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 260, -1));
+
+        jSeparator27.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel16.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 260, 10));
+
+        jButton9.setBackground(new java.awt.Color(0, 0, 0));
+        jButton9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
+        jButton9.setText("Edit Program");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 120, 34));
+
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
+        jButton10.setText("Delete Program");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 150, 34));
+
+        jButton11.setBackground(new java.awt.Color(0, 0, 0));
+        jButton11.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
+        jButton11.setText("Add Program");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 130, 34));
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel60.setText("* Fill all the Fields First");
+        jPanel16.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 180, -1));
+
+        jTabbedPane2.addTab("tab1", jPanel16);
 
         program_ad.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 1030, 600));
 
@@ -1316,10 +1341,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTable10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Course Name", "Course ID", "Semester", "CRedit Hours", "Program ID"
@@ -1327,7 +1349,7 @@ public class AdminFrame extends javax.swing.JFrame {
         ));
         jScrollPane10.setViewportView(jTable10);
 
-        jPanel19.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 430, 130));
+        jPanel19.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 580, 130));
 
         jComboBox6.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Assignment ID" }));
@@ -1971,6 +1993,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton28.setForeground(new java.awt.Color(255, 255, 255));
         jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton28.setText("Edit Teacher");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 130, 34));
 
         jButton29.setBackground(new java.awt.Color(0, 0, 0));
@@ -1978,28 +2005,35 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton29.setForeground(new java.awt.Color(255, 255, 255));
         jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton29.setText("Delete Teacher");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 130, 34));
 
         jTable15.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Name", "Department", "CNIC", "PhoneNo.", "DOB", "ID"
+                "Name", "Department", "CNIC", "PhoneNo.", "email", "Year of Joining", "ID"
             }
         ));
+        jTable15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable15MouseClicked(evt);
+            }
+        });
         jScrollPane15.setViewportView(jTable15);
 
-        jPanel3.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 450, 140));
+        jPanel3.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 570, 140));
         jPanel3.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 260, -1));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel58.setForeground(new java.awt.Color(255, 0, 51));
         jLabel58.setText("* Fill all the Fields First");
-        jPanel3.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 140, -1));
+        jPanel3.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 160, -1));
 
         jTextField23.setText("Year of Joining");
         jTextField23.setBorder(null);
@@ -2036,18 +2070,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTable16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Name", "Department", "CNIC", "Phone Number", "DOB", "ID"
+                "Name", "Department", "CNIC", "Phone Number", "DOB", "Year of Joining", "ID"
             }
         ));
         jScrollPane16.setViewportView(jTable16);
 
-        jPanel4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 450, 140));
+        jPanel4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 540, 140));
 
         jTextField30.setText("Teacher Name");
         jTextField30.setBorder(null);
@@ -3293,7 +3324,17 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(1);
+        jTabbedPane1.setSelectedIndex(1);   
+         for (int i = 0; i < driverr.getPerson_list().size(); i++)
+        {
+            if (driverr.getPerson_list().get(i).getPerson_type().equals("Teacher"))
+            {
+                Teacher tr = (Teacher) driverr.getPerson_list().get(i);
+                   jComboBox4.addItem(tr.getName());
+            }
+
+        }
+        
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
@@ -3328,6 +3369,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(3);
+        showTeachers(jTable15);
     }//GEN-LAST:event_jPanel24MouseClicked
 
     private void jPanel24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseEntered
@@ -3494,11 +3536,13 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel25MouseClicked
         // TODO add your handling code here:
         jTabbedPane4.setSelectedIndex(0);
+        showTeachers(jTable15);
     }//GEN-LAST:event_jPanel25MouseClicked
 
     private void jPanel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel26MouseClicked
         // TODO add your handling code here:
         jTabbedPane4.setSelectedIndex(1);
+        showTeachers(jTable16);
     }//GEN-LAST:event_jPanel26MouseClicked
 
     private void jPanel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel34MouseClicked
@@ -3821,25 +3865,44 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         // TODO add your handling code here:
         String name = jTextField26.getText();
-        String  dep = jTextField27.getText();
+        String dep = jTextField27.getText();
         String phone = jTextField28.getText();
         String email = jTextField29.getText();
         String cnic = jTextField22.getText();
         String year = jTextField23.getText();
         Date dob = jDateChooser1.getDate();
-         if (name != "Teacher Name" && dep != "Department" && phone != "Phone Number" && email != "Email" && cnic != "CNIC" && year != "Year of Joining")
-         {
-             driverr.add_teacher(name, dep, phone, email, cnic, dob, year);
-             
-             
-         }
-         else
-         {
-             jLabel58.setVisible(true);
-         }
-        
-        
-        
+        if (name != "Teacher Name" && dep != "Department" && phone != "Phone Number" && email != "Email" && cnic != "CNIC" && year != "Year of Joining") {
+            if (Person.validate_name(name) && Person.CNIC_Validator(cnic) && Person.Phone_Validator(phone) && Person.email_Validator(email) && Person.validate_name(dep)) {
+                //driverr.add_teacher(name, dep, phone, email, cnic, dob, year);
+                Person pr = new Teacher(name, cnic, phone, email, dob, dep, year);
+                driverr.add_teacher(pr);
+                Teacher tr = (Teacher) pr;
+
+                String data[] = { name, dep, cnic, phone, email,year, tr.getTeacher_ID()};
+                DefaultTableModel tblmodel = (DefaultTableModel) jTable15.getModel();
+                tblmodel.addRow(data);
+                jTextField26.setText("Teacher Name");
+                jTextField27.setText("Department");
+                jTextField28.setText("Phone Number");
+                jTextField29.setText("Email");
+                jTextField22.setText("CNIC");
+                jTextField23.setText("Year of Joining");
+                jLabel58.setVisible(true);
+                jLabel58.setForeground(new java.awt.Color(41, 168, 72));
+                jLabel58.setText("Teacher Has Been Added");
+            }
+            else
+            {
+                jLabel58.setVisible(true);
+                jLabel58.setText("* Enter Valid Inputs");
+            }
+        } 
+        else {
+            jLabel58.setVisible(true);
+            jLabel58.setText("* Fill all the Fields First");
+        }
+
+
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jTextField30FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField30FocusGained
@@ -3997,6 +4060,277 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField23ActionPerformed
 
+    private void jTable15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable15MouseClicked
+        // TODO add your handling code here:
+         DefaultTableModel tblmodel = (DefaultTableModel) jTable15.getModel();
+        int rowIndex = jTable15.getSelectedRow();
+        jTextField26.setText(tblmodel.getValueAt(rowIndex, 0).toString());
+        jTextField27.setText(tblmodel.getValueAt(rowIndex, 1).toString());
+        jTextField22.setText(tblmodel.getValueAt(rowIndex, 2).toString());
+        jTextField28.setText(tblmodel.getValueAt(rowIndex, 3).toString());
+        jTextField29.setText(tblmodel.getValueAt(rowIndex, 4).toString());
+        jTextField23.setText(tblmodel.getValueAt(rowIndex, 5).toString());
+    }//GEN-LAST:event_jTable15MouseClicked
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) jTable15.getModel();
+        if (jTable15.getSelectedRowCount() == 1) {
+            int rowIndex = jTable15.getSelectedRow();
+            String name = jTextField26.getText();
+        String dep = jTextField27.getText();
+        String phone = jTextField28.getText();
+        String email = jTextField29.getText();
+        String cnic = jTextField22.getText();
+        String year = jTextField23.getText();
+        Date dob = jDateChooser1.getDate();
+           // Date dob = jDateChooser1.getDate();
+           // String gend = Teacher.get_gender(cnic);
+             if (name != "Teacher Name" && dep != "Department" && phone != "Phone Number" && email != "Email" && cnic != "CNIC" && year != "Year of Joining") 
+             {
+                if (Person.validate_name(name) && Person.CNIC_Validator(cnic) && Person.Phone_Validator(phone) && Person.email_Validator(email) && Person.validate_name(dep)) {
+                    String id = model.getValueAt(rowIndex, 6).toString();
+                    Person pr = new Teacher(name, cnic, phone, email, dob, dep, year);
+                    Teacher trr = (Teacher) pr;
+                   
+                    for (int i = 0; i < driverr.getPerson_list().size(); i++) {
+                        if (driverr.getPerson_list().get(i).getPerson_type().equals("Teacher")) {
+                            Teacher tr = (Teacher) driverr.getPerson_list().get(i);
+                            if (tr.getTeacher_ID().equals(id)) {
+                                  trr.setTeacher_ID(id);
+                                driverr.update_person(pr, id);
+                               // Teacher trr = (Teacher) pr;
+                                model.setValueAt(name, rowIndex, 0);
+                                model.setValueAt(dep, rowIndex, 1);
+                                model.setValueAt(cnic, rowIndex, 2);
+                                model.setValueAt(phone, rowIndex, 3);
+                                model.setValueAt(email, rowIndex, 4);
+                                model.setValueAt(year, rowIndex, 5);
+                                model.setValueAt(trr.getTeacher_ID(), rowIndex, 6);
+                               jTextField26.setText("Teacher Name");
+                jTextField27.setText("Department");
+                jTextField28.setText("Phone Number");
+                jTextField29.setText("Email");
+                jTextField22.setText("CNIC");
+                jTextField23.setText("Year of Joining");
+                jLabel58.setVisible(true);
+                jLabel58.setForeground(new java.awt.Color(41, 168, 72));
+                jLabel58.setText("Teacher Has Been Updated");
+                            }
+                        }
+
+                    }
+
+                }
+                else
+            {
+                jLabel58.setVisible(true);
+                jLabel58.setText("* Enter Valid Inputs");
+            }
+            } else {
+                jLabel58.show();
+                jLabel58.setForeground(new java.awt.Color(255, 77, 77));
+                jLabel58.setText("Fill all the Fields");
+            }
+
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel tblmodel = (DefaultTableModel) jTable15.getModel();
+        if (jTable15.getSelectedRowCount() == 1) {
+            int rowIndex = jTable15.getSelectedRow();
+       String id = tblmodel.getValueAt(rowIndex, 6).toString();
+            for (int i = 0; i < driverr.getPerson_list().size(); i++) {
+                if(driverr.getPerson_list().get(i).getPerson_type().equals("Teacher"))
+                {
+                Teacher tr = (Teacher)driverr.getPerson_list().get(i);
+                if(tr.getTeacher_ID().equals(id))
+                {
+                    driverr.getPerson_list().remove(i);
+                     tblmodel.removeRow(rowIndex);
+                    jTextField26.setText("Teacher Name");
+                jTextField27.setText("Department");
+                jTextField28.setText("Phone Number");
+                jTextField29.setText("Email");
+                jTextField22.setText("CNIC");
+                jTextField23.setText("Year of Joining");
+                jLabel58.setVisible(true);
+                jLabel58.setForeground(new java.awt.Color(41, 168, 72));
+                jLabel58.setText("Teacher Has Been Deleted");
+                    break;
+                }
+                }
+                
+               
+            }
+           
+
+        }
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        String name = jTextField6.getText();
+        String ID = jTextField7.getText();
+        String teac_name = (String) jComboBox4.getSelectedItem();
+       
+        if (name != "Program Name" && ID != "Program ID (e.g CS123)" && teac_name != "Select HOD" )
+        {
+            if (Program.validate_course_name(name) && Program.validate_courseID(ID) ) {
+                
+                Program pro = new Program(name,ID,teac_name);
+                driverr.add_program(pro);
+
+                String data[] = { (driverr.getPrograms_added().size() + 1 + ""), name, ID, teac_name};
+                DefaultTableModel tblmodel = (DefaultTableModel) jTable1.getModel();
+                tblmodel.addRow(data);
+                jTextField6.setText("Program Name");
+                jTextField7.setText("Program ID (e.g CS123)");
+                jLabel60.setVisible(true);
+                jLabel60.setForeground(new java.awt.Color(41, 168, 72));
+                jLabel60.setText("Program Has Been Added");
+            }
+            else
+            {
+                jLabel60.setVisible(true);
+                jLabel60.setText("* Enter Valid Inputs");
+            }
+        } 
+        else {
+            jLabel60.setVisible(true);
+            jLabel60.setText("* Fill all the Fields First");
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+         DefaultTableModel tblmodel = (DefaultTableModel) jTable1.getModel();
+        int rowIndex = jTable1.getSelectedRow();
+        jTextField6.setText(tblmodel.getValueAt(rowIndex, 1).toString());
+        jTextField7.setText(tblmodel.getValueAt(rowIndex, 2).toString());
+        jComboBox4.setSelectedItem(tblmodel.getValueAt(rowIndex, 3).toString());
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+          DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getSelectedRowCount() == 1) {
+            int rowIndex = jTable1.getSelectedRow();
+             String name = jTextField6.getText();
+        String ID = jTextField7.getText();
+        String teac_name = (String) jComboBox4.getSelectedItem();
+        
+             if (name != "Program Name" && ID != "Program ID (e.g CS123)" && teac_name != "Select HOD" )
+             {
+                if (Program.validate_course_name(name) && Program.validate_courseID(ID) ) {
+                    String id = model.getValueAt(rowIndex, 2).toString();
+                   Program pro = new Program(name,ID,teac_name);
+                    driverr.update_Program(pro, id); 
+                               // Teacher trr = (Teacher) pr;
+                                model.setValueAt(rowIndex +1, rowIndex, 0);
+                                model.setValueAt(name, rowIndex, 1);
+                                model.setValueAt(ID, rowIndex, 2);
+                                model.setValueAt(teac_name, rowIndex, 3);
+                               
+                                jTextField6.setText("Program Name");
+                jTextField7.setText("Program ID (e.g CS123)");
+                jLabel60.setVisible(true);
+                jLabel60.setForeground(new java.awt.Color(41, 168, 72));
+                jLabel60.setText("Program Has Been Updated");
+                            
+                        }
+
+                    
+
+                }
+                else
+            {
+                jLabel58.setVisible(true);
+                jLabel58.setText("* Enter Valid Inputs");
+            }
+            }
+        else {
+                jLabel58.show();
+                jLabel58.setForeground(new java.awt.Color(255, 77, 77));
+                jLabel58.setText("Fill all the Fields");
+            }
+
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel tblmodel = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getSelectedRowCount() == 1) {
+            int rowIndex = jTable1.getSelectedRow();
+       String id = tblmodel.getValueAt(rowIndex, 2).toString();
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                if(driverr.getPrograms_added().get(i).getProgram_id().equals(id))
+                {
+                
+                   driverr.getPrograms_added().remove(i);
+                     tblmodel.removeRow(rowIndex);
+                   jTextField6.setText("Program Name");
+                jTextField7.setText("Program ID (e.g CS123)");
+                jLabel60.setVisible(true);
+                jLabel60.setForeground(new java.awt.Color(41, 168, 72));
+                jLabel60.setText("Program Has Been Deleted");
+                    break;
+                
+                }
+                
+               
+            }
+           
+
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+     
+    private void showPrograms(JTable table) {
+        String[] tableData = {"Sr.No", "Program Name", "Program ID", "HOD"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[4];
+
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++)
+        {
+            Program pr = driverr.getPrograms_added().get(i);
+
+                addList[0] = i+1 + "";
+                addList[1] = pr.getProgram_Name();
+                addList[2] = pr.getProgram_id();
+                addList[3] = pr.getHod();
+                dataModel.addRow(addList);
+                table.setModel(dataModel);
+           
+
+        }
+    }
+    private void showTeachers(JTable table) {
+        String[] tableData = {"Name", "Department", "CNIC", "Phone Number", "DOB", "ID"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[7];
+
+        for (int i = 0; i < driverr.getPerson_list().size(); i++)
+        {
+            if (driverr.getPerson_list().get(i).getPerson_type().equals("Teacher"))
+            {
+                Teacher tr = (Teacher) driverr.getPerson_list().get(i);
+
+                addList[0] = tr.getName();
+                addList[1] = tr.getDepartment();
+                addList[2] = tr.getCnic();
+                addList[3] = tr.getNumber();
+                addList[4] =String.valueOf(tr.getDOB()) ;
+                addList[5] =tr.getYear() ;
+                addList[6] = tr.getTeacher_ID();
+                dataModel.addRow(addList);
+                table.setModel(dataModel);
+            }
+
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -4145,6 +4479,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

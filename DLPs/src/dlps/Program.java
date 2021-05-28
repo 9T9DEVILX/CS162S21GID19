@@ -16,10 +16,20 @@ public class Program {
     ///////////////////////////////////// Attributes ///////////////////////////
     private String program_Name;
     private String program_id;
+    private String hod;
     private List<Courses> courses_ArrayList;
     private List<Courses> plo_ArrayList;
     private List<TimeTable> time_table_ArrayList;
     
+    Program(String name,String ID,String teac_name)
+    {
+        this.hod = teac_name;
+        this.program_Name = name;
+        this.program_id = program_id;
+        this.courses_ArrayList = new ArrayList<>();
+        this.plo_ArrayList = new ArrayList<>();
+        this.time_table_ArrayList = new ArrayList<>();
+    }
     ///////////////////////////////////// Setters ///////////////////////////
 
     public void setProgram_Name(String program_Name) {
@@ -63,6 +73,11 @@ public class Program {
     public List<TimeTable> getTime_table_ArrayList() {
         return time_table_ArrayList;
     }
+
+    public String getHod() {
+        return hod;
+    }
+    
      
         ///////////////////////////////////// Validators Function ///////////////////////////
     

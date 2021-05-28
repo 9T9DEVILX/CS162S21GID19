@@ -62,21 +62,36 @@ public class DLPs {
     }
     
 //////////////////////////////////// Frame Functions ///////////////////////////
-   public Boolean add_teacher(String name,String dep,String phone,String email,String cnic,Date dob,String year)
+   public void add_teacher(Person pr)
    {
-       if( Person.validate_name(name) && Person.CNIC_Validator(cnic) && Person.Phone_Validator(phone) && Person.email_Validator(email) && Person.validate_name(dep) )
-       {
-           Person pr = new Teacher(name, cnic, phone, email, dob, dep , year);
-               this.person_list.add(pr);      
-           return true;
-       }
-       else{
-           return false;
-       }
+               this.person_list.add(pr);     
    }
-   public void print_table()
+   public void update_person(Person pr,String id)
    {
-       AdminFrame obj = new AdminFrame();
-       
+        for (int i = 0; i < this.person_list.size(); i++) {
+                        if (this.person_list.get(i).getPerson_type().equals("Teacher")) {
+                            Teacher tr = (Teacher) this.person_list.get(i);
+                            if (tr.getTeacher_ID().equals(id)) {
+                                this.person_list.set(i, pr);
+                                break;
+                            }
+                        }
+                            }
+   }
+   public void add_program(Program pro)
+   {
+      this.Programs_added.add(pro);
+   }
+   public void update_Program(Program pr,String id)
+   {
+        for (int i = 0; i < this.Programs_added.size(); i++) {
+                       
+                           Program p = this.Programs_added.get(i);
+                            if (p.getProgram_id().equals(id)) {
+                                this.Programs_added.set(i, pr);
+                                break;
+                            }
+                        
+                            }
    }
 }
