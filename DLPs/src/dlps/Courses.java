@@ -19,11 +19,26 @@ public class Courses {
     private String course_ID;
     private String course_semester;
     private String course_CH;
+    private String pro_ID;
     private String course_alocate_teac;
-    private List course_clo_LinkedList;
-    private List course_assignment_ArrayList;
-    private List stu_register_ArrayList;
+    private List<CLOs> course_clo_LinkedList;
+    private List<Assignments> course_assignment_ArrayList;
+    private List<String> stu_register_ArrayList;
     
+    
+    Courses(String name,String ID,String sem,String hours,String pr_id)
+   {
+       
+       this.course_semester = sem;
+       this.course_ID = ID;
+       this.course_name = name;
+       this.course_CH = hours;
+       this.pro_ID = pr_id;
+       this.course_assignment_ArrayList= new ArrayList<Assignments>();
+       this.course_clo_LinkedList = new LinkedList<>(); 
+       this.stu_register_ArrayList = new ArrayList<>();
+       this.course_alocate_teac = "";
+   }
     ///////////////////////////////////// Getters ///////////////////////////
 
     public String getCourse_name() {

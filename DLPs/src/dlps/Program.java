@@ -18,18 +18,23 @@ public class Program {
     private String program_id;
     private String hod;
     private List<Courses> courses_ArrayList;
-    private List<Courses> plo_ArrayList;
+    private List<PLO> plo_ArrayList;
     private List<TimeTable> time_table_ArrayList;
     
     Program(String name,String ID,String teac_name)
     {
         this.hod = teac_name;
         this.program_Name = name;
-        this.program_id = program_id;
+        this.program_id = ID;
         this.courses_ArrayList = new ArrayList<>();
         this.plo_ArrayList = new ArrayList<>();
         this.time_table_ArrayList = new ArrayList<>();
     }
+
+    public Program() {
+    }
+    
+    
     ///////////////////////////////////// Setters ///////////////////////////
 
     public void setProgram_Name(String program_Name) {
@@ -44,7 +49,7 @@ public class Program {
         this.courses_ArrayList = courses_ArrayList;
     }
 
-    public void setPlo_ArrayList(List<Courses> plo_ArrayList) {
+    public void setPlo_ArrayList(List<PLO> plo_ArrayList) {
         this.plo_ArrayList = plo_ArrayList;
     }
 
@@ -66,7 +71,7 @@ public class Program {
         return courses_ArrayList;
     }
 
-    public List<Courses> getPlo_ArrayList() {
+    public List<PLO> getPlo_ArrayList() {
         return plo_ArrayList;
     }
 
@@ -125,5 +130,47 @@ public class Program {
     
     return flag;
   }
-      
+     ///////////////////////////////////// CRUD Function ///////////////////////////
+     public void add_plo(PLO plo)
+     {
+         this.plo_ArrayList.add(plo);
+     }
+     public void update_plo(PLO plo,String id)
+     {
+       
+         DLPs dlp = DLPs.driver_instance();
+         for(int i=0;i< dlp.getPrograms_added().size();i++)
+         {
+             for(int k=0; k< dlp.getPrograms_added().get(i).plo_ArrayList.size();k++)
+             {
+                 if(dlp.getPrograms_added().get(i).getPlo_ArrayList().get(k).getPlo_id().equals(id))
+             {
+                  dlp.getPrograms_added().get(i).plo_ArrayList.set(k, plo);
+                  break;
+             }
+             }
+             
+         }
+     }
+     public void add_course(Courses co)
+     {
+         this.courses_ArrayList.add(co);
+     }
+      public void update_course(Courses co,String id)
+     {
+       
+         DLPs dlp = DLPs.driver_instance();
+         for(int i=0;i< dlp.getPrograms_added().size();i++)
+         {
+             for(int k=0; k< dlp.getPrograms_added().get(i).courses_ArrayList.size();k++)
+             {
+                 if(dlp.getPrograms_added().get(i).courses_ArrayList.get(k).getCourse_ID().equals(id))
+             {
+                  dlp.getPrograms_added().get(i).courses_ArrayList.set(k, co);
+                  break;
+             }
+             }
+             
+         }
+     }
 }
