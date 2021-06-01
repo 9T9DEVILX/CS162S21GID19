@@ -3393,6 +3393,12 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(2);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+           Program pr = driverr.getPrograms_added().get(i);
+                jComboBox4.addItem(pr.getProgram_id());
+   
+        }
+          showCourses(jTable10);
     }//GEN-LAST:event_jPanel15MouseClicked
 
     private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
@@ -3572,6 +3578,12 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseClicked
         // TODO add your handling code here:
         jTabbedPane3.setSelectedIndex(0);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+           Program pr = driverr.getPrograms_added().get(i);
+                jComboBox4.addItem(pr.getProgram_id());
+   
+        }
+         showCourses(jTable10);
     }//GEN-LAST:event_jPanel18MouseClicked
 
     private void jPanel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel22MouseClicked
@@ -3643,10 +3655,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusGained
         // TODO add your handling code here:
+         if(jTextField6.getText().equals("Program Name"))
+        {
+            jTextField6.setText("");
+        }
     }//GEN-LAST:event_jTextField6FocusGained
 
     private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusLost
         // TODO add your handling code here:
+         if(jTextField6.getText().equals(""))
+        {
+            jTextField6.setText("Program Name");
+        }
     }//GEN-LAST:event_jTextField6FocusLost
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
@@ -3655,10 +3675,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
         // TODO add your handling code here:
+         if(jTextField7.getText().equals("Program ID (e.g CS123)"))
+        {
+            jTextField7.setText("");
+        }
     }//GEN-LAST:event_jTextField7FocusGained
 
     private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusLost
         // TODO add your handling code here:
+         if(jTextField7.getText().equals(""))
+        {
+           jTextField7.setText("Program ID (e.g CS123)");
+        }
     }//GEN-LAST:event_jTextField7FocusLost
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
@@ -3667,10 +3695,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
         // TODO add your handling code here:
+         if(jTextField8.getText().equals("Enter PLO Here"))
+        {
+            jTextField8.setText("");
+        }
     }//GEN-LAST:event_jTextField8FocusGained
 
     private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusLost
         // TODO add your handling code here:
+         if(jTextField8.getText().equals(""))
+        {
+           jTextField8.setText("Enter PLO Here");
+        }
     }//GEN-LAST:event_jTextField8FocusLost
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
@@ -3709,10 +3745,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
         // TODO add your handling code here:
+          if(jTextField9.getText().equals("Course Name"))
+        {
+            jTextField9.setText("");
+        }
     }//GEN-LAST:event_jTextField9FocusGained
 
     private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
         // TODO add your handling code here:
+         if(jTextField9.getText().equals(""))
+        {
+            jTextField9.setText("Course Name");
+        }
     }//GEN-LAST:event_jTextField9FocusLost
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
@@ -3721,10 +3765,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusGained
         // TODO add your handling code here:
+        if(jTextField10.getText().equals("Course ID"))
+        {
+            jTextField10.setText("");
+        }
     }//GEN-LAST:event_jTextField10FocusGained
 
     private void jTextField10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusLost
         // TODO add your handling code here:
+         if(jTextField10.getText().equals(""))
+        {
+            jTextField10.setText("Course ID");
+        }
     }//GEN-LAST:event_jTextField10FocusLost
 
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
@@ -3733,10 +3785,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField11FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField11FocusGained
         // TODO add your handling code here:
+        if(jTextField11.getText().equals("Semester"))
+        {
+            jTextField11.setText("");
+        }
     }//GEN-LAST:event_jTextField11FocusGained
 
     private void jTextField11FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField11FocusLost
         // TODO add your handling code here:
+         if(jTextField11.getText().equals(""))
+        {
+            jTextField11.setText("Semester");
+        }
     }//GEN-LAST:event_jTextField11FocusLost
 
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
@@ -3745,10 +3805,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField12FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField12FocusGained
         // TODO add your handling code here:
+        if(jTextField12.getText().equals("Credit Hours"))
+        {
+            jTextField12.setText("");
+        }
     }//GEN-LAST:event_jTextField12FocusGained
 
     private void jTextField12FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField12FocusLost
         // TODO add your handling code here:
+         if(jTextField12.getText().equals(""))
+        {
+           jTextField12.setText("Credit Hours");
+        }
     }//GEN-LAST:event_jTextField12FocusLost
 
     private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
@@ -3800,10 +3868,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField13FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField13FocusGained
         // TODO add your handling code here:
+         if(jTextField13.getText().equals("Enter CLO"))
+        {
+            jTextField13.setText("");
+        }
     }//GEN-LAST:event_jTextField13FocusGained
 
     private void jTextField13FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField13FocusLost
         // TODO add your handling code here:
+         if(jTextField13.getText().equals(""))
+        {
+           jTextField13.setText("Enter CLO");
+        }
     }//GEN-LAST:event_jTextField13FocusLost
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
@@ -3812,10 +3888,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField14FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField14FocusGained
         // TODO add your handling code here:
+         if(jTextField14.getText().equals("Course ID"))
+        {
+            jTextField14.setText("");
+        }
     }//GEN-LAST:event_jTextField14FocusGained
 
     private void jTextField14FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField14FocusLost
         // TODO add your handling code here:
+         if(jTextField14.getText().equals(""))
+        {
+           jTextField14.setText("Course ID");
+        }
     }//GEN-LAST:event_jTextField14FocusLost
 
     private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
@@ -3824,10 +3908,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField15FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField15FocusGained
         // TODO add your handling code here:
+         if(jTextField15.getText().equals("CLO ID"))
+        {
+            jTextField15.setText("");
+        }
     }//GEN-LAST:event_jTextField15FocusGained
 
     private void jTextField15FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField15FocusLost
         // TODO add your handling code here:
+         if(jTextField15.getText().equals(""))
+        {
+           jTextField15.setText("CLO ID");
+        }
     }//GEN-LAST:event_jTextField15FocusLost
 
     private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
@@ -3836,10 +3928,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField16FocusGained
         // TODO add your handling code here:
+         if(jTextField16.getText().equals("Rubric"))
+        {
+            jTextField16.setText("");
+        }
     }//GEN-LAST:event_jTextField16FocusGained
 
     private void jTextField16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField16FocusLost
         // TODO add your handling code here:
+         if(jTextField16.getText().equals(""))
+        {
+           jTextField16.setText("Rubric");
+        }
     }//GEN-LAST:event_jTextField16FocusLost
 
     private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
@@ -3856,10 +3956,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField17FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField17FocusGained
         // TODO add your handling code here:
+         if(jTextField17.getText().equals("Rubric Name"))
+        {
+            jTextField17.setText("");
+        }
     }//GEN-LAST:event_jTextField17FocusGained
 
     private void jTextField17FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField17FocusLost
         // TODO add your handling code here:
+         if(jTextField17.getText().equals(""))
+        {
+           jTextField17.setText("Rubric Name");
+        }
     }//GEN-LAST:event_jTextField17FocusLost
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
@@ -3868,10 +3976,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField18FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField18FocusGained
         // TODO add your handling code here:
+         if(jTextField18.getText().equals("Poor 25%"))
+        {
+            jTextField18.setText("");
+        }
     }//GEN-LAST:event_jTextField18FocusGained
 
     private void jTextField18FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField18FocusLost
         // TODO add your handling code here:
+         if(jTextField18.getText().equals(""))
+        {
+           jTextField18.setText("Poor 25%");
+        }
     }//GEN-LAST:event_jTextField18FocusLost
 
     private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
@@ -3880,10 +3996,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField19FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField19FocusGained
         // TODO add your handling code here:
+         if(jTextField19.getText().equals("Average 50%"))
+        {
+            jTextField19.setText("");
+        }
     }//GEN-LAST:event_jTextField19FocusGained
 
     private void jTextField19FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField19FocusLost
         // TODO add your handling code here:
+         if(jTextField19.getText().equals(""))
+        {
+           jTextField19.setText("Average 50%");
+        }
     }//GEN-LAST:event_jTextField19FocusLost
 
     private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
@@ -3892,10 +4016,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField20FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField20FocusGained
         // TODO add your handling code here:
+         if(jTextField20.getText().equals("Good 75%"))
+        {
+            jTextField20.setText("");
+        }
     }//GEN-LAST:event_jTextField20FocusGained
 
     private void jTextField20FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField20FocusLost
         // TODO add your handling code here:
+         if(jTextField20.getText().equals(""))
+        {
+           jTextField20.setText("Good 75%");
+        }
     }//GEN-LAST:event_jTextField20FocusLost
 
     private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
@@ -3904,10 +4036,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField21FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField21FocusGained
         // TODO add your handling code here:
+         if(jTextField21.getText().equals("Excellent 100%"))
+        {
+            jTextField21.setText("");
+        }
     }//GEN-LAST:event_jTextField21FocusGained
 
     private void jTextField21FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField21FocusLost
         // TODO add your handling code here:
+         if(jTextField21.getText().equals(""))
+        {
+           jTextField21.setText("Excellent 100%");
+        }
     }//GEN-LAST:event_jTextField21FocusLost
 
     private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
@@ -3920,10 +4060,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField22FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField22FocusGained
         // TODO add your handling code here:
+         if(jTextField22.getText().equals("CNIC"))
+        {
+            jTextField22.setText("");
+        }
     }//GEN-LAST:event_jTextField22FocusGained
 
     private void jTextField22FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField22FocusLost
         // TODO add your handling code here:
+         if(jTextField22.getText().equals(""))
+        {
+            jTextField22.setText("CNIC");
+        }
     }//GEN-LAST:event_jTextField22FocusLost
 
     private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
@@ -3932,10 +4080,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField26FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField26FocusGained
         // TODO add your handling code here:
+        if(jTextField26.getText().equals("Teacher Name"))
+        {
+            jTextField26.setText("");
+        }
     }//GEN-LAST:event_jTextField26FocusGained
 
     private void jTextField26FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField26FocusLost
         // TODO add your handling code here:
+        if(jTextField26.getText().equals(""))
+        {
+            jTextField26.setText("Teacher Name");
+        }
     }//GEN-LAST:event_jTextField26FocusLost
 
     private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
@@ -3944,10 +4100,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField27FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField27FocusGained
         // TODO add your handling code here:
+        if(jTextField27.getText().equals("Department"))
+        {
+            jTextField27.setText("");
+        }
     }//GEN-LAST:event_jTextField27FocusGained
 
     private void jTextField27FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField27FocusLost
         // TODO add your handling code here:
+         if(jTextField27.getText().equals(""))
+        {
+            jTextField27.setText("Department");
+        }
     }//GEN-LAST:event_jTextField27FocusLost
 
     private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
@@ -3956,10 +4120,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField28FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField28FocusGained
         // TODO add your handling code here:
+        if(jTextField28.getText().equals("Phone Number"))
+        {
+            jTextField28.setText("");
+        }
     }//GEN-LAST:event_jTextField28FocusGained
 
     private void jTextField28FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField28FocusLost
         // TODO add your handling code here:
+         if(jTextField28.getText().equals(""))
+        {
+            jTextField28.setText("Phone Number");
+        }
     }//GEN-LAST:event_jTextField28FocusLost
 
     private void jTextField28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField28ActionPerformed
@@ -3968,10 +4140,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField29FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField29FocusGained
         // TODO add your handling code here:
+        if(jTextField29.getText().equals("Email"))
+        {
+            jTextField29.setText("");
+        }
     }//GEN-LAST:event_jTextField29FocusGained
 
     private void jTextField29FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField29FocusLost
         // TODO add your handling code here:
+         if(jTextField29.getText().equals(""))
+        {
+            jTextField29.setText("Email");
+        }
     }//GEN-LAST:event_jTextField29FocusLost
 
     private void jTextField29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField29ActionPerformed
@@ -4020,10 +4200,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField30FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField30FocusGained
         // TODO add your handling code here:
+        if(jTextField30.getText().equals("Teacher Name"))
+        {
+            jTextField30.setText("");
+        }
     }//GEN-LAST:event_jTextField30FocusGained
 
     private void jTextField30FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField30FocusLost
         // TODO add your handling code here:
+        if(jTextField30.getText().equals(""))
+        {
+           jTextField30.setText("Teacher Name");
+        }
     }//GEN-LAST:event_jTextField30FocusLost
 
     private void jTextField30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField30ActionPerformed
@@ -4032,10 +4220,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField31FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField31FocusGained
         // TODO add your handling code here:
+        if(jTextField31.getText().equals("Teacher ID"))
+        {
+           jTextField31.setText("");
+        }
     }//GEN-LAST:event_jTextField31FocusGained
 
     private void jTextField31FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField31FocusLost
         // TODO add your handling code here:
+        if(jTextField31.getText().equals(""))
+        {
+           jTextField31.setText("Teacher ID");
+        }
     }//GEN-LAST:event_jTextField31FocusLost
 
     private void jTextField31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField31ActionPerformed
@@ -4048,10 +4244,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField32FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField32FocusGained
         // TODO add your handling code here:
+        if(jTextField32.getText().equals("Hall Name"))
+        {
+            jTextField32.setText("");
+        }
     }//GEN-LAST:event_jTextField32FocusGained
 
     private void jTextField32FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField32FocusLost
         // TODO add your handling code here:
+        if(jTextField32.getText().equals(""))
+        {
+           jTextField32.setText("Hall Name");
+        }
     }//GEN-LAST:event_jTextField32FocusLost
 
     private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
@@ -4060,10 +4264,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField33FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField33FocusGained
         // TODO add your handling code here:
+        if(jTextField33.getText().equals("Total Rooms"))
+        {
+            jTextField33.setText("");
+        }
     }//GEN-LAST:event_jTextField33FocusGained
 
     private void jTextField33FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField33FocusLost
         // TODO add your handling code here:
+        if(jTextField33.getText().equals(""))
+        {
+          jTextField33.setText("Total Rooms");
+        }
     }//GEN-LAST:event_jTextField33FocusLost
 
     private void jTextField33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33ActionPerformed
@@ -4076,10 +4288,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField34FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField34FocusGained
         // TODO add your handling code here:
+        if(jTextField34.getText().equals("Scholarship Name"))
+        {
+           jTextField34.setText("");
+        }
     }//GEN-LAST:event_jTextField34FocusGained
 
     private void jTextField34FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField34FocusLost
         // TODO add your handling code here:
+        if(jTextField34.getText().equals(""))
+        {
+           jTextField34.setText("Scholarship Name");
+        }
     }//GEN-LAST:event_jTextField34FocusLost
 
     private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
@@ -4088,10 +4308,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField35FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField35FocusGained
         // TODO add your handling code here:
+        if(jTextField35.getText().equals("Scholarship Amount"))
+        {
+            jTextField35.setText("");
+        }
     }//GEN-LAST:event_jTextField35FocusGained
 
     private void jTextField35FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField35FocusLost
         // TODO add your handling code here:
+        if(jTextField35.getText().equals(""))
+        {
+           jTextField35.setText("Scholarship Amount");
+        }
     }//GEN-LAST:event_jTextField35FocusLost
 
     private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
@@ -4100,10 +4328,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField36FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField36FocusGained
         // TODO add your handling code here:
+        if(jTextField36.getText().equals("Scholarship Eligibility"))
+        {
+            jTextField36.setText("");
+        }
     }//GEN-LAST:event_jTextField36FocusGained
 
     private void jTextField36FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField36FocusLost
         // TODO add your handling code here:
+        if(jTextField36.getText().equals(""))
+        {
+           jTextField36.setText("Scholarship Eligibility");
+        }
     }//GEN-LAST:event_jTextField36FocusLost
 
     private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
@@ -4112,7 +4348,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // TODO add your handling code here:
-        if (jTextField1.getText().equals("Username")) {
+        if (jTextField1.getText().equals("Fee Name")) {
             jTextField1.setText("");
         }
     }//GEN-LAST:event_jTextField1FocusGained
@@ -4120,7 +4356,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
         // TODO add your handling code here:
         if (jTextField1.getText().equals("")) {
-            jTextField1.setText("Username");
+            jTextField1.setText("Fee Name");
         }
     }//GEN-LAST:event_jTextField1FocusLost
 
@@ -4130,10 +4366,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
         // TODO add your handling code here:
+        if(jTextField2.getText().equals("Module Name"))
+        {
+            jTextField2.setText("");
+        }
     }//GEN-LAST:event_jTextField2FocusGained
 
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
         // TODO add your handling code here:
+        if(jTextField2.getText().equals(""))
+        {
+           jTextField2.setText("Module Name");
+        }
     }//GEN-LAST:event_jTextField2FocusLost
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -4142,10 +4386,18 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
         // TODO add your handling code here:
+        if(jTextField3.getText().equals("Amount"))
+        {
+            jTextField3.setText("");
+        }
     }//GEN-LAST:event_jTextField3FocusGained
 
     private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
         // TODO add your handling code here:
+        if(jTextField3.getText().equals(""))
+        {
+           jTextField3.setText("Amount");
+        }
     }//GEN-LAST:event_jTextField3FocusLost
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -4161,10 +4413,17 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField23FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusGained
         // TODO add your handling code here:
+         if(jTextField23.getText().equals("Year of Joining"))
+        {
+            jTextField23.setText("");
+        }
     }//GEN-LAST:event_jTextField23FocusGained
 
     private void jTextField23FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusLost
         // TODO add your handling code here:
+         if (jTextField23.getText().equals("")) {
+            jTextField23.setText("Year of Joining");
+        }
     }//GEN-LAST:event_jTextField23FocusLost
 
     private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
@@ -4537,6 +4796,27 @@ public class AdminFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton15ActionPerformed
 
+    private void showCourses(JTable table) {
+        String[] tableData = {"Course Name", "Course ID", "Semester", "Credit Hours","Program ID"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[5];
+
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+           for(int k = 0; k< pr.getCourses_ArrayList().size();k++)
+           {
+               addList[0] = pr.getCourses_ArrayList().get(k).getCourse_name();
+            addList[1] = pr.getCourses_ArrayList().get(k).getCourse_ID();
+            addList[2] = pr.getCourses_ArrayList().get(k).getCourse_semester();
+            addList[3] = pr.getCourses_ArrayList().get(k).getCourse_CH();
+            addList[3] = pr.getProgram_id();
+            dataModel.addRow(addList);
+            table.setModel(dataModel);
+           }
+            
+
+        }
+    }
     private void showPrograms(JTable table) {
         String[] tableData = {"Sr.No", "Program Name", "Program ID", "HOD"};
         DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
