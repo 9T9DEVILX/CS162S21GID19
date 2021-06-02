@@ -6,6 +6,7 @@
 package dlps;
 
 import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,7 +20,9 @@ public class TeacherFrame extends javax.swing.JFrame {
     public TeacherFrame() {
         initComponents();
     }
-
+ DLPs driverr = DLPs.driver_instance();
+ 
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,7 +80,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        CourseTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel13 = new javax.swing.JPanel();
@@ -87,7 +90,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        CLOTable = new javax.swing.JTable();
         jLabel33 = new javax.swing.JLabel();
         jSeparator14 = new javax.swing.JSeparator();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -201,14 +204,6 @@ public class TeacherFrame extends javax.swing.JFrame {
         jScrollPane15 = new javax.swing.JScrollPane();
         jTable15 = new javax.swing.JTable();
         jLabel42 = new javax.swing.JLabel();
-        PAY_TEA = new javax.swing.JPanel();
-        jPanel34 = new javax.swing.JPanel();
-        jPanel35 = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        jSeparator11 = new javax.swing.JSeparator();
-        jScrollPane16 = new javax.swing.JScrollPane();
-        jTable16 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
         TIME_TEA = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
@@ -218,6 +213,14 @@ public class TeacherFrame extends javax.swing.JFrame {
         jTable17 = new javax.swing.JTable();
         jScrollPane18 = new javax.swing.JScrollPane();
         jTable18 = new javax.swing.JTable();
+        PAY_TEA = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        jPanel35 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jTable16 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
@@ -690,6 +693,11 @@ public class TeacherFrame extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("View courses & Students");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -779,39 +787,21 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel12.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 51, 147, 10));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        CourseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Course name", "Course ID", "semester", "Credit Hour", "Program"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(CourseTable);
 
         jPanel12.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 791, 190));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Sr.NO", "Student Name", "Stu ID", "Semester", "Phone Number"
@@ -847,7 +837,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jSeparator13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel13.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 40, 10));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        CLOTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -858,7 +848,7 @@ public class TeacherFrame extends javax.swing.JFrame {
                 "CLO #", "CLO ID", "CLO"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(CLOTable);
 
         jPanel13.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 720, 140));
 
@@ -1518,8 +1508,6 @@ public class TeacherFrame extends javax.swing.JFrame {
         jLabel40.setText("Department :");
         hostel_tea.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, 20));
 
-        jTabbedPane1.addTab("tab5", hostel_tea);
-
         result_teac.setBackground(new java.awt.Color(255, 255, 255));
         result_teac.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1724,7 +1712,82 @@ public class TeacherFrame extends javax.swing.JFrame {
 
         result_teac.add(jTabbedPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 1020, 620));
 
-        jTabbedPane1.addTab("tab6", result_teac);
+        TIME_TEA.setBackground(new java.awt.Color(255, 255, 255));
+        TIME_TEA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel36.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1055, Short.MAX_VALUE)
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+
+        TIME_TEA.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 27, -1, -1));
+
+        jPanel37.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+        jPanel37.setLayout(jPanel37Layout);
+        jPanel37Layout.setHorizontalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 12, Short.MAX_VALUE)
+        );
+        jPanel37Layout.setVerticalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+        );
+
+        TIME_TEA.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 6, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
+        jLabel31.setText("TIME-TABLE REPORT");
+        TIME_TEA.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 230, 40));
+
+        jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        TIME_TEA.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 210, 10));
+
+        jTable17.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Semester", "Term", "Year"
+            }
+        ));
+        jScrollPane17.setViewportView(jTable17);
+
+        TIME_TEA.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 820, 140));
+
+        jTable18.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Semester", "Section", "Subject", "Day", "Room", "Time", "Professor"
+            }
+        ));
+        jScrollPane18.setViewportView(jTable18);
+
+        TIME_TEA.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 820, 140));
+
+        result_teac.add(TIME_TEA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        hostel_tea.add(result_teac, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab5", hostel_tea);
 
         PAY_TEA.setBackground(new java.awt.Color(255, 255, 255));
         PAY_TEA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1815,79 +1878,6 @@ public class TeacherFrame extends javax.swing.JFrame {
         PAY_TEA.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 510, 140, 34));
 
         jTabbedPane1.addTab("tab7", PAY_TEA);
-
-        TIME_TEA.setBackground(new java.awt.Color(255, 255, 255));
-        TIME_TEA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel36.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
-        jPanel36.setLayout(jPanel36Layout);
-        jPanel36Layout.setHorizontalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel36Layout.setVerticalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 12, Short.MAX_VALUE)
-        );
-
-        TIME_TEA.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 27, -1, -1));
-
-        jPanel37.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
-        jPanel37.setLayout(jPanel37Layout);
-        jPanel37Layout.setHorizontalGroup(
-            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 12, Short.MAX_VALUE)
-        );
-        jPanel37Layout.setVerticalGroup(
-            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
-        );
-
-        TIME_TEA.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 6, -1, -1));
-
-        jLabel31.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
-        jLabel31.setText("TIME-TABLE REPORT");
-        TIME_TEA.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 230, 40));
-
-        jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        TIME_TEA.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 210, 10));
-
-        jTable17.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Semester", "Term", "Year"
-            }
-        ));
-        jScrollPane17.setViewportView(jTable17);
-
-        TIME_TEA.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 820, 140));
-
-        jTable18.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Semester", "Section", "Subject", "Day", "Room", "Time", "Professor"
-            }
-        ));
-        jScrollPane18.setViewportView(jTable18);
-
-        TIME_TEA.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 820, 140));
-
-        jTabbedPane1.addTab("tab8", TIME_TEA);
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2130,7 +2120,25 @@ public class TeacherFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel3MouseClicked
 
     private void jPanel40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel40MouseClicked
-        // TODO add your handling code here:
+   String[] tableData = {"Course Name", "Course ID", "Semester", "Credit Hours","Program ID"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[5];
+
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+           for(int k = 0; k< pr.getCourses_ArrayList().size();k++)
+           {
+               addList[0] = pr.getCourses_ArrayList().get(k).getCourse_name();
+            addList[1] = pr.getCourses_ArrayList().get(k).getCourse_ID();
+            addList[2] = pr.getCourses_ArrayList().get(k).getCourse_semester();
+            addList[3] = pr.getCourses_ArrayList().get(k).getCourse_CH();
+            addList[3] = pr.getProgram_id();
+            dataModel.addRow(addList);
+            CourseTable.setModel(dataModel);
+           }
+            
+
+        }          // TODO add your handling code here:
         jTabbedPane2.setSelectedIndex(1);
     }//GEN-LAST:event_jPanel40MouseClicked
 
@@ -2282,6 +2290,10 @@ public class TeacherFrame extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jPanel31MouseClicked
 
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+       // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel16MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -2318,6 +2330,8 @@ public class TeacherFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable CLOTable;
+    private javax.swing.JTable CourseTable;
     private javax.swing.JPanel PAY_TEA;
     private javax.swing.JPanel PROFILE_TEA;
     private javax.swing.JPanel TIME_TEA;
@@ -2488,7 +2502,6 @@ public class TeacherFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable10;
     private javax.swing.JTable jTable11;
     private javax.swing.JTable jTable12;
@@ -2500,7 +2513,6 @@ public class TeacherFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable18;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
