@@ -6,6 +6,7 @@
 package dlps;
 
 import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *

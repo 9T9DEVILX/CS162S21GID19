@@ -3589,6 +3589,14 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel22MouseClicked
         // TODO add your handling code here:
         jTabbedPane3.setSelectedIndex(1);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+           Program pr = driverr.getPrograms_added().get(i);
+           {
+               for(int k=0; )
+           }
+                jComboBox4.addItem(pr.getProgram_id());
+   
+        }
     }//GEN-LAST:event_jPanel22MouseClicked
 
     private void jPanel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel23MouseClicked
@@ -4805,7 +4813,7 @@ public class AdminFrame extends javax.swing.JFrame {
             Program pr = driverr.getPrograms_added().get(i);
            for(int k = 0; k< pr.getCourses_ArrayList().size();k++)
            {
-               addList[0] = pr.getCourses_ArrayList().get(k).getCourse_name();
+             addList[0] = pr.getCourses_ArrayList().get(k).getCourse_name();
             addList[1] = pr.getCourses_ArrayList().get(k).getCourse_ID();
             addList[2] = pr.getCourses_ArrayList().get(k).getCourse_semester();
             addList[3] = pr.getCourses_ArrayList().get(k).getCourse_CH();
