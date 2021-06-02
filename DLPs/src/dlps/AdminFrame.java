@@ -3592,9 +3592,12 @@ public class AdminFrame extends javax.swing.JFrame {
          for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
            Program pr = driverr.getPrograms_added().get(i);
            {
-               for(int k=0; )
+               for(int k=0;k<pr.getCourses_ArrayList().size();k++ )
+               {
+                   jComboBox7.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+               }
            }
-                jComboBox4.addItem(pr.getProgram_id());
+              
    
         }
     }//GEN-LAST:event_jPanel22MouseClicked
