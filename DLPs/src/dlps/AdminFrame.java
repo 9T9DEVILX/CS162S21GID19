@@ -3395,7 +3395,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(2);
          for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
            Program pr = driverr.getPrograms_added().get(i);
-                jComboBox4.addItem(pr.getProgram_id());
+                jComboBox6.addItem(pr.getProgram_id());
    
         }
           showCourses(jTable10);
@@ -3959,6 +3959,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
