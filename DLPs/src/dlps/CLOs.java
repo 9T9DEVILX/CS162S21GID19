@@ -6,6 +6,7 @@
 package dlps;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,6 +19,15 @@ public class CLOs {
     private String clo_ID;
     private List<Rubrics> rubric_list;
 
+    public CLOs(String clo) {
+           this.clos = clo;
+           this.clo_ID = id_generator();
+           this.rubric_list = new ArrayList<>();
+    }
+
+    
+    
+    
     ///////////////////////////////////// Getters ///////////////////////////
     public String getClos() {
         return clos;
@@ -47,7 +57,7 @@ public class CLOs {
     }
     
     ///////////////////////////////////// Simple Functions ///////////////////////////
-    public String id_generator(String id)
+    public String id_generator()
     {
         String chars = "0123456789";
         SecureRandom random = new SecureRandom();
@@ -58,21 +68,8 @@ public class CLOs {
             sb.append(chars.charAt(randomIndex));
         }
         String idd = "";
-        idd = idd + "CLO" + this.geneate_short_name(id) + sb;
+        idd = idd + "CLO"  + sb;
         return idd;
     }
     
-    public String geneate_short_name(String name)
-    {
-        String name_short = "";
-        for(int i=0; i < name.length();i++)
-        {
-          if(name.charAt(i)>= 'A' && name.charAt(i) <= 'Z')
-          {
-            name_short = name_short + name.charAt(i);    
-          }
-        }
-        
-        return name_short.toUpperCase();
-    }
 }

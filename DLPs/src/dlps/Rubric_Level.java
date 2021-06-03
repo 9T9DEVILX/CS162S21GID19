@@ -17,6 +17,13 @@ public class Rubric_Level {
    private String good_level;
    private String excellent_level;
 
+   Rubric_Level(String poor,String avre,String good,String exe)
+   {
+       this.average_level = avre;
+       this.excellent_level = exe;
+       this.good_level = good;
+       this.poor_level = poor;
+   }
    /////////////////////////////////////Getters///////////////////////////
     public String getPoor_level() {
         return poor_level;

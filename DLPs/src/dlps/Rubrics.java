@@ -17,6 +17,13 @@ public class Rubrics {
    private String name;
    private String rubric_ID;
 
+    public Rubrics(String name) {
+        this.name = name;
+        this.rubric_ID = this.id_generator();
+        this.levels = null;
+    }
+
+   
    ///////////////////////////////////// Getters ///////////////////////////
     public Rubric_Level getLevels() {
         return levels;
@@ -44,7 +51,7 @@ public class Rubrics {
     }
    
      ///////////////////////////////////// Simple Functions ///////////////////////////
-    public String id_generator(String id)
+    public String id_generator()
     {
         String chars = "0123456789";
         SecureRandom random = new SecureRandom();
@@ -55,20 +62,8 @@ public class Rubrics {
             sb.append(chars.charAt(randomIndex));
         }
         String idd = "";
-        idd = idd + "RUB" + this.geneate_short_name(id) + sb;
+        idd = idd + "RUB"  + sb;
         return idd;
     }
-        public String geneate_short_name(String name)
-    {
-        String name_short = "";
-        for(int i=0; i < name.length();i++)
-        {
-          if(name.charAt(i)>= 'A' && name.charAt(i) <= 'Z')
-          {
-            name_short = name_short + name.charAt(i);    
-          }
-        }
-        
-        return name_short.toUpperCase();
-    }
+     
 }

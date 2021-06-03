@@ -207,5 +207,29 @@ public class Courses {
         
         return flag;
     }
-      
+      public void add_clo(CLOs clo)
+      {
+          this.course_clo_LinkedList.add(clo);
+      }
+       public void update_clo(CLOs clo,String cour_id_old,String clo_id_old)
+       {
+           DLPs driverr = DLPs.driver_instance();
+           for(int k = 0;k<driverr.getPrograms_added().size();k++ )
+           {
+               Program pr = driverr.getPrograms_added().get(k);
+               for(int i =0; i< pr.getCourses_ArrayList().size();i++)
+               {
+                   if(pr.getCourses_ArrayList().get(i).course_ID.equals(cour_id_old))
+                   {
+                       for(int j =0;j<pr.getCourses_ArrayList().get(i).course_clo_LinkedList.size();j++)
+                       {
+                           if(pr.getCourses_ArrayList().get(i).course_clo_LinkedList.get(j).getClo_ID().equals(clo_id_old))
+                           {
+                               pr.getCourses_ArrayList().get(i).course_clo_LinkedList.set(j, clo);
+                           }
+                       }
+                   }
+                       }
+           }
+       }
 }

@@ -6,7 +6,9 @@
 package dlps;
 
 import java.awt.Color;
-import java.util.Date;
+import static java.util.Collections.list;
+import java.util.*;
+import java.util.Iterator;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +26,11 @@ public class AdminFrame extends javax.swing.JFrame {
     public AdminFrame() {
         initComponents();
         jLabel58.setVisible(false);
+        jTextField15.setEnabled(false);
+        jTextField17.setEnabled(false);
+        jTextField30.setEnabled(false);
+        jTextField31.setEnabled(false);
+        jLabel72.setVisible(false);
     }
 
     /**
@@ -144,7 +151,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jTable11 = new javax.swing.JTable();
         jLabel55 = new javax.swing.JLabel();
         jSeparator20 = new javax.swing.JSeparator();
-        jTextField14 = new javax.swing.JTextField();
         jSeparator35 = new javax.swing.JSeparator();
         jSeparator36 = new javax.swing.JSeparator();
         jTextField15 = new javax.swing.JTextField();
@@ -158,6 +164,14 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton23 = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         jTable12 = new javax.swing.JTable();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        jTable22 = new javax.swing.JTable();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jComboBox14 = new javax.swing.JComboBox<>();
         jPanel21 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
@@ -177,11 +191,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator41 = new javax.swing.JSeparator();
         jTextField21 = new javax.swing.JTextField();
         jSeparator42 = new javax.swing.JSeparator();
-        jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
         jScrollPane14 = new javax.swing.JScrollPane();
         jTable14 = new javax.swing.JTable();
+        jLabel68 = new javax.swing.JLabel();
         teacher_ad = new javax.swing.JPanel();
         jPanel42 = new javax.swing.JPanel();
         jPanel43 = new javax.swing.JPanel();
@@ -227,13 +240,16 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator53 = new javax.swing.JSeparator();
         jComboBox9 = new javax.swing.JComboBox<>();
         jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
         jScrollPane17 = new javax.swing.JScrollPane();
         jTable17 = new javax.swing.JTable();
+        jButton32 = new javax.swing.JButton();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
         hostel_ad = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jPanel45 = new javax.swing.JPanel();
@@ -1196,6 +1212,9 @@ public class AdminFrame extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel22MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel22MouseEntered(evt);
+            }
         });
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -1387,7 +1406,7 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jScrollPane10.setViewportView(jTable10);
 
-        jPanel19.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 580, 130));
+        jPanel19.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 600, 130));
 
         jComboBox6.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Program ID" }));
@@ -1446,18 +1465,20 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTable11.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "SR. No", "Course ID", "CLO ID", "Rubric", "Rubric ID"
             }
         ));
+        jTable11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable11MouseClicked(evt);
+            }
+        });
         jScrollPane11.setViewportView(jTable11);
 
-        jPanel20.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 430, 130));
+        jPanel20.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 430, 130));
 
         jLabel55.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel55.setText("Rubric's Management");
@@ -1467,30 +1488,13 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel20.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 220, 10));
 
-        jTextField14.setText("Course ID");
-        jTextField14.setBorder(null);
-        jTextField14.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField14FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField14FocusLost(evt);
-            }
-        });
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
-            }
-        });
-        jPanel20.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 260, 30));
-
         jSeparator35.setForeground(new java.awt.Color(0, 0, 0));
         jPanel20.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 260, 10));
 
         jSeparator36.setForeground(new java.awt.Color(0, 0, 0));
         jPanel20.add(jSeparator36, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 260, 10));
 
-        jTextField15.setText("CLO ID");
+        jTextField15.setText("Select CLO from table to add Rubrics");
         jTextField15.setBorder(null);
         jTextField15.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1522,10 +1526,10 @@ public class AdminFrame extends javax.swing.JFrame {
                 jTextField16ActionPerformed(evt);
             }
         });
-        jPanel20.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 260, 30));
+        jPanel20.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 260, 30));
 
         jSeparator37.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel20.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 260, 10));
+        jPanel20.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 260, 10));
 
         jButton18.setBackground(new java.awt.Color(0, 0, 0));
         jButton18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -1544,6 +1548,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton19.setForeground(new java.awt.Color(255, 255, 255));
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton19.setText("Edit CLO");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
         jPanel20.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 120, 34));
 
         jButton20.setBackground(new java.awt.Color(0, 0, 0));
@@ -1551,6 +1560,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton20.setForeground(new java.awt.Color(255, 255, 255));
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton20.setText("Delete CLO");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
         jPanel20.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 130, 34));
 
         jButton21.setBackground(new java.awt.Color(0, 0, 0));
@@ -1563,36 +1577,97 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton21ActionPerformed(evt);
             }
         });
-        jPanel20.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 120, 34));
+        jPanel20.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 120, 34));
 
         jButton22.setBackground(new java.awt.Color(0, 0, 0));
         jButton22.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton22.setForeground(new java.awt.Color(255, 255, 255));
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
         jButton22.setText("Edit Rubric");
-        jPanel20.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 120, 34));
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 120, 34));
 
         jButton23.setBackground(new java.awt.Color(0, 0, 0));
         jButton23.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton23.setForeground(new java.awt.Color(255, 255, 255));
         jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton23.setText("Delete Rubric");
-        jPanel20.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, 130, 34));
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 130, 34));
 
         jTable12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "SR. No", "Course ID", "CLO ID", "CLO"
             }
         ));
+        jTable12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable12MouseClicked(evt);
+            }
+        });
         jScrollPane12.setViewportView(jTable12);
 
-        jPanel20.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 430, 130));
+        jPanel20.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 430, 130));
+
+        jTable22.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "SR. No", "Course ID", "CLO ID", "CLO"
+            }
+        ));
+        jTable22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable22MouseClicked(evt);
+            }
+        });
+        jScrollPane22.setViewportView(jTable22);
+
+        jPanel20.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 430, 130));
+
+        jLabel63.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel63.setText("Select the Row from the table to Edit/Delete");
+        jPanel20.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 320, -1));
+
+        jLabel64.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jLabel64.setText("Added CLO's List ");
+        jPanel20.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
+
+        jLabel65.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jLabel65.setText("CLO's List Bases on Course ID to add Rubric");
+        jPanel20.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 320, -1));
+
+        jLabel66.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jLabel66.setText("Rubrics List");
+        jPanel20.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, 320, -1));
+
+        jLabel67.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel67.setText("Select the Row from the table to Edit/Delete");
+        jPanel20.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, 320, -1));
+
+        jComboBox14.setForeground(new java.awt.Color(102, 102, 102));
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course ID" }));
+        jComboBox14.setBorder(null);
+        jComboBox14.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox14ItemStateChanged(evt);
+            }
+        });
+        jPanel20.add(jComboBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 260, -1));
 
         jTabbedPane3.addTab("tab2", jPanel20);
 
@@ -1610,6 +1685,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jComboBox3.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course ID" }));
         jComboBox3.setBorder(null);
+        jComboBox3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox3ItemStateChanged(evt);
+            }
+        });
         jPanel21.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 260, -1));
 
         jSeparator21.setForeground(new java.awt.Color(0, 0, 0));
@@ -1618,6 +1698,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jComboBox8.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select CLO ID" }));
         jComboBox8.setBorder(null);
+        jComboBox8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox8ItemStateChanged(evt);
+            }
+        });
         jPanel21.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 260, -1));
 
         jSeparator22.setForeground(new java.awt.Color(0, 0, 0));
@@ -1625,18 +1710,20 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTable13.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "SR. No", "Course ID", "CLO ID", "Rubric", "Rubric ID"
             }
         ));
+        jTable13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable13MouseClicked(evt);
+            }
+        });
         jScrollPane13.setViewportView(jTable13);
 
-        jPanel21.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 430, 130));
+        jPanel21.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 430, 130));
 
         jTextField17.setText("Rubric Name");
         jTextField17.setBorder(null);
@@ -1673,10 +1760,10 @@ public class AdminFrame extends javax.swing.JFrame {
                 jTextField18ActionPerformed(evt);
             }
         });
-        jPanel21.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 260, 30));
+        jPanel21.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 260, 30));
 
         jSeparator39.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel21.add(jSeparator39, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 260, 10));
+        jPanel21.add(jSeparator39, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 260, 10));
 
         jTextField19.setText("Average 50%");
         jTextField19.setBorder(null);
@@ -1693,10 +1780,10 @@ public class AdminFrame extends javax.swing.JFrame {
                 jTextField19ActionPerformed(evt);
             }
         });
-        jPanel21.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 260, 30));
+        jPanel21.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 260, 30));
 
         jSeparator40.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel21.add(jSeparator40, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 260, 10));
+        jPanel21.add(jSeparator40, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 260, 10));
 
         jTextField20.setText("Good 75%");
         jTextField20.setBorder(null);
@@ -1713,10 +1800,10 @@ public class AdminFrame extends javax.swing.JFrame {
                 jTextField20ActionPerformed(evt);
             }
         });
-        jPanel21.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 260, 30));
+        jPanel21.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 260, 30));
 
         jSeparator41.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel21.add(jSeparator41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 260, 10));
+        jPanel21.add(jSeparator41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 260, 10));
 
         jTextField21.setText("Excellent 100%");
         jTextField21.setBorder(null);
@@ -1733,43 +1820,26 @@ public class AdminFrame extends javax.swing.JFrame {
                 jTextField21ActionPerformed(evt);
             }
         });
-        jPanel21.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 260, 30));
+        jPanel21.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 260, 30));
 
         jSeparator42.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel21.add(jSeparator42, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 260, 10));
-
-        jButton24.setBackground(new java.awt.Color(0, 0, 0));
-        jButton24.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(255, 255, 255));
-        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
-        jButton24.setText("Delete CLO");
-        jPanel21.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 130, 34));
+        jPanel21.add(jSeparator42, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 260, 10));
 
         jButton25.setBackground(new java.awt.Color(0, 0, 0));
         jButton25.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jButton25.setForeground(new java.awt.Color(255, 255, 255));
         jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
-        jButton25.setText("Add CLO");
+        jButton25.setText("ADD RUBRIC'S LEVEL");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton25ActionPerformed(evt);
             }
         });
-        jPanel21.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 120, 34));
-
-        jButton26.setBackground(new java.awt.Color(0, 0, 0));
-        jButton26.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jButton26.setForeground(new java.awt.Color(255, 255, 255));
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
-        jButton26.setText("Edit CLO");
-        jPanel21.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 120, 34));
+        jPanel21.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 260, 34));
 
         jTable14.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Course ID", "CLO ID", "Rubric ID", "Poor", "Average", "GOOD", "Excellent"
@@ -1778,6 +1848,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jScrollPane14.setViewportView(jTable14);
 
         jPanel21.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 430, 130));
+
+        jLabel68.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel68.setText("CSelect Row of Rubric To add Rubric Levels In it");
+        jPanel21.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, -1, -1));
 
         jTabbedPane3.addTab("tab3", jPanel21);
 
@@ -2119,6 +2194,11 @@ public class AdminFrame extends javax.swing.JFrame {
                 "Name", "Department", "CNIC", "Phone Number", "DOB", "Year of Joining", "ID"
             }
         ));
+        jTable16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable16MouseClicked(evt);
+            }
+        });
         jScrollPane16.setViewportView(jTable16);
 
         jPanel4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 540, 140));
@@ -2181,21 +2261,17 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton30ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 120, 34));
+        jPanel4.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 260, 34));
 
-        jButton31.setBackground(new java.awt.Color(0, 0, 0));
-        jButton31.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jButton31.setForeground(new java.awt.Color(255, 255, 255));
-        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_edit_16.png"))); // NOI18N
-        jButton31.setText("Edit ");
-        jPanel4.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 120, 34));
+        jLabel69.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel69.setText("Select the Row from the table to Alocated Course");
+        jPanel4.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 320, -1));
 
-        jButton32.setBackground(new java.awt.Color(0, 0, 0));
-        jButton32.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jButton32.setForeground(new java.awt.Color(255, 255, 255));
-        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
-        jButton32.setText("Delete ");
-        jPanel4.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 120, 34));
+        jLabel70.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel70.setText("jLabel70");
+        jPanel4.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 250, -1));
 
         jTabbedPane4.addTab("tab2", jPanel4);
 
@@ -2212,10 +2288,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTable17.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Name", "Department", "CNIC", "Phone Number", "DOB", "ID", "Course ID"
@@ -2224,6 +2297,24 @@ public class AdminFrame extends javax.swing.JFrame {
         jScrollPane17.setViewportView(jTable17);
 
         jPanel5.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 650, 240));
+
+        jButton32.setBackground(new java.awt.Color(0, 0, 0));
+        jButton32.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton32.setForeground(new java.awt.Color(255, 255, 255));
+        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
+        jButton32.setText("De-Allocate");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, 210, 34));
+
+        jLabel71.setText("Select Row From Table to de-Alocate A course");
+        jPanel5.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+
+        jLabel72.setText("jLabel72");
+        jPanel5.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 380, -1, -1));
 
         jTabbedPane4.addTab("tab3", jPanel5);
 
@@ -3393,12 +3484,12 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(2);
-         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
-           Program pr = driverr.getPrograms_added().get(i);
-                jComboBox6.addItem(pr.getProgram_id());
-   
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            jComboBox6.addItem(pr.getProgram_id());
+
         }
-          showCourses(jTable10);
+        showCourses(jTable10);
     }//GEN-LAST:event_jPanel15MouseClicked
 
     private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
@@ -3567,7 +3658,7 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTabbedPane2.setSelectedIndex(1);
         jComboBox5.removeAllItems();
-        
+
         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
             jComboBox5.addItem(driverr.getPrograms_added().get(i).getProgram_Name());
 
@@ -3578,33 +3669,71 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseClicked
         // TODO add your handling code here:
         jTabbedPane3.setSelectedIndex(0);
-         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
-           Program pr = driverr.getPrograms_added().get(i);
-                jComboBox4.addItem(pr.getProgram_id());
-   
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            jComboBox4.addItem(pr.getProgram_id());
+
         }
-         showCourses(jTable10);
+        showCourses(jTable10);
     }//GEN-LAST:event_jPanel18MouseClicked
 
     private void jPanel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel22MouseClicked
         // TODO add your handling code here:
         jTabbedPane3.setSelectedIndex(1);
-         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
-           Program pr = driverr.getPrograms_added().get(i);
-           {
-               for(int k=0;k<pr.getCourses_ArrayList().size();k++ )
-               {
-                   jComboBox7.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
-               }
-           }
-              
-   
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    jComboBox7.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+                    jComboBox14.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+                }
+            }
+
         }
+        int x = 0;
+        jTable12.removeAll();
+        String[] tableData = {"Sr. No", "Course ID", "CLO ID", "CLO"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[4];
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                Courses cour = pr.getCourses_ArrayList().get(k);
+
+                Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                while (iterator.hasNext()) {
+                    CLOs cl = iterator.next();
+
+                    addList[0] = x + 1 + "";
+                    addList[1] = cour.getCourse_ID();
+                    addList[2] = cl.getClo_ID();
+                    addList[3] = cl.getClos();
+
+                    dataModel.addRow(addList);
+                    jTable12.setModel(dataModel);
+
+                }
+
+            }
+        }
+
     }//GEN-LAST:event_jPanel22MouseClicked
 
     private void jPanel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel23MouseClicked
         // TODO add your handling code here:
         jTabbedPane3.setSelectedIndex(2);
+        jComboBox3.removeAllItems();
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    jComboBox3.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+       
+                }
+            }
+
+        }
+        
     }//GEN-LAST:event_jPanel23MouseClicked
 
     private void jPanel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel25MouseClicked
@@ -3616,12 +3745,69 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel26MouseClicked
         // TODO add your handling code here:
         jTabbedPane4.setSelectedIndex(1);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    jComboBox9.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+                   
+                }
+            }
+
+        }
         showTeachers(jTable16);
     }//GEN-LAST:event_jPanel26MouseClicked
 
     private void jPanel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel34MouseClicked
         // TODO add your handling code here:
         jTabbedPane4.setSelectedIndex(2);
+        String[] tableData = {"Name", "Department", "CNIC", "Phone Number", "DOB", "ID", "Course ID"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[7];
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    if(pr.getCourses_ArrayList().get(k).getCourse_alocate_teac() != "")
+                    {
+                         String id = pr.getCourses_ArrayList().get(k).getCourse_alocate_teac();
+                    for(int j=0;j<driverr.getPerson_list().size();j++)
+                    {
+                        if(driverr.getPerson_list().get(j).getType().equals("Teacher"))
+                        {
+                            Teacher tr = (Teacher) driverr.getPerson_list().get(j);
+                            if(tr.getTeacher_ID().equals(id))
+                            {
+                                addList[0] = tr.getName();
+                addList[1] = tr.getDepartment();
+                addList[2] = tr.getCnic();
+                addList[3] = tr.getNumber();
+                addList[4] = String.valueOf(tr.getDOB());
+                addList[5] = tr.getTeacher_ID();
+                addList[6] = pr.getCourses_ArrayList().get(k).getCourse_ID();
+                dataModel.addRow(addList);
+                jTable17.setModel(dataModel);
+                            }
+                            
+                        }
+                    }
+                    }
+                   
+                   
+                }
+            }
+
+        }
+          
+
+        for (int i = 0; i < driverr.getPerson_list().size(); i++) {
+            if (driverr.getPerson_list().get(i).getPerson_type().equals("Teacher")) {
+                Teacher tr = (Teacher) driverr.getPerson_list().get(i);
+
+                
+            }
+
+        }
     }//GEN-LAST:event_jPanel34MouseClicked
 
     private void jPanel35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel35MouseClicked
@@ -3666,16 +3852,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusGained
         // TODO add your handling code here:
-         if(jTextField6.getText().equals("Program Name"))
-        {
+        if (jTextField6.getText().equals("Program Name")) {
             jTextField6.setText("");
         }
     }//GEN-LAST:event_jTextField6FocusGained
 
     private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusLost
         // TODO add your handling code here:
-         if(jTextField6.getText().equals(""))
-        {
+        if (jTextField6.getText().equals("")) {
             jTextField6.setText("Program Name");
         }
     }//GEN-LAST:event_jTextField6FocusLost
@@ -3686,17 +3870,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
         // TODO add your handling code here:
-         if(jTextField7.getText().equals("Program ID (e.g CS123)"))
-        {
+        if (jTextField7.getText().equals("Program ID (e.g CS123)")) {
             jTextField7.setText("");
         }
     }//GEN-LAST:event_jTextField7FocusGained
 
     private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusLost
         // TODO add your handling code here:
-         if(jTextField7.getText().equals(""))
-        {
-           jTextField7.setText("Program ID (e.g CS123)");
+        if (jTextField7.getText().equals("")) {
+            jTextField7.setText("Program ID (e.g CS123)");
         }
     }//GEN-LAST:event_jTextField7FocusLost
 
@@ -3706,17 +3888,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
         // TODO add your handling code here:
-         if(jTextField8.getText().equals("Enter PLO Here"))
-        {
+        if (jTextField8.getText().equals("Enter PLO Here")) {
             jTextField8.setText("");
         }
     }//GEN-LAST:event_jTextField8FocusGained
 
     private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusLost
         // TODO add your handling code here:
-         if(jTextField8.getText().equals(""))
-        {
-           jTextField8.setText("Enter PLO Here");
+        if (jTextField8.getText().equals("")) {
+            jTextField8.setText("Enter PLO Here");
         }
     }//GEN-LAST:event_jTextField8FocusLost
 
@@ -3756,16 +3936,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
         // TODO add your handling code here:
-          if(jTextField9.getText().equals("Course Name"))
-        {
+        if (jTextField9.getText().equals("Course Name")) {
             jTextField9.setText("");
         }
     }//GEN-LAST:event_jTextField9FocusGained
 
     private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
         // TODO add your handling code here:
-         if(jTextField9.getText().equals(""))
-        {
+        if (jTextField9.getText().equals("")) {
             jTextField9.setText("Course Name");
         }
     }//GEN-LAST:event_jTextField9FocusLost
@@ -3776,16 +3954,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusGained
         // TODO add your handling code here:
-        if(jTextField10.getText().equals("Course ID"))
-        {
+        if (jTextField10.getText().equals("Course ID")) {
             jTextField10.setText("");
         }
     }//GEN-LAST:event_jTextField10FocusGained
 
     private void jTextField10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusLost
         // TODO add your handling code here:
-         if(jTextField10.getText().equals(""))
-        {
+        if (jTextField10.getText().equals("")) {
             jTextField10.setText("Course ID");
         }
     }//GEN-LAST:event_jTextField10FocusLost
@@ -3796,16 +3972,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField11FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField11FocusGained
         // TODO add your handling code here:
-        if(jTextField11.getText().equals("Semester"))
-        {
+        if (jTextField11.getText().equals("Semester")) {
             jTextField11.setText("");
         }
     }//GEN-LAST:event_jTextField11FocusGained
 
     private void jTextField11FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField11FocusLost
         // TODO add your handling code here:
-         if(jTextField11.getText().equals(""))
-        {
+        if (jTextField11.getText().equals("")) {
             jTextField11.setText("Semester");
         }
     }//GEN-LAST:event_jTextField11FocusLost
@@ -3816,17 +3990,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField12FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField12FocusGained
         // TODO add your handling code here:
-        if(jTextField12.getText().equals("Credit Hours"))
-        {
+        if (jTextField12.getText().equals("Credit Hours")) {
             jTextField12.setText("");
         }
     }//GEN-LAST:event_jTextField12FocusGained
 
     private void jTextField12FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField12FocusLost
         // TODO add your handling code here:
-         if(jTextField12.getText().equals(""))
-        {
-           jTextField12.setText("Credit Hours");
+        if (jTextField12.getText().equals("")) {
+            jTextField12.setText("Credit Hours");
         }
     }//GEN-LAST:event_jTextField12FocusLost
 
@@ -3843,33 +4015,30 @@ public class AdminFrame extends javax.swing.JFrame {
         String pro_id = jComboBox6.getSelectedItem().toString();
         if (name != "Course Name" && ID != "Course ID" && sem != "Semester" && hours != "Credit Hours" && pro_id != "Select Program ID") {
             if (Courses.validate_course_name(name) && Courses.validate_courseID(ID) && Courses.sem_validator(sem) && Courses.hourse_validator(hours)) {
-               
-                for(int i=0;i<driverr.getPrograms_added().size();i++)
-                {
+
+                for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
                     Program pr = driverr.getPrograms_added().get(i);
-                    if(pr.getProgram_id().equals(pro_id))
-                    {
-                         Courses cour = new Courses(name, ID, sem, hours,pro_id);
-                         pr.add_course(cour);
-                         String data[] = {name, ID, hours, sem,pro_id};
-                DefaultTableModel tblmodel = (DefaultTableModel) jTable10.getModel();
-                tblmodel.addRow(data);
-                jTextField9.setText("Course Name");
-                jTextField11.setText("Semester");
-                jTextField10.setText("Course ID");
-               jTextField12.setText("Credit Hours");
-               jLabel62.setVisible(true);
-                jLabel62.setForeground(new java.awt.Color(41, 168, 72));
-                jLabel62.setText("Courses Has Been Added");
+                    if (pr.getProgram_id().equals(pro_id)) {
+                        Courses cour = new Courses(name, ID, sem, hours, pro_id);
+                        pr.add_course(cour);
+                        String data[] = {name, ID, hours, sem, pro_id};
+                        DefaultTableModel tblmodel = (DefaultTableModel) jTable10.getModel();
+                        tblmodel.addRow(data);
+                        jTextField9.setText("Course Name");
+                        jTextField11.setText("Semester");
+                        jTextField10.setText("Course ID");
+                        jTextField12.setText("Credit Hours");
+                        jLabel62.setVisible(true);
+                        jLabel62.setForeground(new java.awt.Color(41, 168, 72));
+                        jLabel62.setText("Courses Has Been Added");
                     }
                 }
-               
 
-            }else {
-                    jLabel62.setVisible(true);
-                    jLabel62.setText("* Enter Valid Inputs");
-                }
-            
+            } else {
+                jLabel62.setVisible(true);
+                jLabel62.setText("* Enter Valid Inputs");
+            }
+
         } else {
             jLabel62.setVisible(true);
             jLabel62.setForeground(new java.awt.Color(255, 77, 77));
@@ -3879,17 +4048,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField13FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField13FocusGained
         // TODO add your handling code here:
-         if(jTextField13.getText().equals("Enter CLO"))
-        {
+        if (jTextField13.getText().equals("Enter CLO")) {
             jTextField13.setText("");
         }
     }//GEN-LAST:event_jTextField13FocusGained
 
     private void jTextField13FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField13FocusLost
         // TODO add your handling code here:
-         if(jTextField13.getText().equals(""))
-        {
-           jTextField13.setText("Enter CLO");
+        if (jTextField13.getText().equals("")) {
+            jTextField13.setText("Enter CLO");
         }
     }//GEN-LAST:event_jTextField13FocusLost
 
@@ -3897,39 +4064,17 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
 
-    private void jTextField14FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField14FocusGained
-        // TODO add your handling code here:
-         if(jTextField14.getText().equals("Course ID"))
-        {
-            jTextField14.setText("");
-        }
-    }//GEN-LAST:event_jTextField14FocusGained
-
-    private void jTextField14FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField14FocusLost
-        // TODO add your handling code here:
-         if(jTextField14.getText().equals(""))
-        {
-           jTextField14.setText("Course ID");
-        }
-    }//GEN-LAST:event_jTextField14FocusLost
-
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
-
     private void jTextField15FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField15FocusGained
         // TODO add your handling code here:
-         if(jTextField15.getText().equals("CLO ID"))
-        {
+        if (jTextField15.getText().equals("Select CLO from table to add Rubrics")) {
             jTextField15.setText("");
         }
     }//GEN-LAST:event_jTextField15FocusGained
 
     private void jTextField15FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField15FocusLost
         // TODO add your handling code here:
-         if(jTextField15.getText().equals(""))
-        {
-           jTextField15.setText("CLO ID");
+        if (jTextField15.getText().equals("")) {
+            jTextField15.setText("Select CLO from table to add Rubrics");
         }
     }//GEN-LAST:event_jTextField15FocusLost
 
@@ -3939,17 +4084,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField16FocusGained
         // TODO add your handling code here:
-         if(jTextField16.getText().equals("Rubric"))
-        {
+        if (jTextField16.getText().equals("Rubric")) {
             jTextField16.setText("");
         }
     }//GEN-LAST:event_jTextField16FocusGained
 
     private void jTextField16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField16FocusLost
         // TODO add your handling code here:
-         if(jTextField16.getText().equals(""))
-        {
-           jTextField16.setText("Rubric");
+        if (jTextField16.getText().equals("")) {
+            jTextField16.setText("Rubric");
         }
     }//GEN-LAST:event_jTextField16FocusLost
 
@@ -3959,26 +4102,69 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
-        
+        String clo = jTextField13.getText();
+        String id = jComboBox7.getSelectedItem().toString();
+        if (clo != "Enter CLO" && id != "Select Course ID") {
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    if (cour.getCourse_ID().equals(id)) {
+                        CLOs clos = new CLOs(clo);
+                        cour.add_clo(clos);
+                        String data[] = {String.valueOf(pr.getCourses_ArrayList().get(k).getCourse_clo_LinkedList().size()), id, clos.getClo_ID(), clos.getClos()};
+                        DefaultTableModel tblmodel = (DefaultTableModel) jTable12.getModel();
+                        tblmodel.addRow(data);
+                        jTextField13.setText("Enter CLO");
+
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
+        String clo_id = jTextField15.getText();
+        String rubric = jTextField16.getText();
+        String id = jComboBox14.getSelectedItem().toString();
+        if (rubric != "Rubric") {
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    if (cour.getCourse_ID().equals(id)) {
+                        Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                        while (iterator.hasNext()) {
+                            CLOs cl = iterator.next();
+                            if (cl.getClo_ID().equals(clo_id)) {
+                                Rubrics ru = new Rubrics(rubric);
+                                cl.getRubric_list().add(ru);
+                                String data[] = {String.valueOf(jTable11.getRowCount() + 1), id, cl.getClo_ID(), ru.getName(), ru.getRubric_ID()};
+                                DefaultTableModel tblmodel = (DefaultTableModel) jTable11.getModel();
+                                tblmodel.addRow(data);
+                                break;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jTextField17FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField17FocusGained
         // TODO add your handling code here:
-         if(jTextField17.getText().equals("Rubric Name"))
-        {
+        if (jTextField17.getText().equals("Rubric Name")) {
             jTextField17.setText("");
         }
     }//GEN-LAST:event_jTextField17FocusGained
 
     private void jTextField17FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField17FocusLost
         // TODO add your handling code here:
-         if(jTextField17.getText().equals(""))
-        {
-           jTextField17.setText("Rubric Name");
+        if (jTextField17.getText().equals("")) {
+            jTextField17.setText("Rubric Name");
         }
     }//GEN-LAST:event_jTextField17FocusLost
 
@@ -3988,17 +4174,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField18FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField18FocusGained
         // TODO add your handling code here:
-         if(jTextField18.getText().equals("Poor 25%"))
-        {
+        if (jTextField18.getText().equals("Poor 25%")) {
             jTextField18.setText("");
         }
     }//GEN-LAST:event_jTextField18FocusGained
 
     private void jTextField18FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField18FocusLost
         // TODO add your handling code here:
-         if(jTextField18.getText().equals(""))
-        {
-           jTextField18.setText("Poor 25%");
+        if (jTextField18.getText().equals("")) {
+            jTextField18.setText("Poor 25%");
         }
     }//GEN-LAST:event_jTextField18FocusLost
 
@@ -4008,17 +4192,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField19FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField19FocusGained
         // TODO add your handling code here:
-         if(jTextField19.getText().equals("Average 50%"))
-        {
+        if (jTextField19.getText().equals("Average 50%")) {
             jTextField19.setText("");
         }
     }//GEN-LAST:event_jTextField19FocusGained
 
     private void jTextField19FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField19FocusLost
         // TODO add your handling code here:
-         if(jTextField19.getText().equals(""))
-        {
-           jTextField19.setText("Average 50%");
+        if (jTextField19.getText().equals("")) {
+            jTextField19.setText("Average 50%");
         }
     }//GEN-LAST:event_jTextField19FocusLost
 
@@ -4028,17 +4210,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField20FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField20FocusGained
         // TODO add your handling code here:
-         if(jTextField20.getText().equals("Good 75%"))
-        {
+        if (jTextField20.getText().equals("Good 75%")) {
             jTextField20.setText("");
         }
     }//GEN-LAST:event_jTextField20FocusGained
 
     private void jTextField20FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField20FocusLost
         // TODO add your handling code here:
-         if(jTextField20.getText().equals(""))
-        {
-           jTextField20.setText("Good 75%");
+        if (jTextField20.getText().equals("")) {
+            jTextField20.setText("Good 75%");
         }
     }//GEN-LAST:event_jTextField20FocusLost
 
@@ -4048,17 +4228,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField21FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField21FocusGained
         // TODO add your handling code here:
-         if(jTextField21.getText().equals("Excellent 100%"))
-        {
+        if (jTextField21.getText().equals("Excellent 100%")) {
             jTextField21.setText("");
         }
     }//GEN-LAST:event_jTextField21FocusGained
 
     private void jTextField21FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField21FocusLost
         // TODO add your handling code here:
-         if(jTextField21.getText().equals(""))
-        {
-           jTextField21.setText("Excellent 100%");
+        if (jTextField21.getText().equals("")) {
+            jTextField21.setText("Excellent 100%");
         }
     }//GEN-LAST:event_jTextField21FocusLost
 
@@ -4068,20 +4246,59 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
+        int rowIndex = jTable13.getSelectedRow();
+        String cour_id = model.getValueAt(rowIndex, 1).toString();
+        String clo_id = model.getValueAt(rowIndex, 2).toString();
+          String rub_id = jTextField17.getText();
+        String poor = jTextField18.getText();
+        String avre = jTextField19.getText();
+        String good = jTextField20.getText();
+        String exe = jTextField21.getText();
+        
+        if (poor != "Poor 25%" &&avre != "Average 50%" && good != "Good 75%" && exe != "Excellent 100%") {
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    if (cour.getCourse_ID().equals(cour_id)) {
+                        Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                        while (iterator.hasNext()) {
+                            CLOs cl = iterator.next();
+                            if (cl.getClo_ID().equals(clo_id)) {
+                                for(int j=0;j< cl.getRubric_list().size();j++)
+                                {
+                                    if(cl.getRubric_list().get(j).getRubric_ID().equals(rub_id))
+                                    {
+                                        Rubric_Level levl = new Rubric_Level(poor,avre,good,exe);
+                                        cl.getRubric_list().get(j).setLevels(levl);
+                                         String data[] = {cour_id, clo_id, rub_id, levl.getPoor_level(),levl.getAverage_level(),levl.getGood_level(),levl.getExcellent_level() };
+                                DefaultTableModel tblmodel = (DefaultTableModel) jTable14.getModel();
+                                tblmodel.addRow(data);
+                                break;
+                                    }
+                                }
+                               
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jTextField22FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField22FocusGained
         // TODO add your handling code here:
-         if(jTextField22.getText().equals("CNIC"))
-        {
+        if (jTextField22.getText().equals("CNIC")) {
             jTextField22.setText("");
         }
     }//GEN-LAST:event_jTextField22FocusGained
 
     private void jTextField22FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField22FocusLost
         // TODO add your handling code here:
-         if(jTextField22.getText().equals(""))
-        {
+        if (jTextField22.getText().equals("")) {
             jTextField22.setText("CNIC");
         }
     }//GEN-LAST:event_jTextField22FocusLost
@@ -4092,16 +4309,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField26FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField26FocusGained
         // TODO add your handling code here:
-        if(jTextField26.getText().equals("Teacher Name"))
-        {
+        if (jTextField26.getText().equals("Teacher Name")) {
             jTextField26.setText("");
         }
     }//GEN-LAST:event_jTextField26FocusGained
 
     private void jTextField26FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField26FocusLost
         // TODO add your handling code here:
-        if(jTextField26.getText().equals(""))
-        {
+        if (jTextField26.getText().equals("")) {
             jTextField26.setText("Teacher Name");
         }
     }//GEN-LAST:event_jTextField26FocusLost
@@ -4112,16 +4327,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField27FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField27FocusGained
         // TODO add your handling code here:
-        if(jTextField27.getText().equals("Department"))
-        {
+        if (jTextField27.getText().equals("Department")) {
             jTextField27.setText("");
         }
     }//GEN-LAST:event_jTextField27FocusGained
 
     private void jTextField27FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField27FocusLost
         // TODO add your handling code here:
-         if(jTextField27.getText().equals(""))
-        {
+        if (jTextField27.getText().equals("")) {
             jTextField27.setText("Department");
         }
     }//GEN-LAST:event_jTextField27FocusLost
@@ -4132,16 +4345,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField28FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField28FocusGained
         // TODO add your handling code here:
-        if(jTextField28.getText().equals("Phone Number"))
-        {
+        if (jTextField28.getText().equals("Phone Number")) {
             jTextField28.setText("");
         }
     }//GEN-LAST:event_jTextField28FocusGained
 
     private void jTextField28FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField28FocusLost
         // TODO add your handling code here:
-         if(jTextField28.getText().equals(""))
-        {
+        if (jTextField28.getText().equals("")) {
             jTextField28.setText("Phone Number");
         }
     }//GEN-LAST:event_jTextField28FocusLost
@@ -4152,16 +4363,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField29FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField29FocusGained
         // TODO add your handling code here:
-        if(jTextField29.getText().equals("Email"))
-        {
+        if (jTextField29.getText().equals("Email")) {
             jTextField29.setText("");
         }
     }//GEN-LAST:event_jTextField29FocusGained
 
     private void jTextField29FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField29FocusLost
         // TODO add your handling code here:
-         if(jTextField29.getText().equals(""))
-        {
+        if (jTextField29.getText().equals("")) {
             jTextField29.setText("Email");
         }
     }//GEN-LAST:event_jTextField29FocusLost
@@ -4180,24 +4389,24 @@ public class AdminFrame extends javax.swing.JFrame {
         String year = jTextField23.getText();
         Date dob = jDateChooser1.getDate();
         if (name != "Teacher Name" && dep != "Department" && phone != "Phone Number" && email != "Email" && cnic != "CNIC" && year != "Year of Joining") {
-          //  if (Person.validate_name(name) && Person.CNIC_Validator(cnic) && Person.Phone_Validator(phone) && Person.email_Validator(email) && Person.validate_name(dep)) {
-                //driverr.add_teacher(name, dep, phone, email, cnic, dob, year);
-                Person pr = new Teacher(name, cnic, phone, email, dob, dep, year);
-                driverr.add_teacher(pr);
-                Teacher tr = (Teacher) pr;
+            //  if (Person.validate_name(name) && Person.CNIC_Validator(cnic) && Person.Phone_Validator(phone) && Person.email_Validator(email) && Person.validate_name(dep)) {
+            //driverr.add_teacher(name, dep, phone, email, cnic, dob, year);
+            Person pr = new Teacher(name, cnic, phone, email, dob, dep, year);
+            driverr.add_teacher(pr);
+            Teacher tr = (Teacher) pr;
 
-                String data[] = {name, dep, cnic, phone, email, year, tr.getTeacher_ID()};
-                DefaultTableModel tblmodel = (DefaultTableModel) jTable15.getModel();
-                tblmodel.addRow(data);
-                jTextField26.setText("Teacher Name");
-                jTextField27.setText("Department");
-                jTextField28.setText("Phone Number");
-                jTextField29.setText("Email");
-                jTextField22.setText("CNIC");
-                jTextField23.setText("Year of Joining");
-                jLabel58.setVisible(true);
-                jLabel58.setForeground(new java.awt.Color(41, 168, 72));
-                jLabel58.setText("Teacher Has Been Added");
+            String data[] = {name, dep, cnic, phone, email, year, tr.getTeacher_ID()};
+            DefaultTableModel tblmodel = (DefaultTableModel) jTable15.getModel();
+            tblmodel.addRow(data);
+            jTextField26.setText("Teacher Name");
+            jTextField27.setText("Department");
+            jTextField28.setText("Phone Number");
+            jTextField29.setText("Email");
+            jTextField22.setText("CNIC");
+            jTextField23.setText("Year of Joining");
+            jLabel58.setVisible(true);
+            jLabel58.setForeground(new java.awt.Color(41, 168, 72));
+            jLabel58.setText("Teacher Has Been Added");
 //            } else {
 //                jLabel58.setVisible(true);
 //                jLabel58.setText("* Enter Valid Inputs");
@@ -4212,17 +4421,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField30FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField30FocusGained
         // TODO add your handling code here:
-        if(jTextField30.getText().equals("Teacher Name"))
-        {
+        if (jTextField30.getText().equals("Teacher Name")) {
             jTextField30.setText("");
         }
     }//GEN-LAST:event_jTextField30FocusGained
 
     private void jTextField30FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField30FocusLost
         // TODO add your handling code here:
-        if(jTextField30.getText().equals(""))
-        {
-           jTextField30.setText("Teacher Name");
+        if (jTextField30.getText().equals("")) {
+            jTextField30.setText("Teacher Name");
         }
     }//GEN-LAST:event_jTextField30FocusLost
 
@@ -4232,17 +4439,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField31FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField31FocusGained
         // TODO add your handling code here:
-        if(jTextField31.getText().equals("Teacher ID"))
-        {
-           jTextField31.setText("");
+        if (jTextField31.getText().equals("Teacher ID")) {
+            jTextField31.setText("");
         }
     }//GEN-LAST:event_jTextField31FocusGained
 
     private void jTextField31FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField31FocusLost
         // TODO add your handling code here:
-        if(jTextField31.getText().equals(""))
-        {
-           jTextField31.setText("Teacher ID");
+        if (jTextField31.getText().equals("")) {
+            jTextField31.setText("Teacher ID");
         }
     }//GEN-LAST:event_jTextField31FocusLost
 
@@ -4252,21 +4457,45 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
         // TODO add your handling code here:
+         String name = jTextField30.getText();
+            String ID = jTextField31.getText();
+            String cour_id = (String) jComboBox9.getSelectedItem();
+            for(int i=0;i< driverr.getPrograms_added().size();i++)
+            {
+                Program pr = driverr.getPrograms_added().get(i);
+                for(int j=0;j<pr.getCourses_ArrayList().size();j++)
+                {
+                    Courses cour =  pr.getCourses_ArrayList().get(j);
+                    if(cour.getCourse_ID().equals(cour_id))
+                    {
+                        if(cour.getCourse_alocate_teac().equals(""))
+                        {
+                            cour.setCourse_alocate_teac(ID);
+                            jLabel70.setVisible(true);
+                               jLabel70.setForeground(new java.awt.Color(41, 168, 72));
+                               jLabel70.setText("Teacher Has Been Alocated");
+                        }
+                        else{
+                        jLabel70.setVisible(true);
+                               jLabel70.setForeground(new java.awt.Color(41, 168, 72));
+                               jLabel70.setText("This Teacher Has Already Been Alcoated");
+                        }
+                    }
+                }
+            }
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jTextField32FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField32FocusGained
         // TODO add your handling code here:
-        if(jTextField32.getText().equals("Hall Name"))
-        {
+        if (jTextField32.getText().equals("Hall Name")) {
             jTextField32.setText("");
         }
     }//GEN-LAST:event_jTextField32FocusGained
 
     private void jTextField32FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField32FocusLost
         // TODO add your handling code here:
-        if(jTextField32.getText().equals(""))
-        {
-           jTextField32.setText("Hall Name");
+        if (jTextField32.getText().equals("")) {
+            jTextField32.setText("Hall Name");
         }
     }//GEN-LAST:event_jTextField32FocusLost
 
@@ -4276,17 +4505,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField33FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField33FocusGained
         // TODO add your handling code here:
-        if(jTextField33.getText().equals("Total Rooms"))
-        {
+        if (jTextField33.getText().equals("Total Rooms")) {
             jTextField33.setText("");
         }
     }//GEN-LAST:event_jTextField33FocusGained
 
     private void jTextField33FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField33FocusLost
         // TODO add your handling code here:
-        if(jTextField33.getText().equals(""))
-        {
-          jTextField33.setText("Total Rooms");
+        if (jTextField33.getText().equals("")) {
+            jTextField33.setText("Total Rooms");
         }
     }//GEN-LAST:event_jTextField33FocusLost
 
@@ -4300,17 +4527,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField34FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField34FocusGained
         // TODO add your handling code here:
-        if(jTextField34.getText().equals("Scholarship Name"))
-        {
-           jTextField34.setText("");
+        if (jTextField34.getText().equals("Scholarship Name")) {
+            jTextField34.setText("");
         }
     }//GEN-LAST:event_jTextField34FocusGained
 
     private void jTextField34FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField34FocusLost
         // TODO add your handling code here:
-        if(jTextField34.getText().equals(""))
-        {
-           jTextField34.setText("Scholarship Name");
+        if (jTextField34.getText().equals("")) {
+            jTextField34.setText("Scholarship Name");
         }
     }//GEN-LAST:event_jTextField34FocusLost
 
@@ -4320,17 +4545,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField35FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField35FocusGained
         // TODO add your handling code here:
-        if(jTextField35.getText().equals("Scholarship Amount"))
-        {
+        if (jTextField35.getText().equals("Scholarship Amount")) {
             jTextField35.setText("");
         }
     }//GEN-LAST:event_jTextField35FocusGained
 
     private void jTextField35FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField35FocusLost
         // TODO add your handling code here:
-        if(jTextField35.getText().equals(""))
-        {
-           jTextField35.setText("Scholarship Amount");
+        if (jTextField35.getText().equals("")) {
+            jTextField35.setText("Scholarship Amount");
         }
     }//GEN-LAST:event_jTextField35FocusLost
 
@@ -4340,17 +4563,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField36FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField36FocusGained
         // TODO add your handling code here:
-        if(jTextField36.getText().equals("Scholarship Eligibility"))
-        {
+        if (jTextField36.getText().equals("Scholarship Eligibility")) {
             jTextField36.setText("");
         }
     }//GEN-LAST:event_jTextField36FocusGained
 
     private void jTextField36FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField36FocusLost
         // TODO add your handling code here:
-        if(jTextField36.getText().equals(""))
-        {
-           jTextField36.setText("Scholarship Eligibility");
+        if (jTextField36.getText().equals("")) {
+            jTextField36.setText("Scholarship Eligibility");
         }
     }//GEN-LAST:event_jTextField36FocusLost
 
@@ -4378,17 +4599,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
         // TODO add your handling code here:
-        if(jTextField2.getText().equals("Module Name"))
-        {
+        if (jTextField2.getText().equals("Module Name")) {
             jTextField2.setText("");
         }
     }//GEN-LAST:event_jTextField2FocusGained
 
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
         // TODO add your handling code here:
-        if(jTextField2.getText().equals(""))
-        {
-           jTextField2.setText("Module Name");
+        if (jTextField2.getText().equals("")) {
+            jTextField2.setText("Module Name");
         }
     }//GEN-LAST:event_jTextField2FocusLost
 
@@ -4398,17 +4617,15 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
         // TODO add your handling code here:
-        if(jTextField3.getText().equals("Amount"))
-        {
+        if (jTextField3.getText().equals("Amount")) {
             jTextField3.setText("");
         }
     }//GEN-LAST:event_jTextField3FocusGained
 
     private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
         // TODO add your handling code here:
-        if(jTextField3.getText().equals(""))
-        {
-           jTextField3.setText("Amount");
+        if (jTextField3.getText().equals("")) {
+            jTextField3.setText("Amount");
         }
     }//GEN-LAST:event_jTextField3FocusLost
 
@@ -4425,15 +4642,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTextField23FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusGained
         // TODO add your handling code here:
-         if(jTextField23.getText().equals("Year of Joining"))
-        {
+        if (jTextField23.getText().equals("Year of Joining")) {
             jTextField23.setText("");
         }
     }//GEN-LAST:event_jTextField23FocusGained
 
     private void jTextField23FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField23FocusLost
         // TODO add your handling code here:
-         if (jTextField23.getText().equals("")) {
+        if (jTextField23.getText().equals("")) {
             jTextField23.setText("Year of Joining");
         }
     }//GEN-LAST:event_jTextField23FocusLost
@@ -4730,7 +4946,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jComboBox5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox5ItemStateChanged
         // TODO add your handling code here:
-         String item = jComboBox5.getSelectedItem().toString();
+        String item = jComboBox5.getSelectedItem().toString();
         String[] tableData = {"Sr.No", "Program ID", "PLO ID", "PLO"};
         DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
         String[] addList = new String[4];
@@ -4745,6 +4961,7 @@ public class AdminFrame extends javax.swing.JFrame {
                     addList[3] = pr.getPlo_ArrayList().get(j).getPlo_description();
                     dataModel.addRow(addList);
                     jTable9.setModel(dataModel);
+
                 }
             }
 
@@ -4753,7 +4970,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jTable10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable10MouseClicked
         // TODO add your handling code here:
-         DefaultTableModel tblmodel = (DefaultTableModel) jTable10.getModel();
+        DefaultTableModel tblmodel = (DefaultTableModel) jTable10.getModel();
         int rowIndex = jTable10.getSelectedRow();
         jTextField9.setText(tblmodel.getValueAt(rowIndex, 0).toString());
         jTextField10.setText(tblmodel.getValueAt(rowIndex, 1).toString());
@@ -4764,40 +4981,38 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
-          DefaultTableModel model = (DefaultTableModel) jTable10.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable10.getModel();
         if (jTable10.getSelectedRowCount() == 1) {
             int rowIndex = jTable10.getSelectedRow();
             String proo_id = model.getValueAt(rowIndex, 4).toString();
             String cour_id = model.getValueAt(rowIndex, 1).toString();
-             String name = jTextField9.getText();
-        String ID = jTextField10.getText();
-        String sem = jTextField11.getText();
-        String hours = jTextField12.getText();
-        String pro_id = jComboBox6.getSelectedItem().toString();
+            String name = jTextField9.getText();
+            String ID = jTextField10.getText();
+            String sem = jTextField11.getText();
+            String hours = jTextField12.getText();
+            String pro_id = jComboBox6.getSelectedItem().toString();
             if (name != "Course Name" && ID != "Course ID" && sem != "Semester" && hours != "Credit Hours" && pro_id != "Select Program ID") {
-            if (Courses.validate_course_name(name) && Courses.validate_courseID(ID) && Courses.sem_validator(sem) && Courses.hourse_validator(hours)) {
-                 for(int i=0;i<driverr.getPrograms_added().size();i++)
-                {
-                    Program pr = driverr.getPrograms_added().get(i);
-                    if(pr.getProgram_id().equals(proo_id))
-                    {
-                    Courses cour = new Courses(name, ID, sem, hours,pro_id);
-                   pr.update_course(cour, cour_id);
-                    model.setValueAt(name, rowIndex, 0);
-                    model.setValueAt(ID, rowIndex, 1);
-                    model.setValueAt(hours, rowIndex, 3);
-                    model.setValueAt(sem, rowIndex, 2);
-                    model.setValueAt(pro_id, rowIndex, 4);
-                     jTextField9.setText("Course Name");
-                jTextField11.setText("Semester");
-                jTextField10.setText("Course ID");
-               jTextField12.setText("Credit Hours");
-               jLabel62.setVisible(true);
-                jLabel62.setForeground(new java.awt.Color(41, 168, 72));
-                jLabel62.setText("Courses Has Been Updated");
-
+                if (Courses.validate_course_name(name) && Courses.validate_courseID(ID) && Courses.sem_validator(sem) && Courses.hourse_validator(hours)) {
+                    for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                        Program pr = driverr.getPrograms_added().get(i);
+                        if (pr.getProgram_id().equals(proo_id)) {
+                            Courses cour = new Courses(name, ID, sem, hours, pro_id);
+                            pr.update_course(cour, cour_id);
+                            model.setValueAt(name, rowIndex, 0);
+                            model.setValueAt(ID, rowIndex, 1);
+                            model.setValueAt(hours, rowIndex, 3);
+                            model.setValueAt(sem, rowIndex, 2);
+                            model.setValueAt(pro_id, rowIndex, 4);
+                            jTextField9.setText("Course Name");
+                            jTextField11.setText("Semester");
+                            jTextField10.setText("Course ID");
+                            jTextField12.setText("Credit Hours");
+                            jLabel62.setVisible(true);
+                            jLabel62.setForeground(new java.awt.Color(41, 168, 72));
+                            jLabel62.setText("Courses Has Been Updated");
+                            break;
+                        }
                     }
-                }
                 }
             } else {
                 jLabel44.show();
@@ -4808,27 +5023,356 @@ public class AdminFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton15ActionPerformed
 
+    private void jTable12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable12MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel tblmodel = (DefaultTableModel) jTable12.getModel();
+        int rowIndex = jTable12.getSelectedRow();
+        jTextField13.setText(tblmodel.getValueAt(rowIndex, 3).toString());
+        jComboBox7.setSelectedItem(tblmodel.getValueAt(rowIndex, 1).toString());
+    }//GEN-LAST:event_jTable12MouseClicked
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable12.getModel();
+        if (jTable12.getSelectedRowCount() == 1) {
+            int rowIndex = jTable12.getSelectedRow();
+            String clo = jTextField13.getText();
+            String id_new = jComboBox7.getSelectedItem().toString();
+            String cour_id_old = model.getValueAt(rowIndex, 1).toString();
+            String clo_id_old = model.getValueAt(rowIndex, 2).toString();
+            if (clo != "Enter CLO" && id_new != "Select Course ID") {
+                for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                    Program pr = driverr.getPrograms_added().get(i);
+                    for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                        Courses cour = pr.getCourses_ArrayList().get(k);
+                        if (cour.getCourse_ID().equals(id_new)) {
+                            CLOs clos = new CLOs(clo);
+                            cour.update_clo(clos, cour_id_old, clo_id_old);
+                            model.setValueAt(model.getValueAt(rowIndex, 0).toString(), rowIndex, 0);
+                            model.setValueAt(cour_id_old, rowIndex, 1);
+                            model.setValueAt(clos.getClo_ID(), rowIndex, 2);
+                            model.setValueAt(clos.getClos(), rowIndex, 3);
+                            jTextField13.setText("Enter CLO");
+                            break;
+
+                        }
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable12.getModel();
+        if (jTable12.getSelectedRowCount() == 1) {
+            int rowIndex = jTable12.getSelectedRow();
+            String cour_id_old = model.getValueAt(rowIndex, 1).toString();
+            String clo_id_old = model.getValueAt(rowIndex, 2).toString();
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    if (cour.getCourse_ID().equals(cour_id_old)) {
+                        Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                        while (iterator.hasNext()) {
+                            CLOs cl = iterator.next();
+                            if (cl.getClo_ID().equals(clo_id_old)) {
+                                iterator.remove();
+                                model.removeRow(rowIndex);
+                                jTextField13.setText("Enter CLO");
+                                break;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jTable22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable22MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel tblmodel = (DefaultTableModel) jTable22.getModel();
+        int rowIndex = jTable22.getSelectedRow();
+        jTextField15.setText(tblmodel.getValueAt(rowIndex, 2).toString());
+
+    }//GEN-LAST:event_jTable22MouseClicked
+
+    private void jPanel22MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel22MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel22MouseEntered
+
+    private void jComboBox14ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox14ItemStateChanged
+        // TODO add your handling code here:
+        int x = 0;
+        jTable22.removeAll();
+        String id = jComboBox14.getSelectedItem().toString();
+        String[] tableData = {"Sr. No", "Course ID", "CLO ID", "CLO"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[4];
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                Courses cour = pr.getCourses_ArrayList().get(k);
+                if (cour.getCourse_ID().equals(id)) {
+                    Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                    while (iterator.hasNext()) {
+                        CLOs cl = iterator.next();
+
+                        addList[0] = x + 1 + "";
+                        addList[1] = cour.getCourse_ID();
+                        addList[2] = cl.getClo_ID();
+                        addList[3] = cl.getClos();
+
+                        dataModel.addRow(addList);
+                        jTable22.setModel(dataModel);
+
+                    }
+                }
+
+            }
+        }
+    }//GEN-LAST:event_jComboBox14ItemStateChanged
+
+    private void jTable11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable11MouseClicked
+        // TODO add your handling code here:
+          DefaultTableModel tblmodel = (DefaultTableModel) jTable11.getModel();
+        int rowIndex = jTable11.getSelectedRow();
+        jTextField15.setText(tblmodel.getValueAt(rowIndex, 2).toString());
+        jTextField16.setText(tblmodel.getValueAt(rowIndex, 3).toString());
+    }//GEN-LAST:event_jTable11MouseClicked
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) jTable11.getModel();
+         if (jTable11.getSelectedRowCount() == 1) {
+            int rowIndex = jTable11.getSelectedRow();
+            String rubric = jTextField16.getText();
+          
+            String cour_id_old = model.getValueAt(rowIndex, 1).toString();
+            String clo_id_old = model.getValueAt(rowIndex, 2).toString();
+              String rubric_id_old = model.getValueAt(rowIndex, 4).toString();
+            if (rubric != "Rubric" ) 
+             for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    if (cour.getCourse_ID().equals(cour_id_old)) {
+                        Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                        while (iterator.hasNext()) {
+                            CLOs cl = iterator.next();
+                            if (cl.getClo_ID().equals(clo_id_old)) {
+                                
+                                for(int j=0; j<cl.getRubric_list().size();j++)
+                                {
+                                    if(cl.getRubric_list().get(j).getRubric_ID().equals(rubric_id_old))
+                                    {
+                                        Rubrics r = new Rubrics(rubric);
+                                        cl.getRubric_list().set(j, r);
+                                         model.setValueAt(model.getValueAt(rowIndex, 0).toString(), rowIndex, 0);
+                            model.setValueAt(cour_id_old, rowIndex, 1);
+                            model.setValueAt(clo_id_old, rowIndex, 2);
+                            model.setValueAt(r.getName(), rowIndex, 3);
+                            model.setValueAt(r.getRubric_ID(), rowIndex, 4);
+                            break;
+                                    }
+                                }
+                               
+                            }
+
+                        }
+
+                    }
+                }
+            }
+            
+        }
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+          DefaultTableModel model = (DefaultTableModel) jTable11.getModel();
+         if (jTable11.getSelectedRowCount() == 1) {
+            int rowIndex = jTable11.getSelectedRow();
+            String rubric = jTextField16.getText();
+          
+            String cour_id_old = model.getValueAt(rowIndex, 1).toString();
+            String clo_id_old = model.getValueAt(rowIndex, 2).toString();
+              String rubric_id_old = model.getValueAt(rowIndex, 4).toString();
+            if (rubric != "Rubric" ) 
+             for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    if (cour.getCourse_ID().equals(cour_id_old)) {
+                        Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                        while (iterator.hasNext()) {
+                            CLOs cl = iterator.next();
+                            if (cl.getClo_ID().equals(clo_id_old)) {
+                                
+                                for(int j=0; j<cl.getRubric_list().size();j++)
+                                {
+                                    if(cl.getRubric_list().get(j).getRubric_ID().equals(rubric_id_old))
+                                    {
+                                        cl.getRubric_list().remove(j);
+                                        model.removeRow(rowIndex);            
+                                        break;
+                                    }
+                                }
+                               
+                            }
+
+                        }
+
+                    }
+                }
+            }
+            
+        }
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
+        // TODO add your handling code here:
+        jComboBox8.removeAllItems();
+        String cou_id = jComboBox3.getSelectedItem().toString();
+        for(int k=0;k<driverr.getPrograms_added().size();k++)
+        {
+            Program pr = driverr.getPrograms_added().get(k);
+            for(int j=0;j<pr.getCourses_ArrayList().size();j++)
+            {
+                if(pr.getCourses_ArrayList().get(j).getCourse_ID().equals(cou_id))
+                {
+                     Iterator<CLOs> iterator = pr.getCourses_ArrayList().get(j).getCourse_clo_LinkedList().iterator();
+                        while (iterator.hasNext()) {
+                         CLOs cl = iterator.next();
+                         jComboBox8.addItem(cl.getClo_ID());
+                        }
+                        }
+            }
+        }
+        
+    }//GEN-LAST:event_jComboBox3ItemStateChanged
+
+    private void jComboBox8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox8ItemStateChanged
+        // TODO add your handling code here:
+         int x = 0;
+        jTable13.removeAll();
+        String cou_id = jComboBox3.getSelectedItem().toString();
+        String clo_id = jComboBox8.getSelectedItem().toString();
+        String[] tableData = {"Sr. No", "Course ID", "CLO ID", "Rubric","Rubric ID"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[5];
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                Courses cour = pr.getCourses_ArrayList().get(k);
+                if (cour.getCourse_ID().equals(cou_id)) {
+                    Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                    while (iterator.hasNext()) {
+                        CLOs cl = iterator.next();
+                      if(cl.getClo_ID().equals(clo_id))
+                      {
+                          for(int j=0;j<cl.getRubric_list().size();j++)
+                          {
+                              addList[0] = x + 1 + "";
+                        addList[1] = cour.getCourse_ID();
+                        addList[2] = cl.getClo_ID();
+                        addList[3] = cl.getRubric_list().get(j).getName();
+                        addList[4] = cl.getRubric_list().get(j).getRubric_ID();
+                        dataModel.addRow(addList);
+                        jTable13.setModel(dataModel);
+                        x++;
+                          }
+                          
+                      }
+                        
+
+                    }
+                }
+
+            }
+        }
+    }//GEN-LAST:event_jComboBox8ItemStateChanged
+
+    private void jTable13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable13MouseClicked
+        // TODO add your handling code here:
+         DefaultTableModel tblmodel = (DefaultTableModel) jTable13.getModel();
+        int rowIndex = jTable13.getSelectedRow();
+        jTextField17.setText(tblmodel.getValueAt(rowIndex, 4).toString());
+    }//GEN-LAST:event_jTable13MouseClicked
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        // TODO add your handling code here:
+          DefaultTableModel model = (DefaultTableModel) jTable17.getModel();
+         if (jTable17.getSelectedRowCount() == 1) {
+            int rowIndex = jTable17.getSelectedRow();
+          
+            String cour_id_old = model.getValueAt(rowIndex, 6).toString();
+           String tea_id_old = model.getValueAt(rowIndex, 5).toString();
+         
+         
+         
+        
+            for(int i=0;i< driverr.getPrograms_added().size();i++)
+            {
+                Program pr = driverr.getPrograms_added().get(i);
+                for(int j=0;j<pr.getCourses_ArrayList().size();j++)
+                {
+                    Courses cour =  pr.getCourses_ArrayList().get(j);
+                    if(cour.getCourse_ID().equals(cour_id_old))
+                    {
+                        if(cour.getCourse_alocate_teac().equals(tea_id_old))
+                        {
+                            cour.setCourse_alocate_teac("");
+                            jLabel72.setVisible(true);
+                               jLabel72.setForeground(new java.awt.Color(41, 168, 72));
+                               jLabel72.setText("Teacher Has Been De-Alocated");
+                               break;
+                        }
+                        else{
+                        jLabel72.setVisible(true);
+                               jLabel72.setForeground(new java.awt.Color(41, 168, 72));
+                               jLabel72.setText("There is some issue");
+                        }
+                    }
+                }
+            }
+         }
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jTable16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable16MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel tblmodel = (DefaultTableModel) jTable16.getModel();
+        int rowIndex = jTable16.getSelectedRow();
+        jTextField30.setText(tblmodel.getValueAt(rowIndex, 0).toString());
+        jTextField31.setText(tblmodel.getValueAt(rowIndex, 6).toString());
+    }//GEN-LAST:event_jTable16MouseClicked
+
     private void showCourses(JTable table) {
-        String[] tableData = {"Course Name", "Course ID", "Semester", "Credit Hours","Program ID"};
+        String[] tableData = {"Course Name", "Course ID", "Semester", "Credit Hours", "Program ID"};
         DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
         String[] addList = new String[5];
 
         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
             Program pr = driverr.getPrograms_added().get(i);
-           for(int k = 0; k< pr.getCourses_ArrayList().size();k++)
-           {
-             addList[0] = pr.getCourses_ArrayList().get(k).getCourse_name();
-            addList[1] = pr.getCourses_ArrayList().get(k).getCourse_ID();
-            addList[2] = pr.getCourses_ArrayList().get(k).getCourse_semester();
-            addList[3] = pr.getCourses_ArrayList().get(k).getCourse_CH();
-            addList[3] = pr.getProgram_id();
-            dataModel.addRow(addList);
-            table.setModel(dataModel);
-           }
-            
+            for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                addList[0] = pr.getCourses_ArrayList().get(k).getCourse_name();
+                addList[1] = pr.getCourses_ArrayList().get(k).getCourse_ID();
+                addList[2] = pr.getCourses_ArrayList().get(k).getCourse_semester();
+                addList[3] = pr.getCourses_ArrayList().get(k).getCourse_CH();
+                addList[3] = pr.getProgram_id();
+                dataModel.addRow(addList);
+                table.setModel(dataModel);
+                
+            }
 
         }
     }
+
     private void showPrograms(JTable table) {
         String[] tableData = {"Sr.No", "Program Name", "Program ID", "HOD"};
         DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
@@ -4848,7 +5392,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }
 
     private void showTeachers(JTable table) {
-        String[] tableData = {"Name", "Department", "CNIC", "Phone Number", "DOB", "ID"};
+        String[] tableData = {"Name", "Department", "CNIC", "Phone Number", "DOB","Year", "ID"};
         DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
         String[] addList = new String[7];
 
@@ -4927,15 +5471,12 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton34;
@@ -4953,6 +5494,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
     private javax.swing.JComboBox<String> jComboBox13;
+    private javax.swing.JComboBox<String> jComboBox14;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
@@ -5021,7 +5563,17 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -5104,6 +5656,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -5196,6 +5749,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable20;
     private javax.swing.JTable jTable21;
+    private javax.swing.JTable jTable22;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
@@ -5206,7 +5760,6 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
