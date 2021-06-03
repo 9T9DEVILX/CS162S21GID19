@@ -6,6 +6,8 @@
 package dlps;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -795,6 +797,11 @@ public class TeacherFrame extends javax.swing.JFrame {
                 "Course name", "Course ID", "semester", "Credit Hour", "Program"
             }
         ));
+        CourseTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CourseTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(CourseTable);
 
         jPanel12.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 791, 190));
@@ -804,7 +811,7 @@ public class TeacherFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Sr.NO", "Student Name", "Stu ID", "Semester", "Phone Number"
+                "Sr.NO", "Student Name", "Stu ID", "Phone Number"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
@@ -2132,7 +2139,7 @@ public class TeacherFrame extends javax.swing.JFrame {
             addList[1] = pr.getCourses_ArrayList().get(k).getCourse_ID();
             addList[2] = pr.getCourses_ArrayList().get(k).getCourse_semester();
             addList[3] = pr.getCourses_ArrayList().get(k).getCourse_CH();
-            addList[3] = pr.getProgram_id();
+            addList[4] = pr.getProgram_id();
             dataModel.addRow(addList);
             CourseTable.setModel(dataModel);
            }
@@ -2293,6 +2300,48 @@ public class TeacherFrame extends javax.swing.JFrame {
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void CourseTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CourseTableMouseClicked
+   DefaultTableModel tblmodel = (DefaultTableModel) CourseTable.getModel();
+        List<String> list = new ArrayList<>();
+  int rowIndex = CourseTable.getSelectedRow();
+   String courseCode = tblmodel.getValueAt(rowIndex, 1).toString(); 
+         String[] tableData = {"SR No.", "Student Name", "Stu ID", "Phone Number"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList1 = new String[4];
+
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+           for(int k = 0; k< pr.getCourses_ArrayList().size();k++)
+           {  
+               if( courseCode.equals(pr.getCourses_ArrayList().get(k).getCourse_ID()) )
+               {
+                    list=pr.getCourses_ArrayList().get(k).getStu_register_ArrayList();
+                    break;
+               }
+              
+            
+           }
+            
+
+        }  
+        
+        for (int j = 0 ; j< driverr.getPerson_list().size() ; j++)
+        {
+            if (driverr.getPerson_list().get(j).getPerson_type().equals("Student"))
+            {
+                Student s = (Student) driverr.getPerson_list().get(j);
+                for (int l =0;l < list.size();l++)
+                {
+                    if(s.getStudent_ID().equals(list.get(l)))
+                    {
+                        /////////////////// 
+                    }
+                }
+                
+            }
+        }
+    }//GEN-LAST:event_CourseTableMouseClicked
 
     /**
      * @param args the command line arguments
