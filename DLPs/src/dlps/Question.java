@@ -81,6 +81,20 @@ public class Question {
     }
     
     
+    public Question( String ques_name, String quest_id , String quest_total_marks ,String clo_associated , String rubric_associated , String obt_mark )
+    {
+        this.ques_name = ques_name;
+         this.quest_id = quest_id;
+          this.ques_total_marks = quest_total_marks;
+          this.clo_associated = clo_associated;
+           this.ruric_associated = rubric_associated;
+           this.obtained_marks = obt_mark;
+           
+          
+    }
+    public Question(){
+        //default Construqtor
+    }
     ///////////////////////////////////// Simple Functions ///////////////////////////
     public String id_generator() {
         String chars = "0123456789";
