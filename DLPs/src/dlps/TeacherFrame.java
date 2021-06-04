@@ -1078,7 +1078,7 @@ public class TeacherFrame extends javax.swing.JFrame {
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_checkmark_16.png"))); // NOI18N
         jButton5.setText("Done Assignment");
-        jPanel14.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, 34));
+        jPanel14.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 170, 34));
 
         jTextField2.setText("Question");
         jTextField2.setBorder(null);
@@ -1165,7 +1165,12 @@ public class TeacherFrame extends javax.swing.JFrame {
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
         jButton6.setText("Add Assignment");
-        jPanel14.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 160, 34));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 160, 40));
 
         jButton7.setBackground(new java.awt.Color(0, 0, 0));
         jButton7.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -2155,7 +2160,16 @@ public class TeacherFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel41MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-        // TODO add your handling code here:
+for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                  jComboBox2.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+
+                }
+            }
+
+        }                   // TODO add your handling code here:
         jTabbedPane3.setSelectedIndex(0);
     }//GEN-LAST:event_jPanel5MouseClicked
 
@@ -2342,6 +2356,27 @@ public class TeacherFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_CourseTableMouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+                 String assName = jTextField1.getText(); 
+                 String course_code = jComboBox2.getSelectedItem().toString();
+                 for ( int i=0; i< driverr.getPrograms_added().get(i).getCourses_ArrayList().size();i++)
+                 {
+                     if( course_code.equals(driverr.getPrograms_added().get(i).getCourses_ArrayList().get(i).getCourse_ID()))
+                     {
+                         Assignments as = new Assignments();
+                         as.setAssign_name(assName);
+                         as.setAssign_ID("");
+                         Question q = new Question("","","","","","");
+                         List < Question> q1 = new ArrayList<>();
+                         q1.add(q);
+                         as.setAssign_question(q1);
+                         driverr.getPrograms_added().get(i).getCourses_ArrayList().get(i).getCourse_assignment_ArrayList().add(as);
+                         
+                     }
+                 }
+                 
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
