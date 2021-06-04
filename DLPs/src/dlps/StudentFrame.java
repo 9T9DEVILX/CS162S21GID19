@@ -6,6 +6,8 @@
 package dlps;
 
 import java.awt.Color;
+import java.util.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,8 +18,12 @@ public class StudentFrame extends javax.swing.JFrame {
     /**
      * Creates new form StudentFrame
      */
-    public StudentFrame() {
+    DLPs driverr = DLPs.driver_instance();
+    String Student_id;
+
+    public StudentFrame(String id) {
         initComponents();
+        this.Student_id = id;
     }
 
     /**
@@ -75,6 +81,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -83,6 +90,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jLabel32 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
@@ -689,10 +697,7 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Course name", "Course ID", "semester", "Credit Hour", "Program"
@@ -700,17 +705,25 @@ public class StudentFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 98, 791, 220));
+        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 820, 220));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Un-Register");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 380, 126, 34));
 
         jLabel31.setForeground(new java.awt.Color(102, 102, 102));
         jLabel31.setText("Select From the table to  Un-register Available Courses");
-        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+
+        jLabel38.setText("jLabel38");
+        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, -1, -1));
 
         jTabbedPane2.addTab("", jPanel5);
 
@@ -727,6 +740,11 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Semester" }));
         jComboBox2.setBorder(null);
+        jComboBox2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox2ItemStateChanged(evt);
+            }
+        });
         jPanel6.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 81, 279, 28));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -760,6 +778,9 @@ public class StudentFrame extends javax.swing.JFrame {
         });
         jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 390, 126, 34));
 
+        jLabel39.setText("jLabel39");
+        jPanel6.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, -1, -1));
+
         jTabbedPane2.addTab("", jPanel6);
 
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
@@ -776,6 +797,11 @@ public class StudentFrame extends javax.swing.JFrame {
         jComboBox1.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course Code", " " }));
         jComboBox1.setBorder(null);
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
         jPanel21.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 280, -1));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -789,6 +815,11 @@ public class StudentFrame extends javax.swing.JFrame {
                 "CLO #", "CLO ID", "CLO"
             }
         ));
+        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable3MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTable3);
 
         jPanel21.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 720, 140));
@@ -943,14 +974,16 @@ public class StudentFrame extends javax.swing.JFrame {
         jComboBox3.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course Code", "" }));
         jComboBox3.setBorder(null);
+        jComboBox3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox3ItemStateChanged(evt);
+            }
+        });
         jPanel19.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 280, -1));
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Sr. No", "Assignment Name", "Assignment Name", "Total Marks"
@@ -983,7 +1016,12 @@ public class StudentFrame extends javax.swing.JFrame {
         jComboBox4.setForeground(new java.awt.Color(102, 102, 102));
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course Code", " " }));
         jComboBox4.setBorder(null);
-        jPanel20.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 280, -1));
+        jComboBox4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox4ItemStateChanged(evt);
+            }
+        });
+        jPanel20.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 280, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel34.setText("Course");
@@ -1003,15 +1041,7 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jTable7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Ques #", "Total marks", "obtained marks", "rubrics", "Rubric level", "percentage"
@@ -1026,20 +1056,17 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Sr. No", "Assignment Name", "Assignment Name", "Total Marks"
             }
         ));
+        jTable6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable6MouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(jTable6);
 
         jPanel20.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 780, 140));
@@ -1472,6 +1499,34 @@ public class StudentFrame extends javax.swing.JFrame {
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(1);
+        List<String> reg = new ArrayList<>();
+        String[] tableData = {"Course", "Course ID", "Semester", "Credit Hour", "Program"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[5];
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    reg = cour.getStu_register_ArrayList();
+                    for (int l = 0; l < cour.getStu_register_ArrayList().size(); l++) {
+                        if (cour.getStu_register_ArrayList().get(l).equals(this.Student_id)) {
+                            addList[0] = cour.getCourse_name();
+                            addList[1] = cour.getCourse_ID();
+                            addList[2] = cour.getCourse_semester();
+                            addList[3] = cour.getCourse_CH();
+                            addList[4] = pr.getProgram_id();
+
+                            dataModel.addRow(addList);
+                            jTable1.setModel(dataModel);
+                        }
+                    }
+
+                }
+            }
+
+        }
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
@@ -1489,6 +1544,16 @@ public class StudentFrame extends javax.swing.JFrame {
     private void jPanel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(2);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                  jComboBox3.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+                  
+                }
+            }
+
+        }
     }//GEN-LAST:event_jPanel15MouseClicked
 
     private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
@@ -1608,16 +1673,46 @@ public class StudentFrame extends javax.swing.JFrame {
     private void jPanel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel23MouseClicked
         // TODO add your handling code here:
         jTabbedPane2.setSelectedIndex(2);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                   jComboBox1.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+                  
+                }
+            }
+
+        }
     }//GEN-LAST:event_jPanel23MouseClicked
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         // TODO add your handling code here:
         jTabbedPane2.setSelectedIndex(0);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                  jComboBox3.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+                  
+                }
+            }
+
+        }
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jPanel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseClicked
         // TODO add your handling code here:
         jTabbedPane2.setSelectedIndex(1);
+         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                  jComboBox4.addItem(pr.getCourses_ArrayList().get(k).getCourse_ID());
+                  
+                }
+            }
+
+        }
     }//GEN-LAST:event_jPanel18MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
@@ -1632,6 +1727,47 @@ public class StudentFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Boolean flag = false;
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        if (jTable2.getSelectedRowCount() == 1) {
+            int rowIndex = jTable2.getSelectedRow();
+            String cour_id = model.getValueAt(rowIndex, 1).toString();
+            String pro_id = model.getValueAt(rowIndex, 4).toString();
+
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                if (pr.getProgram_id().equals(pro_id)) {
+                    for (int j = 0; j < pr.getCourses_ArrayList().size(); j++) {
+                        Courses cour = pr.getCourses_ArrayList().get(j);
+                        if (cour.getCourse_ID().equals(cour_id)) {
+                            for (int l = 0; l < cour.getStu_register_ArrayList().size(); l++) {
+                                if (cour.getStu_register_ArrayList().get(l) != this.Student_id) {
+                                    flag = true;
+
+                                    break;
+                                } else {
+                                    flag = false;
+                                    break;
+                                }
+                            }
+
+                            if (flag == true) {
+                                cour.getStu_register_ArrayList().add(this.Student_id);
+                                jLabel39.setVisible(true);
+                                jLabel39.setForeground(new java.awt.Color(41, 168, 72));
+                                jLabel39.setText("Courses Has been registered");
+                            } else {
+                                jLabel39.setVisible(true);
+                                jLabel39.setForeground(new java.awt.Color(41, 168, 72));
+                                jLabel39.setText("Courses Has already been registered");
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPanel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel31MouseClicked
@@ -1642,16 +1778,273 @@ public class StudentFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel31MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-       jTabbedPane2.setSelectedIndex(0);        // TODO add your handling code here:
+        jTabbedPane2.setSelectedIndex(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-       jTabbedPane2.setSelectedIndex(1);  // TODO add your handling code here:
+        jTabbedPane2.setSelectedIndex(1);  // TODO add your handling code here:
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-jTabbedPane3.setSelectedIndex(1);        // TODO add your handling code here:
+        jTabbedPane3.setSelectedIndex(1);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getSelectedRowCount() == 1) {
+            int rowIndex = jTable1.getSelectedRow();
+
+            String cour_id_old = model.getValueAt(rowIndex, 1).toString();
+            String pro_id_old = model.getValueAt(rowIndex, 4).toString();
+
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                if (pr.getProgram_id().equals(pro_id_old)) {
+                    for (int j = 0; j < pr.getCourses_ArrayList().size(); j++) {
+                        Courses cour = pr.getCourses_ArrayList().get(j);
+                        if (cour.getCourse_ID().equals(cour_id_old)) {
+                            for (int l = 0; l < cour.getStu_register_ArrayList().size(); l++) {
+                                if (cour.getStu_register_ArrayList().get(l).equals(this.Student_id)) {
+                                    cour.getStu_register_ArrayList().remove(l);
+                                    jTable1.remove(rowIndex);
+                                    jLabel38.setVisible(true);
+                                    jLabel38.setForeground(new java.awt.Color(41, 168, 72));
+                                    jLabel38.setText("Courses Has Been Un-Registerd");
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
+        // TODO add your handling code here:
+      String sem = jComboBox2.getSelectedItem().toString();
+        String[] tableData = {"Course", "Course ID", "Semester", "Credit Hour", "Program"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[5];
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            {
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                  if(cour.getCourse_semester().equals(sem))
+                  {
+                       addList[0] = cour.getCourse_name();
+                            addList[1] = cour.getCourse_ID();
+                            addList[2] = cour.getCourse_semester();
+                            addList[3] = cour.getCourse_CH();
+                            addList[4] = pr.getProgram_id();
+
+                            dataModel.addRow(addList);
+                           jTable2.setModel(dataModel);
+                  }
+                }
+            }
+        }
+    }//GEN-LAST:event_jComboBox2ItemStateChanged
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        // TODO add your handling code here:
+        int x = 0;
+        String id = jComboBox1.getSelectedItem().toString();
+         String[] tableData = {"CLO#", "CLO ID", "CLO"};
+        DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+        String[] addList = new String[3];
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                Courses cour = pr.getCourses_ArrayList().get(k);
+                if (cour.getCourse_ID().equals(id)) {
+                    Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                    while (iterator.hasNext()) {
+                        CLOs cl = iterator.next();
+
+                        addList[0] = "CLO" + x+1;
+                        addList[1] = cour.getCourse_ID();
+                        addList[2] = cl.getClo_ID();
+                        addList[3] = cl.getClos();
+
+                        dataModel.addRow(addList);
+                        jTable3.setModel(dataModel);
+x++;
+                    }
+                }
+
+            }
+        }
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
+
+    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
+        // TODO add your handling code here:
+        int x = 0;
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        int index = jTable3.getSelectedRow();
+        String clo_id_old = model.getValueAt(index, 1).toString();
+        String id = jComboBox1.getSelectedItem().toString();
+        if (jTable3.getSelectedRowCount() == 1) {
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                Program pr = driverr.getPrograms_added().get(i);
+                for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
+                    Courses cour = pr.getCourses_ArrayList().get(k);
+                    if (cour.getCourse_ID().equals(id)) {
+
+                        Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
+                        while (iterator.hasNext()) {
+                            CLOs cl = iterator.next();
+                            if (cl.getClo_ID().equals(clo_id_old)) {
+                                String[] tableData = {"Sr. NO", "Rubric Name", "Poor", "Average", "Good", "Excellent"};
+                                DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+                                String[] addList = new String[6];
+                                for (int l = 0; l < cl.getRubric_list().size(); l++) {
+                                    Rubrics ru = cl.getRubric_list().get(l);
+                                    addList[0] = "" + x + 1;
+                                    addList[1] = ru.getName();
+                                    addList[2] = ru.getLevels().getPoor_level();
+                                    addList[3] = ru.getLevels().getAverage_level();
+                                    addList[4] = ru.getLevels().getGood_level();
+                                    addList[5] = ru.getLevels().getExcellent_level();
+
+                                    dataModel.addRow(addList);
+                                    jTable3.setModel(dataModel);
+                                    x++;
+                                }
+                                 break;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+    }//GEN-LAST:event_jTable3MouseClicked
+
+    private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
+        // TODO add your handling code here:
+        int x = 0;
+        String id = jComboBox1.getSelectedItem().toString();
+        for(int i=0;i< driverr.getPrograms_added().size();i++)
+        {
+            Program pr = driverr.getPrograms_added().get(i);
+            for(int k=0;k<pr.getCourses_ArrayList().size();k++)
+            {
+                Courses cou = pr.getCourses_ArrayList().get(k);
+                if(cou.getCourse_ID().equals(id))
+                {
+                     String[] tableData = {"Sr. NO", "Assignment Name", "Assignment ID", "Total Marks" };
+                                DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+                                String[] addList = new String[4];
+                    for(int l=0;l< cou.getCourse_assignment_ArrayList().size();l++)
+                    {
+                        int total_marks = 0;
+                        Assignments ass =  (Assignments) cou.getCourse_assignment_ArrayList().get(l);
+                        for(int j=0;j< ass.getAssign_question().size();j++)
+                        {                            
+                            total_marks += Integer.parseInt(ass.getAssign_question().get(j).getQues_total_marks()) ;
+                        }
+                        addList[0] = "" + x + 1;
+                                    addList[1] = ass.getAssign_name();
+                                    addList[2] = ass.getAssign_ID();
+                                    addList[3] = String.valueOf(total_marks);
+                                     dataModel.addRow(addList);
+                                    jTable5.setModel(dataModel);
+                        x++;
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jComboBox3ItemStateChanged
+
+    private void jComboBox4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox4ItemStateChanged
+        // TODO add your handling code here:
+        int x = 0;
+        String id = jComboBox4.getSelectedItem().toString();
+        for(int i=0;i< driverr.getPrograms_added().size();i++)
+        {
+            Program pr = driverr.getPrograms_added().get(i);
+            for(int k=0;k<pr.getCourses_ArrayList().size();k++)
+            {
+                Courses cou = pr.getCourses_ArrayList().get(k);
+                if(cou.getCourse_ID().equals(id))
+                {
+                     String[] tableData = {"Sr. NO", "Assignment Name", "Assignment ID", "Total Marks" };
+                                DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+                                String[] addList = new String[4];
+                    for(int l=0;l< cou.getCourse_assignment_ArrayList().size();l++)
+                    {
+                        int total_marks = 0;
+                        Assignments ass =  (Assignments) cou.getCourse_assignment_ArrayList().get(l);
+                        for(int j=0;j< ass.getAssign_question().size();j++)
+                        {                            
+                            total_marks += Integer.parseInt(ass.getAssign_question().get(j).getQues_total_marks()) ;
+                        }
+                        addList[0] = "" + x + 1;
+                                    addList[1] = ass.getAssign_name();
+                                    addList[2] = ass.getAssign_ID();
+                                    addList[3] = String.valueOf(total_marks);
+                                     dataModel.addRow(addList);
+                                    jTable6.setModel(dataModel);
+                        x++;
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jComboBox4ItemStateChanged
+
+    private void jTable6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable6MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
+        int index = jTable6.getSelectedRow();
+        String ass_id = model.getValueAt(index, 2).toString();
+        String id = jComboBox4.getSelectedItem().toString();
+        int x = 0;
+        if(jTable6.getSelectedRowCount() == 1)
+        {
+            for(int i=0;i< driverr.getPrograms_added().size();i++)
+        {
+            Program pr = driverr.getPrograms_added().get(i);
+            for(int k=0;k<pr.getCourses_ArrayList().size();k++)
+            {
+                Courses cou = pr.getCourses_ArrayList().get(k);
+                if(cou.getCourse_ID().equals(id))
+                {
+                     String[] tableData = {"Ques #", "Total Marks", "Obtained Marks", "Rubrics" ,"Rubric Level Obtained" , "Percentage Obt"};
+                                DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
+                                String[] addList = new String[6];
+                    for(int l=0;l< cou.getCourse_assignment_ArrayList().size();l++)
+                    {
+                        int total_marks = 0;
+                        Assignments ass =  (Assignments) cou.getCourse_assignment_ArrayList().get(l);
+                        if(ass.getAssign_ID().equals(ass_id))
+                        {
+                             for(int j=0;j< ass.getAssign_question().size();j++)
+                        {                            
+                            addList[0] = "" + x + 1;
+                                    addList[1] = ass.getAssign_question().get(j).getQues_total_marks();
+                                    addList[2] = ass.getAssign_question().get(j).getObtained_marks();
+                                    addList[3] = ass.getAssign_question().get(j).getRuric_associated();
+                                    addList[4] = ass.getAssign_question().get(j).getRubric_level_ob();
+                                    addList[5] = String.valueOf(Integer.parseInt(ass.getAssign_question().get(j).getObtained_marks())/Integer.parseInt(ass.getAssign_question().get(j).getQues_total_marks())) ;
+                                    dataModel.addRow(addList);
+                                    jTable6.setModel(dataModel);
+                                    x++;
+                        }
+                        }
+                       
+                        
+                    }
+                }
+            }
+        }
+        }
+    }//GEN-LAST:event_jTable6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1683,7 +2076,7 @@ jTabbedPane3.setSelectedIndex(1);        // TODO add your handling code here:
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentFrame().setVisible(true);
+                new StudentFrame("CS123").setVisible(true);
             }
         });
     }
@@ -1740,6 +2133,8 @@ jTabbedPane3.setSelectedIndex(1);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;

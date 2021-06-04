@@ -3800,14 +3800,8 @@ public class AdminFrame extends javax.swing.JFrame {
         }
           
 
-        for (int i = 0; i < driverr.getPerson_list().size(); i++) {
-            if (driverr.getPerson_list().get(i).getPerson_type().equals("Teacher")) {
-                Teacher tr = (Teacher) driverr.getPerson_list().get(i);
-
-                
-            }
-
-        }
+      
+        
     }//GEN-LAST:event_jPanel34MouseClicked
 
     private void jPanel35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel35MouseClicked
@@ -5120,7 +5114,8 @@ public class AdminFrame extends javax.swing.JFrame {
                 Courses cour = pr.getCourses_ArrayList().get(k);
                 if (cour.getCourse_ID().equals(id)) {
                     Iterator<CLOs> iterator = cour.getCourse_clo_LinkedList().iterator();
-                    while (iterator.hasNext()) {
+                    while (iterator.hasNext()) 
+                    {
                         CLOs cl = iterator.next();
 
                         addList[0] = x + 1 + "";
@@ -5130,10 +5125,9 @@ public class AdminFrame extends javax.swing.JFrame {
 
                         dataModel.addRow(addList);
                         jTable22.setModel(dataModel);
-
+                        x++;
                     }
-                }
-
+                } 
             }
         }
     }//GEN-LAST:event_jComboBox14ItemStateChanged
@@ -5328,6 +5322,7 @@ public class AdminFrame extends javax.swing.JFrame {
                         if(cour.getCourse_alocate_teac().equals(tea_id_old))
                         {
                             cour.setCourse_alocate_teac("");
+                            jTable17.remove(rowIndex);
                             jLabel72.setVisible(true);
                                jLabel72.setForeground(new java.awt.Color(41, 168, 72));
                                jLabel72.setText("Teacher Has Been De-Alocated");

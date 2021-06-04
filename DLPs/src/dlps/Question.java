@@ -19,6 +19,7 @@ public class Question {
     private String clo_associated;
     private String ruric_associated;
     private String obtained_marks;
+    private String rubric_level_ob;
 
     ///////////////////////////////////// Getters ///////////////////////////
     public String getQues_name() {
@@ -45,6 +46,11 @@ public class Question {
         return obtained_marks;
     }
 
+    public String getRubric_level_ob() {
+        return rubric_level_ob;
+    }
+
+    
     ///////////////////////////////////// Setters ///////////////////////////
     public void setQues_name(String ques_name) {
         this.ques_name = ques_name;
@@ -69,6 +75,11 @@ public class Question {
     public void setObtained_marks(String obtained_marks) {
         this.obtained_marks = obtained_marks;
     }
+
+    public void setRubric_level_ob(String rubric_level_ob) {
+        this.rubric_level_ob = rubric_level_ob;
+    }
+    
     
     ///////////////////////////////////// Simple Functions ///////////////////////////
     public String id_generator() {

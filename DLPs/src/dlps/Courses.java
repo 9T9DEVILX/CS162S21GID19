@@ -34,7 +34,7 @@ public class Courses {
        this.course_name = name;
        this.course_CH = hours;
        this.pro_ID = pr_id;
-       this.course_assignment_ArrayList= new ArrayList<Assignments>();
+       this.course_assignment_ArrayList= new ArrayList<>();
        this.course_clo_LinkedList = new LinkedList<>(); 
        this.stu_register_ArrayList = new ArrayList<>();
        this.course_alocate_teac = "";
