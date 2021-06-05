@@ -1,6 +1,8 @@
 package dlps;
 
 import java.awt.Color;
+import java.util.Date;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +19,7 @@ public class LoginFrame extends javax.swing.JFrame {
     /**
      * Creates new form LoginFrame
      */
+    DLPs driverr = DLPs.driver_instance();
     public int a = 0;
     public LoginFrame() {
         initComponents();
@@ -83,6 +86,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         jButton3 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
@@ -94,6 +98,33 @@ public class LoginFrame extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jSeparator17 = new javax.swing.JSeparator();
+        jTextField7 = new javax.swing.JTextField();
+        jSeparator18 = new javax.swing.JSeparator();
+        jTextField8 = new javax.swing.JTextField();
+        jSeparator19 = new javax.swing.JSeparator();
+        jTextField9 = new javax.swing.JTextField();
+        jSeparator20 = new javax.swing.JSeparator();
+        jTextField10 = new javax.swing.JTextField();
+        jSeparator21 = new javax.swing.JSeparator();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jSeparator44 = new javax.swing.JSeparator();
+        jTextField11 = new javax.swing.JTextField();
+        jSeparator22 = new javax.swing.JSeparator();
+        jTextField13 = new javax.swing.JTextField();
+        jSeparator24 = new javax.swing.JSeparator();
+        jTextField14 = new javax.swing.JTextField();
+        jSeparator25 = new javax.swing.JSeparator();
+        jTextField15 = new javax.swing.JTextField();
+        jSeparator26 = new javax.swing.JSeparator();
+        jButton7 = new javax.swing.JButton();
+        jTextField16 = new javax.swing.JTextField();
+        jSeparator27 = new javax.swing.JSeparator();
+        jLabel11 = new javax.swing.JLabel();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jSeparator28 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -523,7 +554,18 @@ public class LoginFrame extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel11.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
+        jPanel11.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, -1, -1));
+
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_add_16.png"))); // NOI18N
+        jButton6.setText("Register");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, -1, 40));
 
         jTabbedPane1.addTab("tab3", jPanel11);
 
@@ -548,9 +590,9 @@ public class LoginFrame extends javax.swing.JFrame {
                 jTextField4FocusLost(evt);
             }
         });
-        jPanel12.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 260, 30));
-        jPanel12.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 260, 10));
-        jPanel12.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 260, 10));
+        jPanel12.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 290, 30));
+        jPanel12.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 290, 10));
+        jPanel12.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 290, 10));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -575,7 +617,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 jTextField5FocusLost(evt);
             }
         });
-        jPanel12.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 260, 30));
+        jPanel12.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 290, 30));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -600,10 +642,185 @@ public class LoginFrame extends javax.swing.JFrame {
                 jTextField6FocusLost(evt);
             }
         });
-        jPanel12.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 260, 30));
-        jPanel12.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 260, 10));
+        jPanel12.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 290, 30));
+        jPanel12.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 290, 10));
 
         jTabbedPane1.addTab("tab4", jPanel12);
+
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("STUDENT Registration");
+        jPanel13.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 230, -1));
+        jPanel13.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 230, 20));
+
+        jTextField7.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField7.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField7.setText("Full Name");
+        jTextField7.setBorder(null);
+        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField7FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 210, 30));
+        jPanel13.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 210, 10));
+
+        jTextField8.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField8.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField8.setText("Email");
+        jTextField8.setBorder(null);
+        jTextField8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField8FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 210, 30));
+        jPanel13.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 210, 10));
+
+        jTextField9.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField9.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField9.setText("Father Name");
+        jTextField9.setBorder(null);
+        jTextField9.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField9FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField9FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 210, 30));
+        jPanel13.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 210, 10));
+
+        jTextField10.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField10.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField10.setText("CNIC");
+        jTextField10.setBorder(null);
+        jTextField10.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField10FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField10FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 210, 30));
+        jPanel13.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 210, 10));
+        jPanel13.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 210, -1));
+
+        jSeparator44.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel13.add(jSeparator44, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 210, 10));
+
+        jTextField11.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField11.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField11.setText("Year Of Joining");
+        jTextField11.setBorder(null);
+        jTextField11.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField11FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField11FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 210, 30));
+        jPanel13.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 210, 10));
+
+        jTextField13.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField13.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField13.setText("Semester");
+        jTextField13.setBorder(null);
+        jTextField13.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField13FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField13FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 210, 30));
+        jPanel13.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 210, 10));
+
+        jTextField14.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField14.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField14.setText("Domicel");
+        jTextField14.setBorder(null);
+        jTextField14.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField14FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField14FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 210, 30));
+        jPanel13.add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 210, 10));
+
+        jTextField15.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField15.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField15.setText("Phone Number");
+        jTextField15.setBorder(null);
+        jTextField15.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField15FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField15FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 210, 30));
+        jPanel13.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 210, 10));
+
+        jButton7.setBackground(new java.awt.Color(255, 255, 255));
+        jButton7.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_reset_32.png"))); // NOI18N
+        jButton7.setText("REGISTER");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
+
+        jTextField16.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField16.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField16.setText("Address");
+        jTextField16.setBorder(null);
+        jTextField16.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField16FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField16FocusLost(evt);
+            }
+        });
+        jPanel13.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 210, 30));
+        jPanel13.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 210, 10));
+
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel13.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, 150, 20));
+
+        jComboBox10.setForeground(new java.awt.Color(102, 102, 102));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Program code" }));
+        jComboBox10.setBorder(null);
+        jComboBox10.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox10ItemStateChanged(evt);
+            }
+        });
+        jPanel13.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 210, -1));
+        jPanel13.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 210, 10));
+
+        jTabbedPane1.addTab("tab5", jPanel13);
 
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 660, 570));
 
@@ -786,7 +1003,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        StudentFrame obj = new StudentFrame();
+        StudentFrame obj = new StudentFrame("");
         obj.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -926,6 +1143,125 @@ public class LoginFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+         jTabbedPane1.setSelectedIndex(4);
+               for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+           jComboBox10.addItem(pr.getProgram_id());
+
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7FocusGained
+
+    private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7FocusLost
+
+    private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8FocusGained
+
+    private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8FocusLost
+
+    private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9FocusGained
+
+    private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9FocusLost
+
+    private void jTextField10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10FocusGained
+
+    private void jTextField10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10FocusLost
+
+    private void jTextField11FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField11FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11FocusGained
+
+    private void jTextField11FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField11FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11FocusLost
+
+    private void jTextField13FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField13FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField13FocusGained
+
+    private void jTextField13FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField13FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField13FocusLost
+
+    private void jTextField14FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField14FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField14FocusGained
+
+    private void jTextField14FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField14FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField14FocusLost
+
+    private void jTextField15FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField15FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField15FocusGained
+
+    private void jTextField15FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField15FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField15FocusLost
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+         String name = jTextField7.getText();
+        String sem = jTextField13.getText();
+        String phone = jTextField15.getText();
+        String email = jTextField8.getText();
+        String cnic = jTextField10.getText();
+        String year = jTextField11.getText();
+        Date dob = jDateChooser1.getDate();
+        String domicel = jTextField14.getText();
+        String Address= jTextField16.getText();
+        String pro = jComboBox10.getSelectedItem().toString();
+         if (name != "Full Name" && sem != "Semester" && phone != "Phone Number" && email != "Email" && cnic != "CNIC" && year != "Year Of Joining" && domicel != "Domicel" &&  Address != "Address")
+         {
+             if (Person.validate_name(name) && Person.CNIC_Validator(cnic) && Person.Phone_Validator(phone) && Person.email_Validator(email) && Person.validate_name(domicel) && Person.integar_validator(sem))
+             {
+                 Person pr = new Student(name,sem,phone,email,cnic,year,dob,domicel,Address,pro);
+                 driverr.add_teacher(pr);
+                 jLabel11.setVisible(true);
+                 jLabel11.setText("* You Have Been Registered");
+             }
+             else {
+               jLabel11.setVisible(true);
+               jLabel11.setText("* Enter Valid Inputs");
+            }
+         }
+         else {
+            jLabel11.setVisible(true);
+            jLabel11.setText("* Fill all the Fields First");
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jTextField16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField16FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField16FocusGained
+
+    private void jTextField16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField16FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField16FocusLost
+
+    private void jComboBox10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox10ItemStateChanged
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jComboBox10ItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -968,8 +1304,13 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -977,6 +1318,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -990,6 +1332,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
@@ -1011,9 +1354,21 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
+    private javax.swing.JSeparator jSeparator24;
+    private javax.swing.JSeparator jSeparator25;
+    private javax.swing.JSeparator jSeparator26;
+    private javax.swing.JSeparator jSeparator27;
+    private javax.swing.JSeparator jSeparator28;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator44;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
@@ -1021,10 +1376,19 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,6 +7,7 @@ package dlps;
 
 //import dlps.Question;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +20,16 @@ public class Assignments {
     private String assign_ID;
     private List<Question> assign_question;
 
+     Assignments(String assName,String cour)
+     {
+         this.assign_name = assName;
+         this.assign_ID = this.id_generator(cour);
+         this.assign_question = new ArrayList<>();
+     }
+
+    Assignments() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     ///////////////////////////////////// Getters ///////////////////////////
     public String getAssign_name() {
         return assign_name;

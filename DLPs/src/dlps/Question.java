@@ -21,6 +21,16 @@ public class Question {
     private String obtained_marks;
     private String rubric_level_ob;
 
+    Question(String ques,String marks,String clo,String rub)
+    {
+        this.ques_name = ques;
+        this.quest_id = this.id_generator();
+        this.ques_total_marks = marks;
+        this.ruric_associated = rub;
+        this.clo_associated = clo;
+        this.rubric_level_ob = null;
+        this.obtained_marks = null;
+    }
     ///////////////////////////////////// Getters ///////////////////////////
     public String getQues_name() {
         return ques_name;

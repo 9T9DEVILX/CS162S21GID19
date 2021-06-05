@@ -6,7 +6,8 @@
 package dlps;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
+
+import java.util.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -22,12 +23,33 @@ public class Student extends Person {
     private String Student_password;
     private String Stu_semester;
     private String Stu_domicel;
+    private String Program;
     public static int Instance;
     private FEE fee_obj;
-    private List<String> stu_Assignment_List;
+    private List<Assignments> stu_Assignment_List;
     private Set<String> stu_Attendence_TreeSet;
     private Set<String> stu_GPA_HashSet;
     
+    Student(String name,String sem,String phone,String email,String cnic,String year,Date dob,String domicel,String Address,String pro)
+    {
+        this.setName(name);
+        this.Stu_semester = sem;
+        this.setEmail(email);
+        this.setNumber(phone);
+        this.setYear(year);
+        this.setCnic(cnic);
+        this.setDOB(dob);
+        this.Stu_domicel = domicel;
+        this.setAddress(Address);
+        this.setPerson_type(this.getType());
+        this.Program = pro;
+        this.student_ID = this.ID_Generator(pro, year);
+        this.Student_password = this.Password_generator(year);
+        this.stu_Assignment_List = new ArrayList<>();
+        this.stu_Attendence_TreeSet = new TreeSet<>();
+        this.stu_GPA_HashSet = new HashSet<>();
+        
+    }
     ///////////////////////////////////// Getters ///////////////////////////
 
     public String getStudent_ID() {
@@ -50,7 +72,7 @@ public class Student extends Person {
         return fee_obj;
     }
 
-    public List<String> getStu_Assignment_List() {
+    public List<Assignments> getStu_Assignment_List() {
         return stu_Assignment_List;
     }
 
@@ -84,7 +106,7 @@ public class Student extends Person {
         this.fee_obj = fee_obj;
     }
 
-    public void setStu_Assignment_List(List<String> stu_Assignment_List) {
+    public void setStu_Assignment_List(List<Assignments> stu_Assignment_List) {
         this.stu_Assignment_List = stu_Assignment_List;
     }
 

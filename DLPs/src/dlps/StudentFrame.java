@@ -749,10 +749,7 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Course name", "Course ID", "semester", "Credit Hour", "Program"
@@ -806,10 +803,7 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "CLO #", "CLO ID", "CLO"
@@ -826,10 +820,7 @@ public class StudentFrame extends javax.swing.JFrame {
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Sr. No", "Rubric Name", "Poor", "Average", "Good", "Excellent"
@@ -1912,7 +1903,7 @@ x++;
                                     addList[5] = ru.getLevels().getExcellent_level();
 
                                     dataModel.addRow(addList);
-                                    jTable3.setModel(dataModel);
+                                    jTable4.setModel(dataModel);
                                     x++;
                                 }
                                  break;
