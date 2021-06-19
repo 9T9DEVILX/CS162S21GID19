@@ -5,10 +5,15 @@
  */
 package dlps;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -57,8 +62,10 @@ public class DLPs {
 ///////////////////////////////////// Main Functions ///////////////////////////
     public static void main(String[] args) {
         // TODO code application logic here
-
+          Person ad = Admin.admin_instance();
+          
           generation.startProgram();
+          
     }
     
 //////////////////////////////////// Frame Functions ///////////////////////////
@@ -93,5 +100,20 @@ public class DLPs {
                             }
                         
                             }
+   }
+   
+   public void loadAdmin()
+   {
+        try {
+            FileReader read = new FileReader("admin.txt");
+            BufferedReader cin = new BufferedReader(read);
+            String input = "-1";
+            while (input != "") {
+                input = cin.readLine();
+                
+            }
+        } catch (Exception ex) {
+
+        }
    }
 }

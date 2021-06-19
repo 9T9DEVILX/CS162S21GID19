@@ -24,7 +24,7 @@ public class Admin extends Person {
     ///////////////////////////////////// Singlaton Constructors ///////////////////////////
     public Admin()
     { 
-       
+        
     }
     
     public static Admin admin_instance()

@@ -6,7 +6,9 @@
 package dlps;
 
 import java.awt.Color;
+import java.io.File;
 import java.util.*;
+import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -118,6 +120,9 @@ public class StudentFrame extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -738,7 +743,7 @@ public class StudentFrame extends javax.swing.JFrame {
         jSeparator3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel6.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 51, 256, 10));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Semester" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Semester", "1", "2", "3", "4", "5", "6", "7", "8" }));
         jComboBox2.setBorder(null);
         jComboBox2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -989,7 +994,26 @@ public class StudentFrame extends javax.swing.JFrame {
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_login_32.png"))); // NOI18N
         jButton3.setText("Submit");
-        jPanel19.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 380, 126, 34));
+        jPanel19.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 380, 126, 34));
+
+        jTextField1.setText("jTextField1");
+        jPanel19.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 190, -1));
+
+        jButton8.setBackground(new java.awt.Color(0, 0, 0));
+        jButton8.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_login_32.png"))); // NOI18N
+        jButton8.setText("sdf");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 126, 34));
+
+        jLabel40.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel40.setText("Select Assignment From table to Submit a Assignment");
+        jPanel19.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
 
         jTabbedPane3.addTab("", jPanel19);
 
@@ -1664,6 +1688,7 @@ public class StudentFrame extends javax.swing.JFrame {
     private void jPanel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel23MouseClicked
         // TODO add your handling code here:
         jTabbedPane2.setSelectedIndex(2);
+        jComboBox1.removeAllItems();
          for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
             Program pr = driverr.getPrograms_added().get(i);
             {
@@ -1732,17 +1757,20 @@ public class StudentFrame extends javax.swing.JFrame {
                         Courses cour = pr.getCourses_ArrayList().get(j);
                         if (cour.getCourse_ID().equals(cour_id)) {
                             for (int l = 0; l < cour.getStu_register_ArrayList().size(); l++) {
-                                if (cour.getStu_register_ArrayList().get(l) != this.Student_id) {
+                                if(cour.getStu_register_ArrayList().get(l).equals(this.Student_id))
+                                {
                                     flag = true;
 
                                     break;
-                                } else {
+                                }
+                                    
+                                else {
                                     flag = false;
-                                    break;
+                                    
                                 }
                             }
 
-                            if (flag == true) {
+                            if (flag == false) {
                                 cour.getStu_register_ArrayList().add(this.Student_id);
                                 jLabel39.setVisible(true);
                                 jLabel39.setForeground(new java.awt.Color(41, 168, 72));
@@ -1845,9 +1873,9 @@ public class StudentFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         int x = 0;
         String id = jComboBox1.getSelectedItem().toString();
-         String[] tableData = {"CLO#", "CLO ID", "CLO"};
+         String[] tableData = {"CLO#", "Course ID","CLO ID", "CLO"};
         DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
-        String[] addList = new String[3];
+        String[] addList = new String[4];
         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
             Program pr = driverr.getPrograms_added().get(i);
             for (int k = 0; k < pr.getCourses_ArrayList().size(); k++) {
@@ -1877,7 +1905,7 @@ x++;
         int x = 0;
         DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
         int index = jTable3.getSelectedRow();
-        String clo_id_old = model.getValueAt(index, 1).toString();
+        String clo_id_old = model.getValueAt(index, 2).toString();
         String id = jComboBox1.getSelectedItem().toString();
         if (jTable3.getSelectedRowCount() == 1) {
             for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
@@ -2037,6 +2065,14 @@ x++;
         }
     }//GEN-LAST:event_jTable6MouseClicked
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+//        JFileChooser ofd = new JFileChooser();
+//        ofd.showOpenDialog(null);
+//        ofd.setFileFilter(zip); 
+//        File f = ofd.getSelectedFile();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2087,6 +2123,7 @@ x++;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -2127,6 +2164,7 @@ x++;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -2222,6 +2260,7 @@ x++;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel profile;
     private javax.swing.JPanel scho;
     private javax.swing.JPanel timetable;

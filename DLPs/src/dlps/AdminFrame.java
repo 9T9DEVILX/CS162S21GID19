@@ -147,8 +147,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator33 = new javax.swing.JSeparator();
         jTextField13 = new javax.swing.JTextField();
         jSeparator34 = new javax.swing.JSeparator();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        jTable11 = new javax.swing.JTable();
         jLabel55 = new javax.swing.JLabel();
         jSeparator20 = new javax.swing.JSeparator();
         jSeparator35 = new javax.swing.JSeparator();
@@ -172,6 +170,8 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jComboBox14 = new javax.swing.JComboBox<>();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTable11 = new javax.swing.JTable();
         jPanel21 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
@@ -1389,6 +1389,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/icons8_delete_16.png"))); // NOI18N
         jButton17.setText("Delete Course");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
         jPanel19.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 130, 34));
 
         jTable10.setModel(new javax.swing.table.DefaultTableModel(
@@ -1462,23 +1467,6 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jSeparator34.setForeground(new java.awt.Color(0, 0, 0));
         jPanel20.add(jSeparator34, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 260, 10));
-
-        jTable11.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "SR. No", "Course ID", "CLO ID", "Rubric", "Rubric ID"
-            }
-        ));
-        jTable11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable11MouseClicked(evt);
-            }
-        });
-        jScrollPane11.setViewportView(jTable11);
-
-        jPanel20.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 430, 130));
 
         jLabel55.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel55.setText("Rubric's Management");
@@ -1669,6 +1657,23 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel20.add(jComboBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 260, -1));
 
+        jTable11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "SR. No", "Course ID", "CLO ID", "Rubric", "Rubric ID"
+            }
+        ));
+        jTable11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable11MouseClicked(evt);
+            }
+        });
+        jScrollPane11.setViewportView(jTable11);
+
+        jPanel20.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 430, 130));
+
         jTabbedPane3.addTab("tab2", jPanel20);
 
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
@@ -1688,6 +1693,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jComboBox3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox3ItemStateChanged(evt);
+            }
+        });
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
             }
         });
         jPanel21.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 260, -1));
@@ -3484,6 +3494,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(2);
+        jComboBox6.removeAllItems();
         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
             Program pr = driverr.getPrograms_added().get(i);
             jComboBox6.addItem(pr.getProgram_id());
@@ -3669,6 +3680,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseClicked
         // TODO add your handling code here:
         jTabbedPane3.setSelectedIndex(0);
+        jComboBox4.removeAllItems();
         for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
             Program pr = driverr.getPrograms_added().get(i);
             jComboBox4.addItem(pr.getProgram_id());
@@ -4465,6 +4477,7 @@ public class AdminFrame extends javax.swing.JFrame {
                         if(cour.getCourse_alocate_teac().equals(""))
                         {
                             cour.setCourse_alocate_teac(ID);
+                            
                             jLabel70.setVisible(true);
                                jLabel70.setForeground(new java.awt.Color(41, 168, 72));
                                jLabel70.setText("Teacher Has Been Alocated");
@@ -4925,7 +4938,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
                             jLabel61.setVisible(true);
                             jLabel61.setForeground(new java.awt.Color(41, 168, 72));
-                            jLabel61.setText("PLO Has Been Updated");
+                            jLabel61.setText("PLO Has Been Deleted");
                             break;
                         }
                     }
@@ -5213,7 +5226,9 @@ public class AdminFrame extends javax.swing.JFrame {
                                     if(cl.getRubric_list().get(j).getRubric_ID().equals(rubric_id_old))
                                     {
                                         cl.getRubric_list().remove(j);
-                                        model.removeRow(rowIndex);            
+                                        model.removeRow(rowIndex);   
+                                        jTextField15.setText("Select CLO from table to add Rubrics");
+                                        jTextField16.setText("Rubric");
                                         break;
                                     }
                                 }
@@ -5245,7 +5260,9 @@ public class AdminFrame extends javax.swing.JFrame {
                          CLOs cl = iterator.next();
                          jComboBox8.addItem(cl.getClo_ID());
                         }
+                        break;
                         }
+                
             }
         }
         
@@ -5319,7 +5336,7 @@ public class AdminFrame extends javax.swing.JFrame {
                     Courses cour =  pr.getCourses_ArrayList().get(j);
                     if(cour.getCourse_ID().equals(cour_id_old))
                     {
-                        if(cour.getCourse_alocate_teac().equals(tea_id_old))
+                        if(cour.getCourse_alocate_teac().equals(tea_id_old))             
                         {
                             cour.setCourse_alocate_teac("");
                             jTable17.remove(rowIndex);
@@ -5346,6 +5363,45 @@ public class AdminFrame extends javax.swing.JFrame {
         jTextField30.setText(tblmodel.getValueAt(rowIndex, 0).toString());
         jTextField31.setText(tblmodel.getValueAt(rowIndex, 6).toString());
     }//GEN-LAST:event_jTable16MouseClicked
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel tblmodel = (DefaultTableModel) jTable10.getModel();
+        if (jTable10.getSelectedRowCount() == 1) {
+            int rowIndex = jTable10.getSelectedRow();
+            String id = tblmodel.getValueAt(rowIndex, 1).toString();
+            for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+                for (int j=0;j< driverr.getPrograms_added().get(i).getCourses_ArrayList().size();j++)
+                {
+                    if (driverr.getPrograms_added().get(i).getCourses_ArrayList().get(j).getCourse_ID().equals(id)) {
+
+                    driverr.getPrograms_added().get(i).getCourses_ArrayList().remove(j);
+                    tblmodel.removeRow(rowIndex);
+                    jTextField9.setText("Course Name");
+                    jTextField10.setText("Course ID");
+                    jTextField11.setText("Semester");
+                    jTextField12.setText("Credit Hours");
+                    jLabel62.setVisible(true);
+                    jLabel62.setForeground(new java.awt.Color(41, 168, 72));
+                    jLabel62.setText("Course Has Been Deleted");
+                    break;
+
+                }
+                }
+                
+                
+
+            }
+
+        }
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+      //   String courseid = jComboBox3.getItemAt(jComboBox3.getSelectedIndex());
+         
+        
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void showCourses(JTable table) {
         String[] tableData = {"Course Name", "Course ID", "Semester", "Credit Hours", "Program ID"};
