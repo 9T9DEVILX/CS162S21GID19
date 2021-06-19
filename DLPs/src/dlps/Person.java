@@ -5,6 +5,7 @@
  */
 package dlps;
 
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -17,7 +18,7 @@ abstract public class Person {
     private String Number;
     private String email;
     private String cnic;
-    private Date DOB;
+    private Timestamp DOB;
     private String year;
     private String address;
     private String person_type;
@@ -39,7 +40,7 @@ abstract public class Person {
         return cnic;
     }
 
-    public Date getDOB() {
+    public Timestamp getDOB() {
         return DOB;
     }
 
@@ -73,7 +74,7 @@ abstract public class Person {
         this.cnic = cnic;
     }
 
-    public void setDOB(Date DOB) {
+    public void setDOB(Timestamp DOB) {
         this.DOB = DOB;
     }
 

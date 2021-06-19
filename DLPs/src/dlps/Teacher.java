@@ -6,6 +6,7 @@
 package dlps;
 
 import java.security.SecureRandom;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Set;
 import java.util.Stack;
@@ -33,7 +34,8 @@ public class Teacher extends Person {
         this.setCnic(cnic);
         this.setNumber(phone);
         this.setEmail(email);
-        this.setDOB(dob);
+        Timestamp sts =Timestamp.valueOf(dob.toString()); 
+        this.setDOB(sts);
         this.department = dep;
         this.setYear(yearr);
         this.setAddress("Please Edit To Chnage");

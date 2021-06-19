@@ -5,6 +5,7 @@
  */
 package dlps;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -22,11 +23,24 @@ public class Admin extends Person {
     private static Admin admin;
     
     ///////////////////////////////////// Singlaton Constructors ///////////////////////////
-    public Admin()
+    public Admin(String name,String number,String emai,String cnic,String date,String year,String add,String type,String userna,String pass)
     { 
-        
+        this.admin_ID = userna;
+        this.admin_password = pass;
+        this.setAddress(add);
+        this.setName(name);
+        this.setEmail(emai);
+        this.setNumber(number);
+        this.setCnic(cnic);
+        this.setDOB(Timestamp.valueOf(date));
+        this.setYear(year);
+        this.setPerson_type(type);
     }
     
+    public Admin()
+    {
+        
+    }
     public static Admin admin_instance()
     {
        if(admin == null)

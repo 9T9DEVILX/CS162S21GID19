@@ -6,6 +6,7 @@
 package dlps;
 
 import java.security.SecureRandom;
+import java.sql.Timestamp;
 
 import java.util.*;
 import java.util.HashSet;
@@ -38,7 +39,8 @@ public class Student extends Person {
         this.setNumber(phone);
         this.setYear(year);
         this.setCnic(cnic);
-        this.setDOB(dob);
+        Timestamp st =Timestamp.valueOf(dob.toString()); 
+        this.setDOB(st);
         this.Stu_domicel = domicel;
         this.setAddress(Address);
         this.setPerson_type(this.getType());

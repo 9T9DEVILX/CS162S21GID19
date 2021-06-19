@@ -62,13 +62,18 @@ public class DLPs {
 ///////////////////////////////////// Main Functions ///////////////////////////
     public static void main(String[] args) {
         // TODO code application logic here
-          Person ad = Admin.admin_instance();
+          DLPs L = DLPs.driver_instance();
+          L.loadAdmin();
           
           generation.startProgram();
           
     }
     
 //////////////////////////////////// Frame Functions ///////////////////////////
+    static void addadmin(Person add)
+    {
+        
+    }
    public void add_teacher(Person pr)
    {
                this.person_list.add(pr);     
@@ -108,10 +113,13 @@ public class DLPs {
             FileReader read = new FileReader("admin.txt");
             BufferedReader cin = new BufferedReader(read);
             String input = "-1";
-            while (input != "") {
+            
                 input = cin.readLine();
+                String arr[] = input.split(",");
+                Person ad = new Admin(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],arr[7],arr[8],arr[9]);
+                this.person_list.add(ad);
                 
-            }
+            
         } catch (Exception ex) {
 
         }
