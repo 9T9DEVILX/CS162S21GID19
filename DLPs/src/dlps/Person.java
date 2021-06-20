@@ -18,7 +18,7 @@ abstract public class Person {
     private String Number;
     private String email;
     private String cnic;
-    private Timestamp DOB;
+    private Date DOB;
     private String year;
     private String address;
     private String person_type;
@@ -40,8 +40,8 @@ abstract public class Person {
         return cnic;
     }
 
-    public Timestamp getDOB() {
-        return DOB;
+    public Date getDOB() {
+        return  DOB;
     }
 
     public String getYear() {
@@ -74,7 +74,7 @@ abstract public class Person {
         this.cnic = cnic;
     }
 
-    public void setDOB(Timestamp DOB) {
+    public void setDOB(Date DOB) {
         this.DOB = DOB;
     }
 

@@ -6,6 +6,8 @@
 package dlps;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,41 +17,56 @@ import java.util.Queue;
  * @author m_nou
  */
 public class Admin extends Person {
+
     ///////////////////////////////////// Attributes ///////////////////////////
     private String admin_ID;
     private String admin_password;
     private Queue<String> reqs_For_SchoQueue = new LinkedList<>();
     private Queue<String> reqs_For_hostelsQueue = new LinkedList<>();
     private static Admin admin;
-    
+
     ///////////////////////////////////// Singlaton Constructors ///////////////////////////
-    public Admin(String name,String number,String emai,String cnic,String date,String year,String add,String type,String userna,String pass)
-    { 
+    public Admin(String name, String number, String emai, String cnic, String date, String year, String add, String type, String userna, String pass) throws ParseException {
+
         this.admin_ID = userna;
+
         this.admin_password = pass;
+
         this.setAddress(add);
+
         this.setName(name);
+
         this.setEmail(emai);
+
         this.setNumber(number);
+
         this.setCnic(cnic);
-        this.setDOB(Timestamp.valueOf(date));
+
+        System.out.println(date);
+        // SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
+
+        //   Date date1= s.parse(date);
+        Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+        System.out.println(date1);
+// this.setDOB(Timestamp.valueOf(date));
+        this.setDOB(date1);
+
         this.setYear(year);
-        this.setPerson_type(type);
+
+        this.setPerson_type(this.getType());
     }
-    
-    public Admin()
-    {
-        
+
+    public Admin() {
+
     }
-    public static Admin admin_instance()
-    {
-       if(admin == null)
-       {
-           admin = new Admin();
-       }
-       return admin;
+
+    public static Admin admin_instance() {
+        if (admin == null) {
+            admin = new Admin();
+        }
+        return admin;
     }
-  ///////////////////////////////////// Getters ///////////////////////////
+    ///////////////////////////////////// Getters ///////////////////////////
 
     public String getAdmin_ID() {
         return admin_ID;
@@ -66,9 +83,8 @@ public class Admin extends Person {
     public Queue<String> getReqs_For_hostelsQueue() {
         return reqs_For_hostelsQueue;
     }
-    
-    ///////////////////////////////////// Setters ///////////////////////////
 
+    ///////////////////////////////////// Setters ///////////////////////////
     public void setAdmin_ID(String admin_ID) {
         this.admin_ID = admin_ID;
     }
@@ -84,13 +100,11 @@ public class Admin extends Person {
     public void setReqs_For_hostelsQueue(Queue<String> reqs_For_hostelsQueue) {
         this.reqs_For_hostelsQueue = reqs_For_hostelsQueue;
     }
-    
+
     ///////////////////////////////////// OverLoad Functions ///////////////////////////
-   
     //This Function will Tell wheather what kind of Person's Profile it is.
     @Override
-    public String getType()
-    {
+    public String getType() {
         return "Admin";
     }
 }

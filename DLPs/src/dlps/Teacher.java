@@ -34,8 +34,8 @@ public class Teacher extends Person {
         this.setCnic(cnic);
         this.setNumber(phone);
         this.setEmail(email);
-        Timestamp sts =Timestamp.valueOf(dob.toString()); 
-        this.setDOB(sts);
+      //  Timestamp sts =Timestamp.valueOf(dob.toString()); 
+        this.setDOB(dob);
         this.department = dep;
         this.setYear(yearr);
         this.setAddress("Please Edit To Chnage");

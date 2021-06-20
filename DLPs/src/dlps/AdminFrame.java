@@ -6,6 +6,7 @@
 package dlps;
 
 import java.awt.Color;
+import java.text.SimpleDateFormat;
 import static java.util.Collections.list;
 import java.util.*;
 import java.util.Iterator;
@@ -25,6 +26,48 @@ public class AdminFrame extends javax.swing.JFrame {
 
     public AdminFrame() {
         initComponents();
+        int tea=0;
+        int stu=0;
+        int cour = 0;
+        for(int i=0;i< driverr.getPerson_list().size();i++)
+        {
+            if(driverr.getPerson_list().get(i).getPerson_type().equals("Admin"))
+            {
+                Admin ad = (Admin) driverr.getPerson_list().get(i);
+                jLabel103.setText(ad.getName());
+                jLabel90.setText(ad.getNumber());
+                jLabel91.setText(ad.getEmail());
+                jLabel92.setText(ad.getCnic());
+                jLabel93.setText(ad.getYear());
+                jLabel94.setText(ad.getAdmin_ID());
+                jLabel95.setText(Person.get_gender(ad.getCnic()));
+               // SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); 
+                
+                jLabel96.setText(ad.getDOB().toString());
+                //jLabel96.setText(formatter.format(ad.getDOB()));
+                jLabel97.setText(ad.getAddress());
+                jLabel98.setText(ad.getAdmin_password());
+                for (int j = 0; j < driverr.getPerson_list().size(); j++) {
+            if (driverr.getPerson_list().get(i).getPerson_type().equals("Teacher")) {
+                tea++;
+            } else if (driverr.getPerson_list().get(i).getPerson_type().equals("Student")) {
+                stu++;
+            }
+        }
+                jLabel99.setText(tea+"");
+                jLabel100.setText(driverr.getPrograms_added().size()+"");
+                for(int j=0;j<driverr.getPrograms_added().size();j++)
+                {
+                    Program pr = driverr.getPrograms_added().get(j);
+                    for(int k=0;k<pr.getCourses_ArrayList().size();k++)
+                    {
+                        cour++;
+                    }
+                }
+                jLabel101.setText(cour+"");
+                jLabel102.setText(stu+"");
+            }
+        }
         jLabel58.setVisible(false);
         jTextField15.setEnabled(false);
         jTextField17.setEnabled(false);
@@ -75,6 +118,54 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel37 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jSeparator46 = new javax.swing.JSeparator();
+        jLabel73 = new javax.swing.JLabel();
+        jSeparator67 = new javax.swing.JSeparator();
+        jLabel74 = new javax.swing.JLabel();
+        jSeparator68 = new javax.swing.JSeparator();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jSeparator69 = new javax.swing.JSeparator();
+        jLabel77 = new javax.swing.JLabel();
+        jSeparator70 = new javax.swing.JSeparator();
+        jLabel78 = new javax.swing.JLabel();
+        jSeparator71 = new javax.swing.JSeparator();
+        jSeparator72 = new javax.swing.JSeparator();
+        jLabel79 = new javax.swing.JLabel();
+        jSeparator73 = new javax.swing.JSeparator();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jSeparator74 = new javax.swing.JSeparator();
+        jSeparator75 = new javax.swing.JSeparator();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jSeparator76 = new javax.swing.JSeparator();
+        jSeparator77 = new javax.swing.JSeparator();
+        jLabel84 = new javax.swing.JLabel();
+        jSeparator78 = new javax.swing.JSeparator();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        jSeparator79 = new javax.swing.JSeparator();
+        jLabel87 = new javax.swing.JLabel();
+        jSeparator80 = new javax.swing.JSeparator();
+        jLabel88 = new javax.swing.JLabel();
+        jSeparator81 = new javax.swing.JSeparator();
+        jLabel89 = new javax.swing.JLabel();
+        jSeparator82 = new javax.swing.JSeparator();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
         program_ad = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
@@ -781,6 +872,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 1080, 50));
 
         profile_ad.setBackground(new java.awt.Color(255, 255, 255));
+        profile_ad.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         profile_ad.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel36.setBackground(new java.awt.Color(0, 0, 0));
@@ -820,6 +912,197 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         profile_ad.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 10));
+
+        jSeparator46.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator46.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 10));
+
+        jLabel73.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel73.setText("Personal Information");
+        profile_ad.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 210, -1));
+
+        jSeparator67.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator67.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator67, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 190, 10));
+
+        jLabel74.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel74.setText("Academic Detail");
+        profile_ad.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 150, -1));
+
+        jSeparator68.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator68.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator68, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 150, 10));
+
+        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/profff.PNG"))); // NOI18N
+        profile_ad.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 80, 130, 140));
+
+        jLabel75.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel75.setText("Name");
+        profile_ad.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 60, -1));
+
+        jSeparator69.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator69.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator69, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 50, 10));
+
+        jLabel77.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel77.setText("Number");
+        profile_ad.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 80, -1));
+
+        jSeparator70.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator70.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator70, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 70, 10));
+
+        jLabel78.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel78.setText("Gender");
+        profile_ad.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 80, -1));
+
+        jSeparator71.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator71.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator71, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 60, 10));
+
+        jSeparator72.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator72.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator72, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 50, 10));
+
+        jLabel79.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel79.setText("DOB");
+        profile_ad.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 50, -1));
+
+        jSeparator73.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator73.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator73, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 50, 10));
+
+        jLabel80.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel80.setText("Email");
+        profile_ad.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 60, -1));
+
+        jLabel81.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel81.setText("CNIC");
+        profile_ad.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 60, -1));
+
+        jSeparator74.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator74.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator74, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 50, 10));
+
+        jSeparator75.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator75.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator75, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 70, 10));
+
+        jLabel82.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel82.setText("Address");
+        profile_ad.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 80, -1));
+
+        jLabel83.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel83.setText("Year of Joining");
+        profile_ad.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 140, -1));
+
+        jSeparator76.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator76.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator76, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 130, 10));
+
+        jSeparator77.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator77.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator77, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 70, 10));
+
+        jLabel84.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel84.setText("User ID");
+        profile_ad.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 80, -1));
+
+        jSeparator78.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator78.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator78, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 90, 10));
+
+        jLabel85.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel85.setText("Password");
+        profile_ad.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 90, -1));
+
+        jLabel86.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel86.setText("Total Teachers");
+        profile_ad.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 150, -1));
+
+        jSeparator79.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator79.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator79, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 130, 10));
+
+        jLabel87.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel87.setText("Total Programs ");
+        profile_ad.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 150, -1));
+
+        jSeparator80.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator80.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator80, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 560, 130, 10));
+
+        jLabel88.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel88.setText("Total Courses");
+        profile_ad.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 580, 140, -1));
+
+        jSeparator81.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator81.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator81, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 600, 130, 10));
+
+        jLabel89.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel89.setText("Total Students");
+        profile_ad.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, 140, -1));
+
+        jSeparator82.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator82.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        profile_ad.add(jSeparator82, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 640, 130, 10));
+
+        jLabel90.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel90.setText("jLabel90");
+        profile_ad.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
+
+        jLabel91.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel91.setText("jLabel91");
+        profile_ad.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+
+        jLabel92.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel92.setText("Label92");
+        profile_ad.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, -1, -1));
+
+        jLabel93.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel93.setText("Label93");
+        profile_ad.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
+
+        jLabel94.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel94.setText("Label94");
+        profile_ad.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
+
+        jLabel95.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel95.setText("Label95");
+        profile_ad.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, -1, -1));
+
+        jLabel96.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel96.setText("Label96");
+        profile_ad.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, -1, -1));
+
+        jLabel97.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel97.setText("Label97");
+        profile_ad.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, -1, -1));
+
+        jLabel98.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel98.setText("Label98");
+        profile_ad.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, -1, -1));
+
+        jLabel99.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel99.setText("Label99");
+        profile_ad.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, -1, -1));
+
+        jLabel100.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel100.setText("Label100");
+        profile_ad.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
+
+        jLabel101.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel101.setText("Label101");
+        profile_ad.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 580, -1, -1));
+
+        jLabel102.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel102.setText("Label102");
+        profile_ad.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, -1, -1));
+
+        jLabel103.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel103.setText("Label103");
+        profile_ad.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
 
         jTabbedPane1.addTab("tab1", profile_ad);
 
@@ -5557,6 +5840,10 @@ public class AdminFrame extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -5625,8 +5912,35 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -5753,6 +6067,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator43;
     private javax.swing.JSeparator jSeparator44;
     private javax.swing.JSeparator jSeparator45;
+    private javax.swing.JSeparator jSeparator46;
     private javax.swing.JSeparator jSeparator47;
     private javax.swing.JSeparator jSeparator48;
     private javax.swing.JSeparator jSeparator49;
@@ -5775,8 +6090,24 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator64;
     private javax.swing.JSeparator jSeparator65;
     private javax.swing.JSeparator jSeparator66;
+    private javax.swing.JSeparator jSeparator67;
+    private javax.swing.JSeparator jSeparator68;
+    private javax.swing.JSeparator jSeparator69;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator70;
+    private javax.swing.JSeparator jSeparator71;
+    private javax.swing.JSeparator jSeparator72;
+    private javax.swing.JSeparator jSeparator73;
+    private javax.swing.JSeparator jSeparator74;
+    private javax.swing.JSeparator jSeparator75;
+    private javax.swing.JSeparator jSeparator76;
+    private javax.swing.JSeparator jSeparator77;
+    private javax.swing.JSeparator jSeparator78;
+    private javax.swing.JSeparator jSeparator79;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator80;
+    private javax.swing.JSeparator jSeparator81;
+    private javax.swing.JSeparator jSeparator82;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;

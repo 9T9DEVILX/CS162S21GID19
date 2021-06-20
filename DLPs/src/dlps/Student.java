@@ -39,8 +39,8 @@ public class Student extends Person {
         this.setNumber(phone);
         this.setYear(year);
         this.setCnic(cnic);
-        Timestamp st =Timestamp.valueOf(dob.toString()); 
-        this.setDOB(st);
+       // Timestamp st =Timestamp.valueOf(dob.toString()); 
+        this.setDOB(dob);
         this.Stu_domicel = domicel;
         this.setAddress(Address);
         this.setPerson_type(this.getType());
