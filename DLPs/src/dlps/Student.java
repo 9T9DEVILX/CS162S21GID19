@@ -101,6 +101,11 @@ public class Student extends Person {
         this.student_ID = student_ID;
     }
 
+    public void setProgram(String Program) {
+        this.Program = Program;
+    }
+
+    
     public void setStudent_password(String Student_password) {
         this.Student_password = Student_password;
     }

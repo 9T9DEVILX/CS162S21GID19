@@ -8,6 +8,9 @@ package dlps;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -64,7 +67,8 @@ public class DLPs {
         // TODO code application logic here
           DLPs L = DLPs.driver_instance();
           L.loadAdmin();
-        
+          L.LoadStudents();
+          L.loadTeacher();
           generation.startProgram();
           
     }
@@ -126,6 +130,79 @@ public class DLPs {
             
         } catch (Exception ex) {
 System.out.println("exception");
+        }
+   }
+   public void LoadStudents()
+   {
+       
+        try {
+           FileReader read = new FileReader("student.txt");
+           BufferedReader cin = new BufferedReader(read);
+           String in = "-1";
+           in = cin.readLine();
+            System.out.println(in);
+            while (in != null) {       
+                System.out.println(".");
+               String[] xx = in.split(",");
+               Student s = new Student();
+               s.setName(xx[0]);
+               s.setNumber(xx[1]);
+               s.setEmail(xx[2]);
+               s.setCnic(xx[3]);
+               Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(xx[4]);
+               s.setDOB(date1);
+               s.setYear(xx[5]);
+               s.setAddress(xx[6]);
+               s.setPerson_type(xx[7]);
+               s.setStudent_ID(xx[8]);
+               s.setStudent_password(xx[9]);
+               s.setStu_semester(xx[10]);
+               s.setStu_domicel(xx[11]);
+               s.setProgram(xx[12]);
+               Person pr = s;
+               this.person_list.add(pr);
+               in = cin.readLine();
+            }
+           
+        } catch (IOException | ParseException ex) {
+            Logger.getLogger(DLPs.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+   }
+   public void loadTeacher()
+   {
+       try {
+           FileReader read = new FileReader("Teacher.txt");
+           BufferedReader cin = new BufferedReader(read);
+           String in = "-1";
+           in = cin.readLine();
+            System.out.println(in);
+            while (in != null) {       
+                System.out.println(".");
+               String[] xx = in.split(",");
+               Teacher s = new Teacher();
+               s.setName(xx[0]);
+               s.setNumber(xx[1]);
+               s.setEmail(xx[2]);
+               s.setCnic(xx[3]);
+               Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(xx[4]);
+               s.setDOB(date1);
+               s.setYear(xx[5]);
+               s.setAddress(xx[6]);
+               s.setPerson_type(xx[7]);
+               s.setTeacher_ID(xx[8]);
+               s.setTeacher_password(xx[9]);
+               s.setDepartment(xx[10]);
+               s.setQualification(xx[11]);
+               s.setBank_acc(xx[12]);
+               s.setMonthly_pay(xx[13]);
+               Person pr = s;
+               this.person_list.add(pr);
+               in = cin.readLine();
+            }
+           
+        } catch (IOException | ParseException ex) {
+            Logger.getLogger(DLPs.class.getName()).log(Level.SEVERE, null, ex);
         }
    }
 }

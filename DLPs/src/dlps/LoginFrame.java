@@ -2,6 +2,15 @@ package dlps;
 
 import java.awt.Color;
 import java.util.Date;
+import java.util.Properties;
+import java.util.Random;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -1145,6 +1154,47 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        String from = "nkzatb2050@gmail.com";
+        String em = jTextField5.getText();
+        String to = em;
+        String host = "localhost";
+        String sub = "Forget Password";
+        Random rand = new Random();
+        int n1 = rand.nextInt(9);
+        int n2 = rand.nextInt(9);
+        int n3 = rand.nextInt(9);
+        int n4 = rand.nextInt(9);
+        String code = Integer.toString(n1) + Integer.toString(n2) + Integer.toString(n3) + Integer.toString(n4);
+        String content = "Hi," + "\n"+"The verification code to access your account is \n\n"+code+"\n\nDO NO FORWARD THIS CODE TO ANYONE";
+//        
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", true);
+        props.put("mail.smtp.starttls.enable", true);
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        props.setProperty("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("nkzatb2050@gmail.com","hamad_lora001");
+            }
+        });
+
+        try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));//ur email
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(to));//u will send to
+            message.setSubject(sub);
+            message.setText(content);
+            Transport.send(message);
+            System.out.println("success");
+
+        } catch (MessagingException e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
