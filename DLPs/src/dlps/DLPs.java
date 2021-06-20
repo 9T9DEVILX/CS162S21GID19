@@ -64,7 +64,7 @@ public class DLPs {
         // TODO code application logic here
           DLPs L = DLPs.driver_instance();
           L.loadAdmin();
-          System.out.println("sgtaring");
+        
           generation.startProgram();
           
     }
@@ -109,20 +109,20 @@ public class DLPs {
    
    public void loadAdmin()
    {
-       System.out.println("in load function");
+       
         try {
             FileReader read = new FileReader("admin.txt");
             BufferedReader cin = new BufferedReader(read);
             String input = "-1";
-            System.out.println(".");
+            
                 input = cin.readLine();
-                System.out.println("..");
+               
                 String arr[] = input.split(",");
-                System.out.println("...");
+                
                 Person ad = new Admin(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],arr[7],arr[8],arr[9]);
-                System.out.println("....");
+                
                 this.person_list.add(ad);
-                System.out.println("done loading");
+               
             
         } catch (Exception ex) {
 System.out.println("exception");

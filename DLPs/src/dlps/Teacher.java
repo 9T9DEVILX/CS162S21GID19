@@ -49,6 +49,10 @@ public class Teacher extends Person {
         this.teacher_password = this.Password_generator(yearr);
         this.setPerson_type(this.getType());
     }
+
+    public Teacher() {
+    }
+    
     ///////////////////////////////////// Getters ///////////////////////////
 
     public String getDepartment() {

@@ -23,6 +23,7 @@ public class LoginFrame extends javax.swing.JFrame {
     public int a = 0;
     public LoginFrame() {
         initComponents();
+        jLabel20.setVisible(false);
     }
 
     /**
@@ -64,6 +65,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
+        jLabel20 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -75,6 +77,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
         jButton2 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
@@ -407,6 +410,10 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel9.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
         jPanel9.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 80, 10));
 
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel20.setText("jLabel20");
+        jPanel9.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
+
         jTabbedPane1.addTab("tab1", jPanel9);
 
         jPanel10.setBackground(new java.awt.Color(0, 0, 0));
@@ -483,6 +490,10 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
         jPanel10.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
+
+        jLabel21.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel21.setText("jLabel21");
+        jPanel10.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
 
         jTabbedPane1.addTab("tab2", jPanel10);
 
@@ -846,9 +857,37 @@ public class LoginFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        AdminFrame obj = new AdminFrame();
-        obj.setVisible(true);
-        this.setVisible(false);
+        String Username = jTextField1.getText();
+        String Pass = jPasswordField1.getText();
+        Admin ad = new Admin();
+        for (int i = 0; i < driverr.getPerson_list().size(); i++) {
+            if(driverr.getPerson_list().get(i).getType().equals("Admin"))
+            {
+                ad = (Admin) driverr.getPerson_list().get(i);
+                
+                break;
+            }
+        }
+        if(ad.getAdmin_ID().equals(Username))
+        {
+            if(ad.getAdmin_password().equals(Pass))
+            {
+                AdminFrame obj = new AdminFrame();
+                obj.setVisible(true);
+                this.setVisible(false);
+            }
+            else{
+                jLabel20.setVisible(true);
+        jLabel20.setText("User Password is Incorrect");
+            }
+            
+        }
+        else{
+        jLabel20.setVisible(true);
+        jLabel20.setText("User ID is Incorrect");
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
@@ -951,9 +990,39 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        TeacherFrame obj = new TeacherFrame();
+        String Username = jTextField2.getText();
+        String Pass = jPasswordField2.getText();
+       
+        for (int i = 0; i < driverr.getPerson_list().size(); i++) {
+            if(driverr.getPerson_list().get(i).getType().equals("Teacher"))
+            {
+               Teacher tr = (Teacher) driverr.getPerson_list().get(i);
+                 if(tr.getTeacher_ID().equals(Username))
+        {
+            if(tr.getTeacher_password().equals(Pass))
+            {
+                TeacherFrame obj = new TeacherFrame(tr);
         obj.setVisible(true);
         this.setVisible(false);
+            }
+            else{
+                jLabel21.setVisible(true);
+        jLabel21.setText("User Password is Incorrect");
+            }
+            
+        }
+        else{
+        jLabel21.setVisible(true);
+        jLabel21.setText("User ID is Incorrect");
+        }
+           
+            }
+        }
+       
+        
+        
+      //  Teacher t = new Teacher();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
@@ -1004,10 +1073,39 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Student s = new Student();
-        StudentFrame obj = new StudentFrame(s,"");
+        String Username = jTextField3.getText();
+        String Pass = jPasswordField3.getText();
+       
+        for (int i = 0; i < driverr.getPerson_list().size(); i++) {
+            if(driverr.getPerson_list().get(i).getType().equals("Student"))
+            {
+               Student tr = (Student) driverr.getPerson_list().get(i);
+                 if(tr.getStudent_ID().equals(Username))
+        {
+            if(tr.getStudent_password().equals(Pass))
+            {
+                StudentFrame obj = new StudentFrame(tr,tr.getStudent_ID());
         obj.setVisible(true);
         this.setVisible(false);
+            }
+            else{
+                jLabel21.setVisible(true);
+        jLabel21.setText("User Password is Incorrect");
+            }
+            
+        }
+        else{
+        jLabel21.setVisible(true);
+        jLabel21.setText("User ID is Incorrect");
+        }
+               
+            }
+        }
+       
+        
+        
+       // Student s = new Student();
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
@@ -1322,6 +1420,8 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;

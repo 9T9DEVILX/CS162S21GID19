@@ -4320,6 +4320,7 @@ public class AdminFrame extends javax.swing.JFrame {
                         jLabel62.setVisible(true);
                         jLabel62.setForeground(new java.awt.Color(41, 168, 72));
                         jLabel62.setText("Courses Has Been Added");
+                        break;
                     }
                 }
 

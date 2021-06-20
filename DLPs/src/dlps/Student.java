@@ -52,6 +52,10 @@ public class Student extends Person {
         this.stu_GPA_HashSet = new HashSet<>();
         
     }
+
+    public Student() {
+    }
+    
     ///////////////////////////////////// Getters ///////////////////////////
 
     public String getStudent_ID() {
@@ -85,6 +89,11 @@ public class Student extends Person {
     public Set<String> getStu_GPA_HashSet() {
         return stu_GPA_HashSet;
     }
+
+    public String getProgram() {
+        return Program;
+    }
+    
     
     ///////////////////////////////////// Settters ///////////////////////////
 
