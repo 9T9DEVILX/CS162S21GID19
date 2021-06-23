@@ -405,6 +405,18 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel51 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         jSeparator15 = new javax.swing.JSeparator();
+        jLabel104 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jLabel105 = new javax.swing.JLabel();
+        jComboBox15 = new javax.swing.JComboBox<>();
+        jLabel106 = new javax.swing.JLabel();
+        jComboBox16 = new javax.swing.JComboBox<>();
+        jButton24 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
         scho_ad = new javax.swing.JPanel();
         jPanel52 = new javax.swing.JPanel();
         jPanel53 = new javax.swing.JPanel();
@@ -3139,6 +3151,69 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tIME_AD.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 300, 10));
 
+        jLabel104.setText("select program :");
+        tIME_AD.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "program 1", "program 2", "progran null" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        tIME_AD.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 390, -1));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Course Title", "Course ID", "Teacher"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        tIME_AD.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, -1, 180));
+
+        jLabel105.setText("Select day :");
+        tIME_AD.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, 20));
+
+        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednersday", "Thursday", "Friday", " " }));
+        tIME_AD.add(jComboBox15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 390, -1));
+
+        jLabel106.setText("Select time : ");
+        tIME_AD.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 70, 20));
+
+        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00-9:00", "9:00-10:00", "10:00-11:00", "11:00-12:00", "1:00-2:00", "2:00-3:00", "3:00-4:00", " " }));
+        tIME_AD.add(jComboBox16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 390, -1));
+
+        jButton24.setBackground(new java.awt.Color(0, 0, 0));
+        jButton24.setForeground(new java.awt.Color(255, 255, 255));
+        jButton24.setText("Add");
+        tIME_AD.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 90, 40));
+
+        jButton26.setBackground(new java.awt.Color(0, 0, 0));
+        jButton26.setForeground(new java.awt.Color(255, 255, 255));
+        jButton26.setText("Delete");
+        tIME_AD.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 90, 40));
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable5);
+
+        tIME_AD.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 440, 760, 200));
+
         jTabbedPane1.addTab("tab8", tIME_AD);
 
         scho_ad.setBackground(new java.awt.Color(255, 255, 255));
@@ -3870,6 +3945,12 @@ public class AdminFrame extends javax.swing.JFrame {
     private void jPanel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel30MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(7);
+         jComboBox1.removeAllItems();
+        for (int i = 0; i < driverr.getPrograms_added().size(); i++) {
+            Program pr = driverr.getPrograms_added().get(i);
+            jComboBox1.addItem(pr.getProgram_id());
+
+        }
     }//GEN-LAST:event_jPanel30MouseClicked
 
     private void jPanel30MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel30MouseEntered
@@ -5687,6 +5768,10 @@ public class AdminFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     private void showCourses(JTable table) {
         String[] tableData = {"Course Name", "Course ID", "Semester", "Credit Hours", "Program ID"};
         DefaultTableModel dataModel = new DefaultTableModel(tableData, 0);
@@ -5806,7 +5891,9 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
@@ -5825,11 +5912,14 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
     private javax.swing.JComboBox<String> jComboBox13;
     private javax.swing.JComboBox<String> jComboBox14;
+    private javax.swing.JComboBox<String> jComboBox15;
+    private javax.swing.JComboBox<String> jComboBox16;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
@@ -5845,6 +5935,9 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -6024,6 +6117,8 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -6134,6 +6229,8 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable21;
     private javax.swing.JTable jTable22;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;

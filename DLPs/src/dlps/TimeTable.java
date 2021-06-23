@@ -13,46 +13,30 @@ import java.util.List;
  * @author m_nou
  */
 public class TimeTable {
-    ///////////////////////////////////// Attributes ///////////////////////////
-    private String course_name;
-    private List days_LinkedList;
-    private List hours_LinkedList;
-    private List professor_LinkedList;
+
+    ////////////////////Atrributs////////////////
+    private List < Program > timetable_program_ids;
+    private List < List <TimeTablComponents>> timetable_components;
     
-    ///////////////////////////////////// Getters ///////////////////////////
-
-    public String getCourse_name() {
-        return course_name;
+    ////////////////Getters///////////////////
+    
+    public List get_timetable_program_ids(){
+        return this.timetable_program_ids;
     }
-
-    public List getDays_LinkedList() {
-        return days_LinkedList;
-    }
-
-    public List getHours_LinkedList() {
-        return hours_LinkedList;
-    }
-
-    public List getProfessor_LinkedList() {
-        return professor_LinkedList;
+    public List get_timetable_components(){
+        return this.timetable_components;
     }
     
-    ///////////////////////////////////// setters ///////////////////////////
+    //////////////Setters/////////////////////
 
-    public void setCourse_name(String course_name) {
-        this.course_name = course_name;
+    public void setTimetable_program_ids(List<Program> timetable_program_ids) {
+        this.timetable_program_ids = timetable_program_ids;
     }
 
-    public void setDays_LinkedList(List days_LinkedList) {
-        this.days_LinkedList = days_LinkedList;
+    public void setTimetable_components(List<List<TimeTablComponents>> timetable_components) {
+        this.timetable_components = timetable_components;
     }
 
-    public void setHours_LinkedList(List hours_LinkedList) {
-        this.hours_LinkedList = hours_LinkedList;
-    }
-
-    public void setProfessor_LinkedList(List professor_LinkedList) {
-        this.professor_LinkedList = professor_LinkedList;
-    }
- 
+    
+   
 }
